@@ -10,7 +10,7 @@ Let’s start with a very basic regex: `/p/g`.
 
 ![/p/g](./media/exported/p.png)
 
-As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more matches within the input string, it is said to “match” the regex.
+As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more “matches” within the input string, it is said to “match” the regex. Think of “the matches” as an array, and whether an input “matches” a regex as a boolean.
 
 ## Character classes
 
