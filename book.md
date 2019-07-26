@@ -70,6 +70,34 @@ We’ll see how to do a lot of this in later chapters, but learning how groups w
 
 ## Repetition
 
+### Making things optional
+
+We can make parts of regex optional. We achieve this (among other things) using the `?` operator.
+
+### Zero or more
+
+If we wish to match zero or more of a token, we can suffix it with a `*`.
+
+### One or more
+
+If we wish to match zero or more of a token, we can suffix it with a `+`.
+
+### Exactly `x` times
+
+If we wish to match a particular token exactly `x` times, we can suffix with with `{x}`. This is functionally identical to repeatedly copy-pasting the token `x` times, but using `{x}` is often a lot less tedious.
+
+### Between `min` and `max` times
+
+If we wish to match a particular token between `min` and `max` times, we can suffix it with `{min,max}`.
+
+Warning: There must be no space after the comma in `{min,max}`.
+
+### At least `x` times
+
+If we wish to match a particular token at least, we can suffix it with `{x,}`. Think of it as [`{min,max}`](#between-min-and-max-times), but without an upper bound.
+
+### A note on *greediness*
+
 ## Flags
 
 ## Anchors
