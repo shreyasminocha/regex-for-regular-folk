@@ -1,0 +1,58 @@
+line-length: false
+no-trailing-spaces: true
+no-hard-tabs: true
+no-trailing-punctuation: true
+no-multiple-blanks:
+    maximum: 1
+proper-names: false
+
+heading-increment: true
+first-heading-h1:
+    level: 2
+heading-style:
+    style: atx
+no-missing-space-atx: true
+no-multiple-space-atx: true
+no-missing-space-closed-atx: true
+no-multiple-space-closed-atx: true
+blanks-around-headings: true
+heading-start-left: true
+no-duplicate-heading: true
+single-h1: true
+required-headings: false
+first-line-h1: false
+
+ul-style:
+    style: dash
+list-indent:
+    style: dash
+ol-prefix:
+    style: ordered
+list-marker-space: 1
+ul-start-left: true
+ul-indent: 4
+
+blanks-around-fences: true
+blanks-around-lists: true
+
+hr-style:
+    style: ___
+
+no-space-in-emphasis: true
+
+no-space-in-code: false
+fenced-code-language: false
+
+no-space-in-links: true
+no-reversed-links: true
+no-empty-links: true
+no-bare-urls: true
+
+no-alt-text: true
+
+no-multiple-space-blockquote: true
+no-blanks-blockquote: true
+
+no-inline-html: false
+
+commands-show-output: true

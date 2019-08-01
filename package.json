@@ -1,0 +1,28 @@
+{
+  "name": "regex-for-regular-people",
+  "version": "0.0.0",
+  "description": "todo",
+  "main": "book.md",
+  "scripts": {
+    "test": "mdspell -r book.md; markdownlint book.md; proselint book.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shreyasminocha/regex-for-regular-people.git"
+  },
+  "keywords": [
+    "regex",
+    "book"
+  ],
+  "author": "Shreyas Minocha",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/shreyasminocha/regex-for-regular-people/issues"
+  },
+  "homepage": "https://github.com/shreyasminocha/regex-for-regular-people#readme",
+  "devDependencies": {
+    "markdown-spellcheck": "^1.3.1",
+    "markdownlint-cli": "^0.17.0",
+    "proselint": "^0.1.7"
+  }
+}
