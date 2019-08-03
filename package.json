@@ -4,7 +4,8 @@
   "description": "todo",
   "main": "book.md",
   "scripts": {
-    "test": "mdspell -r **/*.md !node_modules; markdownlint **/*.md; proselint **/*.md"
+    "test": "mdspell -r **/*.md !node_modules !dist --ignore-numbers; markdownlint **/*.md; proselint **/*.md",
+    "build": "bash export.bash"
   },
   "repository": {
     "type": "git",
