@@ -1,6 +1,6 @@
 ## Flags
 
-Flags allow us to put our regexes into different "modes", so to speak. Remember how we took for granted the part after the final `/` in `/pattern/`? We'll get into the details of those now.
+Think of flags as a means of allowing us to put our regexes into different "modes". Remember how we took for granted the part after the final `/` in `/pattern/`? We'll get into the details of those now.
 
 There are 5 kinds of flags:
 
