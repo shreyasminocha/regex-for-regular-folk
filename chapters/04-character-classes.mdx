@@ -2,23 +2,47 @@
 
 It’s possible to match a character from one of several characters. Here’s an example:
 
-![/[aeiou]/g](media/exported/[aeiou].png)
+<Example source="[aeiou]" flags="g">
+    <String>avocado</String>
+    <String>brinjal</String>
+    <String>onion</String>
+    <String>rhythm</String>
+</Example>
 
 Our regex `/[aeiou]/g` matches all vowels in our input strings.
 
 Here’s another example of these in action:
 
-![/p[aeiou]t/g](media/exported/p[aeiou]t.png)
+<Example source="p[aeiou]t" flags="g">
+    <String>pat</String>
+    <String>pet</String>
+    <String>pit</String>
+    <String>spat</String>
+    <String>spot a pet</String>
+    <String>bat</String>
+</Example>
 
 We match a `p`, followed by one of the vowels, followed by a `t`.
 
 There’s an intuitive shortcut for matching a character from within a continuous _range_.
 
-![/[a-z]/g](media/exported/[a-z].png)
+<Example source="[a-z]" flags="g">
+    <String>john_s</String>
+    <String>matej29</String>
+    <String>Ayesha?!</String>
+    <String>4952</String>
+    <String>LOUD</String>
+</Example>
 
 We can combine ranges and individual characters in our regexes.
 
-![/[A-Za-z0-9_-]/g](media/exported/[A-Za-z0-9_-].png)
+<Example source="[A-Za-z0-9_-]" flags="g">
+    <String>john_s</String>
+    <String>matej29</String>
+    <String>Ayesha?!</String>
+    <String>4952</String>
+    <String>LOUD</String>
+</Example>
 
 Our regex `/[A-Za-z0-9_-]/g` matches a single character, which must be (at least) one of the following:
 
@@ -29,7 +53,11 @@ Our regex `/[A-Za-z0-9_-]/g` matches a single character, which must be (at least
 
 We can also “negate” these rules:
 
-![/[^aeiou]/g](media/exported/[^aeiou].png)
+<Example source="[^aeiou]" flags="g">
+    <String>Umbrella</String>
+    <String>cauliflower</String>
+    <String>ou</String>
+</Example>
 
 The only difference between the first regex of this chapter and `/[^aeiou]/g` is the `^` immediately after the opening bracket. Its purpose is to negate the rules defined within the brackets. We are now saying:
 

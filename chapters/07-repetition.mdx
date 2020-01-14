@@ -1,0 +1,119 @@
+## Repetition
+
+### Making things optional
+
+We can make parts of regex optional. We achieve this (among other things) using the `?` operator.
+
+<Example source="a?" flags="g">
+    <String></String>
+    <String>a</String>
+    <String>aa</String>
+    <String>aaa</String>
+    <String>aaaa</String>
+    <String>aaaaa</String>
+</Example>
+
+Here’s another example:
+
+<Example source="https?" flags="g">
+    <String>http</String>
+    <String>https</String>
+    <String>http/2</String>
+    <String>shttp</String>
+    <String>ftp</String>
+</Example>
+
+Here the`s` following `http` is optional.
+
+We can also make capturing and non-capturing groups optional. The ability to repeat groups is really powerful.
+
+<Example source="url: (www\.)?example\.com" flags="g">
+    <String>url: example.com</String>
+    <String>url: www.example.com/foo</String>
+    <String>Here's the url: example.com.</String>
+</Example>
+
+### Zero or more
+
+If we wish to match zero or more of a token, we can suffix it with a `*`.
+
+<Example source="a*" flags="g">
+    <String></String>
+    <String>a</String>
+    <String>aa</String>
+    <String>aaa</String>
+    <String>aaaa</String>
+    <String>aaaaa</String>
+</Example>
+
+Our regex matches even an empty string `“”`.
+
+### One or more
+
+If we wish to match zero or more of a token, we can suffix it with a `+`.
+
+<Example source="a+" flags="g">
+    <String></String>
+    <String>a</String>
+    <String>aa</String>
+    <String>aaa</String>
+    <String>aaaa</String>
+    <String>aaaaa</String>
+</Example>
+
+### Exactly `x` times
+
+If we wish to match a particular token exactly `x` times, we can suffix with with `{x}`. This is functionally identical to repeatedly copy-pasting the token `x` times, but using `{x}` is often a lot less tedious.
+
+<Example source="a{3}" flags="g">
+    <String></String>
+    <String>a</String>
+    <String>aa</String>
+    <String>aaa</String>
+    <String>aaaa</String>
+    <String>aaaaa</String>
+</Example>
+
+Here's an example that matches an uppercase six-character hex colour code.
+
+<Example source="#[0-9A-F]{6}" flags="g">
+    <String>#AE25AE</String>
+    <String>#555555</String>
+    <String>How about #73FA79?</String>
+    <String>#FFF</String>
+    <String>#a2ca2c</String>
+</Example>
+
+The token `{6}` applies to the character class `[0-9A-F]`, of course.
+
+### Between `min` and `max` times
+
+If we wish to match a particular token between `min` and `max` times, we can suffix it with `{min,max}`.
+
+<Example source="a{2,4}" flags="g">
+    <String></String>
+    <String>a</String>
+    <String>aa</String>
+    <String>aaa</String>
+    <String>aaaa</String>
+    <String>aaaaa</String>
+</Example>
+
+Warning: There must be no space after the comma in `{min,max}`.
+
+Note: Both `min` and `max` is included in the range.
+
+### At least `x` times
+
+If we wish to match a particular token at least, we can suffix it with `{x,}`. Think of it as [`{min,max}`](#between-min-and-max-times), but without an upper bound.
+
+<Example source="a{2,}" flags="g">
+    <String></String>
+    <String>a</String>
+    <String>aa</String>
+    <String>aaa</String>
+    <String>aaaa</String>
+    <String>aaaaa</String>
+</Example>
+
+### A note on *greediness*

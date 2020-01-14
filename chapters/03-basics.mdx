@@ -4,6 +4,12 @@ Regular expressions are typically formatted as `/<rules>/<flags>`. Often people 
 
 Let’s start with a relatively simple regex: `/p/g`.
 
-![/p/g](media/exported/p.png)
+<Example source="p" flags="g">
+    <String>pancake</String>
+    <String>pineapple</String>
+    <String>apple</String>
+    <String>mango</String>
+    <String>Plum</String>
+</Example>
 
 As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more “matches” within the input string, it is said to “match” the regex. Think of “the matches” as an array, and whether an input “matches” a regex as a boolean.
