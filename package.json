@@ -5,10 +5,9 @@
   "main": "book.md",
   "scripts": {
     "spellcheck": "mdspell -r chapters/*.md !node_modules !dist --ignore-numbers",
-    "mdlint": "markdownlint --ignore dist chapters/*.mdx",
     "proselint": "proselint chapters/*.mdx",
     "alex": "alex chapters/*.mdx",
-    "test": "status=0; npm run spellcheck || status=$?; npm run mdlint || status=$?; npm run proselint || status=$?; npm run alex || status=$?; exit $status"
+    "test": "status=0; npm run spellcheck || status=$?; npm run proselint || status=$?; npm run alex || status=$?; exit $status"
   },
   "repository": {
     "type": "git",
@@ -25,9 +24,8 @@
   },
   "homepage": "https://github.com/shreyasminocha/regex-for-regular-people#readme",
   "devDependencies": {
+    "alex": "^8.1.1",
     "markdown-spellcheck": "^1.3.1",
-    "markdownlint-cli": "^0.17.0",
-    "proselint": "^0.1.7",
-    "alex": "^8.1.1"
+    "proselint": "^0.1.7"
   }
 }
