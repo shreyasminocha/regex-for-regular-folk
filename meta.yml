@@ -1,8 +1,23 @@
 ---
 title: Regular Expressions for Regular People
+
 creator:
     role: author
     text: Shreyas Minocha
 
-rights: © 2019 Shreyas Minocha, CC-BY-NC-SA 4.0
+rights: CC-BY-SA 4.0
+
+chapters:
+    - chapters/introduction.mdx
+    - chapters/conventions.mdx
+    - chapters/basics.mdx
+    - chapters/character-classes.mdx
+    - chapters/groups.mdx
+    - chapters/alternation.mdx
+    - chapters/repetition.mdx
+    - chapters/flags.mdx
+    - chapters/anchors.mdx
+    - chapters/lookaround.mdx
+    - chapters/some-words-of-caution.mdx
+    - chapters/using-regex.mdx
 ---
