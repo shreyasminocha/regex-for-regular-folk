@@ -12,6 +12,7 @@ chapters:
     - chapters/conventions.mdx
     - chapters/basics.mdx
     - chapters/character-classes.mdx
+    - chapters/character-escapes.mdx
     - chapters/groups.mdx
     - chapters/alternation.mdx
     - chapters/repetition.mdx
