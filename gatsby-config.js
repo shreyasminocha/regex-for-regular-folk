@@ -1,3 +1,10 @@
 module.exports = {
-    plugins: ["gatsby-plugin-mdx"]
+    plugins: [
+        {
+            resolve: "gatsby-plugin-mdx",
+            options: {
+                gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-smartypants" }]
+            }
+        }
+    ]
 };
