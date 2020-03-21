@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 const Example = props => {
     const { source, flags, children } = props;
@@ -9,21 +10,23 @@ const Example = props => {
         const matches = Array.from(actualString.matchAll(regex));
         const matchesList = matches.map(match => <li>{match}</li>);
 
-        return [
+        return (
             <li>
                 {actualString}
                 <ol>{matchesList}</ol>
             </li>
-        ];
+        );
     });
 
-    return [
-        <span>
-            /{source}/{flags}
-        </span>,
+    return (
+        <div class="example">
+            <span>
+                /{source}/{flags}
+            </span>
 
-        allStrings
-    ];
+            <ul>{allStrings}</ul>
+        </div>
+    );
 };
 
 export default Example;

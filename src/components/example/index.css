@@ -1,0 +1,25 @@
+.example {
+    font-family: monospace;
+}
+
+.example span {
+    font-size: x-large;
+}
+
+.example ul {
+    margin-left: 2em;
+    font-size: large;
+}
+
+.example ul ol {
+    margin: 0 2em;
+}
+
+.example ul ol li {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.example ul ol li:last-child {
+    margin-right: 0;
+}
