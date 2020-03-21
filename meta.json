@@ -1,0 +1,23 @@
+{
+    "title": "Regular Expressions for Regular People",
+    "author": "Shreyas Minocha",
+
+    "rights": "CC-BY-SA 4.0",
+
+    "chapters": [
+        "introduction",
+        "conventions",
+        "basics",
+        "character-classes",
+        "character-escapes",
+        "escapes",
+        "groups",
+        "alternation",
+        "repetition",
+        "flags",
+        "anchors",
+        "lookaround",
+        "some-words-of-caution",
+        "using-regex"
+    ]
+}
