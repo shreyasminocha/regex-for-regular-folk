@@ -9,7 +9,7 @@
     "alex": "alex chapters/*.mdx",
     "lint-check": "prettier --ignore-path .gitignore --check '**/*.{css,js,md,mdx,yml}'",
     "lint": "prettier --ignore-path .gitignore --write '**/*.{css,js,md,mdx,yml}'",
-    "test": "status=0; npm run spellcheck || status=$?; npm run proselint || status=$?; npm run alex || status=$?; npm run lint-check || status=$?; exit $status"
+    "test": "status=0; npm run spellcheck || status=$?; npm run alex || status=$?; npm run lint-check || status=$?; exit $status"
   },
   "repository": {
     "type": "git",

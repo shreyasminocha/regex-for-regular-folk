@@ -2,9 +2,9 @@ import Example from "../src/components/example";
 
 ## Basics
 
-Regular expressions are typically formatted as `/<rules>/<flags>`. Often people will drop the slashes and the flags for brevity. We’ll get into the details of flags in a later chapter, but the one you need to now now is `g`, which stands for “global”.
+Regular expressions are typically formatted as `/<rules>/<flags>`. Often people will drop the slashes and the flags for brevity. We'll get into the details of flags in a later chapter, but the one you need to now now is `g`, which stands for "global".
 
-Let’s start with a relatively simple regex: `/p/g`.
+Let's start with a relatively simple regex: `/p/g`.
 
 <Example source="p" flags="g">
     <String>pancake</String>
@@ -14,7 +14,7 @@ Let’s start with a relatively simple regex: `/p/g`.
     <String>Plum</String>
 </Example>
 
-As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more “matches” within the input string, it is said to “match” the regex. Think of “the matches” as an array, and whether an input “matches” a regex as a boolean.
+As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more "matches" within the input string, it is said to "match" the regex. Think of "the matches" as an array, and whether an input "matches" a regex as a boolean.
 
 <Example source="pp" flags="g">
     <String>apple</String>
