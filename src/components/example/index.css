@@ -11,6 +11,16 @@
     margin-left: 2em;
     font-size: large;
     list-style-type: none;
+    margin-top: 1.5em;
+}
+
+.example ul > li {
+    height: 2em;
+}
+
+.example ul li,
+.example ul li ol li {
+    font-size: large;
 }
 
 .example .pass-fail {
@@ -20,8 +30,16 @@
     border-radius: 50%;
     color: transparent;
 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
     /*
         I have no idea why these magic constants work. They just do.
+        If you figure it out, please let me know.
         Such is CSS sometimes. I'm so sorry.
     */
     font-size: 6px;
@@ -31,13 +49,17 @@
 
 .example ul ol {
     margin: 0 2em;
+    position: relative;
+    top: -22px;
+    left: -1px;
+    z-index: -1;
 }
 
 .example ul ol li {
-    display: inline-block;
-    margin-right: 1em;
-}
-
-.example ul ol li:last-child {
-    margin-right: 0;
+    display: inline;
+    background-color: hsl(33, 100%, 88%, 0.7);
+    padding: 0.2em 0;
+    color: transparent;
+    position: relative;
+    left: 0;
 }

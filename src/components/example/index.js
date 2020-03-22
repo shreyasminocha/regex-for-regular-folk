@@ -5,12 +5,28 @@ const Example = props => {
     const { source, flags, children } = props;
     const regex = new RegExp(source, flags);
 
-    const allStrings = children.map(str => {
-        const actualString = str.props.children;
-        const matches = Array.from(actualString.matchAll(regex));
-        const matchesList = matches.map(match => <li>{match}</li>);
+    const testCases = children.map(str => {
+        const string = str.props.children;
+        const matches = string.matchAll(regex);
 
-        const numMatches = matchesList.length;
+        const matchesListItems = [];
+        let runningMatchLength = 0;
+
+        for (const match of matches) {
+            const [str] = match;
+            const { index } = match;
+            const left = index - runningMatchLength;
+
+            matchesListItems.push(
+                <li style={{ width: `${str.length}ch`, left: `${left}ch` }}>
+                    {str}
+                </li>
+            );
+
+            runningMatchLength += str.length;
+        }
+
+        const numMatches = matchesListItems.length;
         const anyMatches = numMatches !== 0;
         const indicatorColour = anyMatches ? "#73fa79" : "#ff7e79";
 
@@ -23,20 +39,20 @@ const Example = props => {
                     {numMatches} match{numMatches !== 1 ? "es" : ""}
                 </span>
 
-                {actualString}
-                <ol>{matchesList}</ol>
+                {string}
+                <ol>{matchesListItems}</ol>
             </li>
         );
     });
 
     return (
-        <div class="example">
+        <figure class="example">
             <span className="regex-name">
                 /{source}/{flags}
             </span>
 
-            <ul>{allStrings}</ul>
-        </div>
+            <ul>{testCases}</ul>
+        </figure>
     );
 };
 
