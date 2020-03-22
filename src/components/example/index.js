@@ -10,8 +10,19 @@ const Example = props => {
         const matches = Array.from(actualString.matchAll(regex));
         const matchesList = matches.map(match => <li>{match}</li>);
 
+        const numMatches = matchesList.length;
+        const anyMatches = numMatches !== 0;
+        const indicatorColour = anyMatches ? "#73fa79" : "#ff7e79";
+
         return (
             <li>
+                <span
+                    className="pass-fail"
+                    style={{ backgroundColor: indicatorColour }}
+                >
+                    {numMatches} match{numMatches !== 1 ? "es" : ""}
+                </span>
+
                 {actualString}
                 <ol>{matchesList}</ol>
             </li>
@@ -20,7 +31,7 @@ const Example = props => {
 
     return (
         <div class="example">
-            <span>
+            <span className="regex-name">
                 /{source}/{flags}
             </span>
 

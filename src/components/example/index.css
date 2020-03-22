@@ -2,7 +2,7 @@
     font-family: monospace;
 }
 
-.example span {
+.example .regex-name {
     font-size: large;
     font-weight: bold;
 }
@@ -10,6 +10,23 @@
 .example ul {
     margin-left: 2em;
     font-size: large;
+    list-style-type: none;
+}
+
+.example .pass-fail {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: transparent;
+
+    /*
+        I have no idea why these magic constants work. They just do.
+        Such is CSS sometimes. I'm so sorry.
+    */
+    font-size: 6px;
+    margin-right: 12px;
+    vertical-align: -10%;
 }
 
 .example ul ol {
