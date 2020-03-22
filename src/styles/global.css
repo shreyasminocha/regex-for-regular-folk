@@ -1,4 +1,25 @@
+:root {
+    --pseudo-black: hsl(0, 0%, 30%);
+}
+
 body {
     width: 50%;
     margin: 2em auto;
+    line-height: 1.4;
+    color: var(--pseudo-black);
+}
+
+@media (max-width: 600px) {
+    body {
+        width: 90%;
+    }
+}
+
+a {
+    color: hsl(219, 100%, 47%);
+    transition: color ease-in-out 0.4s;
+}
+
+a:hover {
+    color: var(--pseudo-black);
 }
