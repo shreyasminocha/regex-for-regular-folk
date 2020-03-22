@@ -1,5 +1,6 @@
 import React from "react";
 import * as meta from "../../meta.json";
+import toTitleCase from "titlecase";
 
 const Index = () => (
     <>
@@ -16,10 +17,11 @@ const Index = () => (
 
 const chaptersList = meta.chapters.map(chapter => {
     const link = `/chapters/${chapter}`;
+    const title = toTitleCase(chapter.replace("-", " "));
 
     return (
         <li>
-            <a href={link}>{chapter}</a>
+            <a href={link}>{title}</a>
         </li>
     );
 });
