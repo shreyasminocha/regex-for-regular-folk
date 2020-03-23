@@ -1,4 +1,4 @@
-# Regular Expressions for Regular People
+# Regular Expressions for Regular Folk
 
 ## License
 

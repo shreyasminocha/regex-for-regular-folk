@@ -1,5 +1,5 @@
 {
-  "name": "regex-for-regular-people",
+  "name": "regex-for-regular-folk",
   "version": "0.0.0",
   "description": "todo",
   "main": "book.md",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shreyasminocha/regex-for-regular-people.git"
+    "url": "git+https://github.com/shreyasminocha/regex-for-regular-folk.git"
   },
   "keywords": [
     "regex",
@@ -22,9 +22,9 @@
   "author": "Shreyas Minocha",
   "license": "CC-BY-SA-4.0",
   "bugs": {
-    "url": "https://github.com/shreyasminocha/regex-for-regular-people/issues"
+    "url": "https://github.com/shreyasminocha/regex-for-regular-folk/issues"
   },
-  "homepage": "https://github.com/shreyasminocha/regex-for-regular-people#readme",
+  "homepage": "https://github.com/shreyasminocha/regex-for-regular-folk#readme",
   "devDependencies": {
     "alex": "^8.1.1",
     "markdown-spellcheck": "^1.3.1",
