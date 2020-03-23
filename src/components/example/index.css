@@ -58,6 +58,8 @@
 .example ul ol li {
     display: inline;
     background-color: hsl(33, 100%, 88%, 0.7);
+    border-radius: 3px;
+    border-bottom: 0.1px solid slategrey;
     padding: 0.2em 0;
     color: transparent;
     position: relative;

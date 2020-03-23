@@ -1,4 +1,5 @@
 import Example from "../src/components/example";
+import Warning from "../src/components/warning";
 
 ## Character classes
 
@@ -35,6 +36,11 @@ There's an intuitive shortcut for matching a character from within a continuous 
     <String>4952</String>
     <String>LOUD</String>
 </Example>
+<Warning>
+    The regex <code>/[a-z]/g</code> matches only one character. In the example
+    above, the strings have{" "}
+    <em>several matches each, each one character long</em>. Not one long match.
+</Warning>
 
 We can combine ranges and individual characters in our regexes.
 
