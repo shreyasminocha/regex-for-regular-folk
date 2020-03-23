@@ -1,0 +1,13 @@
+.note {
+    background-color: hsl(199, 100%, 85%);
+    padding: 1em;
+    margin-bottom: 2.5em;
+}
+
+.note span {
+    font-weight: bold;
+}
+
+.note p {
+    margin-bottom: 0;
+}
