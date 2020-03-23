@@ -1,12 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./index.css";
 
 const Example = props => {
-    const { source, flags, children } = props;
+    const { source, flags } = props;
     const regex = new RegExp(source, flags);
 
+    const children = props.children;
+
     const testCases = children.map(str => {
-        const string = str.props.children;
+        const string = str.props.children || "";
         const matches = string.matchAll(regex);
 
         const matchesListItems = [];
@@ -46,7 +49,7 @@ const Example = props => {
     });
 
     return (
-        <figure class="example">
+        <figure className="example">
             <span className="regex-name">
                 /{source}/{flags}
             </span>
@@ -54,6 +57,17 @@ const Example = props => {
             <ul>{testCases}</ul>
         </figure>
     );
+};
+
+Example.propTypes = {
+    source: PropTypes.string.isRequired,
+    flags: PropTypes.string,
+    children: PropTypes.element
+};
+
+Example.defaultProps = {
+    children: [],
+    flags: ""
 };
 
 export default Example;
