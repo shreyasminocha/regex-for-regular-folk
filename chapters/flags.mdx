@@ -1,3 +1,5 @@
+import Example from "../src/components/example";
+
 ## Flags
 
 Think of flags as a means of allowing us to put our regexes into different "modes". Remember how we took for granted the part after the final `/` in `/pattern/`? We'll get into the details of those now.
@@ -7,21 +9,59 @@ There are 5 kinds of flags:
 -   `g` — global
 -   `i` — (case) insensitive
 -   `m` — multiline
--   `u` — unicode
--   `y` — sticky
 
 ### Global (`g`)
 
 All examples thus far have had the global flag. When the global flag isn't enabled, the regex doesn't match anything beyond the first match.
 
+<Example source="[aeiou]" flags="g">
+    <String>corona</String>
+    <String>cancel</String>
+    <String>rhythm</String>
+</Example>
+<Example source="[aeiou]" flags="">
+    <String>corona</String>
+    <String>cancel</String>
+    <String>rhythm</String>
+</Example>
+
 ### (Case) Insensitive (`i`)
 
 As the name suggests, enabling the "insensitive" flag makes the regex case insensitive about matching text.
 
+<Example source="#[0-9A-F]{6}" flags="i">
+    <String>#AE25AE</String>
+    <String>#555555</String>
+    <String>Even #a2ca2c?</String>
+    <String>#FFF</String>
+</Example>
+<Example source="#[0-9A-F]{6}" flags="">
+    <String>#AE25AE</String>
+    <String>#555555</String>
+    <String>Even #a2ca2c?</String>
+    <String>#FFF</String>
+</Example>
+<Example source="#[0-9A-Fa-f]{6}" flags="">
+    <String>#AE25AE</String>
+    <String>#555555</String>
+    <String>Even #a2ca2c?</String>
+    <String>#FFF</String>
+</Example>
+
 ### Multiline (`m`)
 
-The multiline flag has to do with the regex's handling of anchors when dealing with "multiline" strings, that is strings that include newlines (`\n`) and thus spans over multiple lines. By default, the regex `/^foo$/` would match only `"foo"`. We might want it to match `foo` when it is in a line by itself in a multiline string.
+The multiline flag has to do with the regex's handling of anchors when dealing with "multiline" strings, that is strings that include newlines (`\n`) and thus spans over multiple lines. By default, the regex `/^foo$/` would match only `"foo"`.
 
-### Unicode (`u`)
+We might want it to match `foo` when it is in a line by itself in a multiline string.
 
-### Sticky (`y`)
+Let's take the string `"bar\nfoo\nbaz"` as an example:
+
+```
+bar
+foo
+baz
+```
+
+Without the multiline flag, the string above would be considered as a single line for matching purposes. The regex `^foo$` **would not** match since the beginning of line would be before `b` and the end of line would be after `z`.
+
+With the multiline flag, it would be considered as three "lines": `bar`, `foo`, and `baz`. The regex `^foo$` _would match_ the "line" in the middle—`foo`.
