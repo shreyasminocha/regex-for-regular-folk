@@ -1,10 +1,52 @@
+import Example from "../src/components/example";
+
 ## Groups
 
 Groups, as the name suggests, are meant to be used to "group" components of regular expressions. These groups can be used to:
 
 -   Extract subsets of matches
--   Enhance readability
 -   Repeat groups an arbitrary number of times
--   Make the group optional
+-   Enhance readability
+-   Allow complex alternations
 
 We'll see how to do a lot of this in later chapters, but learning how groups work will allow us to study some great examples in these later chapters.
+
+### Capturing groups
+
+Capturing groups are denoted by `(` … `)`. Here's an expository example:
+
+<Example source="a(bcd)e" flags="g">
+    <String>abcde</String>
+    <String>abcdefg?</String>
+    <String>abcde</String>
+</Example>
+
+This regex is functionally identical to `/abcde/g`.
+
+Capturing groups allow _extracting_ parts of matches.
+
+<!-- Insert example -->
+
+Capturing groups can also be used to group regex parts for ease of [repetition](/repetition) of said group.[^1] While we will cover repetition in detail in chapters that follow, here's an example that demonstrates the utility of groups.
+
+<Example source="a(bcd)+e" flags="g">
+    <String>abcdefg</String>
+    <String>abcdbcde</String>
+    <String>abcdbcdbcdef</String>
+    <String>ae</String>
+</Example>
+
+Other times, they are used to group logically similar parts of the regex for readability.
+
+<Example source="(\d\d\d\d)-W(\d\d)" flags="g">
+    <String>2020-W12</String>
+    <String>1970-W01</String>
+    <String>2050-W50-6</String>
+    <String>12050-W50</String>
+</Example>
+
+### Non-capturing groups
+
+Non-capturing groups are very similar to capturing groups, except that they don't create "captures". They take the form `(?:` … `)`.
+
+Non-capturing groups are usually used in conjunction with capturing groups. Perhaps you are attempting to extract some parts of the matches using capturing groups. You may wish to use a group _without messing up the order of the captures_. This is where non-capturing groups come handy.
