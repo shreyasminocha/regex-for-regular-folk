@@ -1,5 +1,6 @@
 .example {
     font-family: monospace;
+    page-break-inside: avoid;
 }
 
 .example .regex-name {
