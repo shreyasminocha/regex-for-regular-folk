@@ -17,7 +17,7 @@ const Index = () => (
 
 const chaptersList = meta.chapters.map(chapter => {
     const link = `/chapters/${chapter}`;
-    const title = toTitleCase(chapter.replace("-", " "));
+    const title = toTitleCase(chapter.replace(/-/g, " "));
 
     return (
         <li>
