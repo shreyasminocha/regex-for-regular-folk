@@ -1,3 +1,33 @@
+@font-face {
+    font-family: "Libre Baskerville";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Libre Baskerville"), url("/fonts/libre-baskerville.ttf");
+}
+
+@font-face {
+    font-family: "Libre Baskerville";
+    font-style: italic;
+    font-weight: normal;
+    src: local("Libre Baskerville Italic"),
+        url("/fonts/libre-baskerville-italic.ttf");
+}
+
+@font-face {
+    font-family: "Libre Baskerville";
+    font-style: normal;
+    font-weight: bold;
+    src: local("Libre Baskerville Bold"),
+        url("/fonts/libre-baskerville-bold.ttf");
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Raleway SemiBold"), url("/fonts/raleway-500.ttf");
+}
+
 :root {
     --pseudo-black: hsl(0, 0%, 30%);
 }
@@ -30,6 +60,7 @@ h5,
 h6 {
     font-family: "Raleway", "Arial", "Helvetica", sans-serif;
     font-weight: 500;
+    letter-spacing: normal;
 }
 
 h2 {
