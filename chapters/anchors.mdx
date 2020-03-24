@@ -1,27 +1,112 @@
 import Example from "../src/components/example";
+import Note from "../src/components/note";
 
 ## Anchors
+
+Anchors do not match anything by themselves. Instead, they place restrictions on where matches may appear—"anchoring" matches.
+
+You could also think about anchors as "zero-width" characters.
+
+### Beginning of line — `^`
+
+Marked by a carat (`^`) at the beginning of the regex, this anchor makes it necessary for the rest of the regex to _match from the beginning of the string_.
+
+You can think of it as matching an _invisible character_ always present at the _beginning_ of the string.
 
 <Example source="^p" flags="g">
     <String>photoshop</String>
     <String>pineapple</String>
     <String>tap</String>
     <String>apple</String>
-    <String>Plum</String>
+    <String>ppap</String>
     <String>mango</String>
 </Example>
+
+### End of line — `$`
+
+This anchor marked by a dollar (`$`) at the end of the regex. It is analogous to the beginning of the line anchor.
+
+You can think of it as matching an _invisible character_ always present at the _end_ of the string.
+
 <Example source="p$" flags="g">
     <String>photoshop</String>
     <String>pineapple</String>
-    <String>tap</String>
     <String>apple</String>
+    <String>app</String>
     <String>Plum</String>
     <String>mango</String>
 </Example>
+
+---
+
+The `^` and `$` anchors are often used in conjunction to ensure that the regex matches the entirety of the string, rather than just a part.
+
 <Example source="^p$" flags="g">
     <String>p</String>
     <String>pi</String>
     <String>pea</String>
     <String>tarp</String>
     <String>apple</String>
+</Example>
+
+Let's revisit an example from [_Repetition_](/chapters/repetition), except we add the two anchors at the ends of the regex.
+
+<Example source="^https?$" flags="g">
+    <String>http</String>
+    <String>https</String>
+    <String>http/2</String>
+    <String>shttp</String>
+    <String>ftp</String>
+</Example>
+
+In the absence of the anchors, both `http/2` and `shttp` would match.
+
+### Word boundary — `\b`
+
+A word boundary is a _position_ between a [word character](/chapters/character-escapes#word-character--w) and a non-word character.
+
+The word boundary anchor, `\b`, once again matches an imaginary invisible character that exists between consecutive word and non-word characters.
+
+<Example source="\bp" flags="g">
+    <String>peach</String>
+    <String>banana, peach</String>
+    <String>banana+peach</String>
+    <String>banana-peach</String>
+    <String>banana_peach</String>
+    <String>banana%20peach</String>
+    <String>grape</String>
+</Example>
+<Note>
+    Words characters include <code>a-z</code>, <code>A-Z</code>,{" "}
+    <code>0-9</code>, and <code>_</code>.
+</Note>
+<Example source="\bp\b" flags="g">
+    <String>word p word</String>
+    <String>(p)</String>
+    <String>p+q+r</String>
+    <String>(paren)</String>
+    <String>(loop)</String>
+    <String>loops</String>
+</Example>
+
+---
+
+There is also a non-word-boundary anchors: `\B`.
+
+As the name suggests, it matches everything apart from word boundaries.
+
+<Example source="\Bp" flags="g">
+    <String>ape</String>
+    <String>leap</String>
+    <String>(leap)</String>
+    <String>a pot</String>
+    <String>pea</String>
+</Example>
+<Example source="\Bp\B" flags="g">
+    <String>ape</String>
+    <String>_peel</String>
+    <String>leap</String>
+    <String>(leap)</String>
+    <String>a pot</String>
+    <String>pea</String>
 </Example>
