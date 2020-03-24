@@ -2,10 +2,86 @@ import Example from "../src/components/example";
 
 ## Character Escapes
 
-<Example source="\d" flags="g"></Example>
-<Example source="\d\d" flags="g"></Example>
-<Example source="\w" flags="g"></Example>
-<Example source="\s" flags="g"></Example>
-<Example source="\D" flags="g"></Example>
-<Example source="\W" flags="g"></Example>
-<Example source="\S" flags="g"></Example>
+Character escapes act as shorthands for some common character classes.
+
+### Digit character — `\d`
+
+The character escape `\d` matches digit characters, from `0` to `9`. It is equivalent to the character class `[0-9]`.
+
+<Example source="\d" flags="g">
+    <String>2020</String>
+    <String>100/100</String>
+    <String>It costs $5.45</String>
+    <String>3.14159</String>
+</Example>
+<Example source="\d\d" flags="g">
+    <String>2020</String>
+    <String>100/100</String>
+    <String>It costs $5.45</String>
+    <String>3.14159</String>
+</Example>
+<Example source="\D" flags="g">
+    <String>2020</String>
+    <String>100/100</String>
+    <String>It costs $5.45</String>
+    <String>3.14159</String>
+</Example>
+
+### Word character — `\w`
+
+The escape `\w` matches characters deemed "word characters". These include:
+
+-   lowercase alphabet — `a`–`z`
+-   uppercase alphabet — `A`–`Z`
+-   digits — `0`–`9`
+-   underscore — `_`
+
+It is thus equivalelnt to the character class `[a-zA-Z0-9_]`.
+
+<Example source="\w" flags="g">
+    <String>john_s</String>
+    <String>matej29</String>
+    <String>Ayesha?!</String>
+    <String>4952</String>
+    <String>LOUD</String>
+    <String>lo-fi</String>
+    <String>get out</String>
+    <String>21*2 = 42(1)</String>
+</Example>
+<Example source="\W" flags="g">
+    <String>john_s</String>
+    <String>Ayesha?!</String>
+    <String>4952</String>
+    <String>LOUD</String>
+    <String>lo-fi</String>
+    <String>get out</String>
+    <String>;-;</String>
+    <String>21*2 = 42(1)</String>
+</Example>
+
+### Whitespace character — `\s`
+
+The escape `\s` matches whitespace characters. The exact set of characters matched is dependent on the regex engine, but most include at least:
+
+-   space
+-   tab — `\t`
+-   carriage return — `\r`
+-   new line — `\n`
+-   form feed — `\f`
+
+Many also include vertical tabs (`\v`). Unicode-aware engines usually match all characters in the `separator` category.
+
+The technicalities, however, will usually not be important.
+
+This escape is difficult to demonstrate through my `Example` component. However, a few elementary examples follow anyway.
+
+<Example source="\s" flags="g">
+    <String>word word</String>
+    <String>tabs vs spaces</String>
+    <String>snake_case.jpg</String>
+</Example>
+<Example source="\S" flags="g">
+    <String>word word</String>
+    <String>tabs vs spaces</String>
+    <String>snake_case.jpg</String>
+</Example>

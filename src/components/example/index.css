@@ -65,4 +65,5 @@
     color: transparent;
     position: relative;
     left: 0;
+    white-space: pre;
 }
