@@ -83,3 +83,20 @@ This escape is difficult to demonstrate through my `Example` component. However,
     <String>tabs vs spaces</String>
     <String>snake_case.jpg</String>
 </Example>
+
+### Any character — `.`
+
+While not a typical character escape, `.` matches any[^1] character.
+
+<Example source="." flags="g">
+    <String>john_s</String>
+    <String>Ayesha?!</String>
+    <String>4952</String>
+    <String>LOUD</String>
+    <String>lo-fi</String>
+    <String>get out</String>
+    <String>;-;</String>
+    <String>21*2 = 42(1)</String>
+</Example>
+
+[^1]: Except the newline character `\n`. This can be changed using the "dotAll" flag, if supported by the regex engine in question.
