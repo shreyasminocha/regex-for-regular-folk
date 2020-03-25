@@ -13,7 +13,7 @@ We'll see how to do a lot of this in later chapters, but learning how groups wor
 
 Capturing groups are denoted by `(` … `)`. Here's an expository example:
 
-<Example source="a(bcd)e" flags="g">
+<Example regex={/a(bcd)e/g}>
     <String>abcde</String>
     <String>abcdefg?</String>
     <String>abcde</String>
@@ -27,7 +27,7 @@ Capturing groups allow _extracting_ parts of matches.
 
 Capturing groups can also be used to group regex parts for ease of [repetition](/repetition) of said group.[^1] While we will cover repetition in detail in chapters that follow, here's an example that demonstrates the utility of groups.
 
-<Example source="a(bcd)+e" flags="g">
+<Example regex={/a(bcd)+e/g}>
     <String>abcdefg</String>
     <String>abcdbcde</String>
     <String>abcdbcdbcdef</String>
@@ -36,7 +36,7 @@ Capturing groups can also be used to group regex parts for ease of [repetition](
 
 Other times, they are used to group logically similar parts of the regex for readability.
 
-<Example source="(\d\d\d\d)-W(\d\d)" flags="g">
+<Example regex={/(\d\d\d\d)-W(\d\d)/g}>
     <String>2020-W12</String>
     <String>1970-W01</String>
     <String>2050-W50-6</String>

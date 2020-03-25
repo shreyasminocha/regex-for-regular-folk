@@ -25,12 +25,12 @@ This is done by **prefixing the character with a `\`**.
 
 ---
 
-<Example source="\(paren\)" flags="g">
+<Example regex={/\(paren\)/g}>
     <String>paren</String>
     <String>(paren)</String>
     <String>a (paren)</String>
 </Example>
-<Example source="(paren)" flags="g">
+<Example regex={/(paren)/g}>
     <String>paren</String>
     <String>parents</String>
     <String>(paren)</String>
@@ -39,14 +39,14 @@ This is done by **prefixing the character with a `\`**.
 
 ---
 
-<Example source="example\.com" flags="g">
+<Example regex={/example\.com/g}>
     <String>example.com</String>
     <String>a.example.com/foo</String>
     <String>example_com</String>
     <String>example@com</String>
     <String>example_com/foo</String>
 </Example>
-<Example source="example.com" flags="g">
+<Example regex={/example.com/g}>
     <String>example.com</String>
     <String>a.example.com/foo</String>
     <String>example_com</String>
@@ -56,13 +56,13 @@ This is done by **prefixing the character with a `\`**.
 
 ---
 
-<Example source="A\+" flags="g">
+<Example regex={/A\+/g}>
     <String>A+</String>
     <String>A+B</String>
     <String>5A+</String>
     <String>AAA</String>
 </Example>
-<Example source="A+" flags="g">
+<Example regex={/A+/g}>
     <String>A+</String>
     <String>A+B</String>
     <String>5A+</String>
@@ -71,12 +71,12 @@ This is done by **prefixing the character with a `\`**.
 
 ---
 
-<Example source="worth \$5" flags="g">
+<Example regex={/worth \$5/g}>
     <String>worth $5</String>
     <String>worth $54</String>
     <String>not worth $5</String>
 </Example>
-<Example source="worth $5" flags="g">
+<Example regex={/worth $5/g}>
     <String>worth $5</String>
     <String>worth $54</String>
     <String>not worth $5</String>

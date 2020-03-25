@@ -2,7 +2,7 @@
 
 It's possible to match a character from one of several characters. Here's an example:
 
-<Example source="[aeiou]" flags="g">
+<Example regex={/[aeiou]/g}>
     <String>avocado</String>
     <String>brinjal</String>
     <String>onion</String>
@@ -13,7 +13,7 @@ Our regex `/[aeiou]/g` matches all vowels in our input strings.
 
 Here's another example of these in action:
 
-<Example source="p[aeiou]t" flags="g">
+<Example regex={/p[aeiou]t/g}>
     <String>pat</String>
     <String>pet</String>
     <String>pit</String>
@@ -26,7 +26,7 @@ We match a `p`, followed by one of the vowels, followed by a `t`.
 
 There's an intuitive shortcut for matching a character from within a continuous _range_.
 
-<Example source="[a-z]" flags="g">
+<Example regex={/[a-z]/g}>
     <String>john_s</String>
     <String>matej29</String>
     <String>Ayesha?!</String>
@@ -41,7 +41,7 @@ There's an intuitive shortcut for matching a character from within a continuous 
 
 We can combine ranges and individual characters in our regexes.
 
-<Example source="[A-Za-z0-9_-]" flags="g">
+<Example regex={/[A-Za-z0-9_-]/g}>
     <String>john_s</String>
     <String>matej29</String>
     <String>Ayesha?!</String>
@@ -58,7 +58,7 @@ Our regex `/[A-Za-z0-9_-]/g` matches a single character, which must be (at least
 
 We can also "negate" these rules:
 
-<Example source="[^aeiou]" flags="g">
+<Example regex={/[^aeiou]/g}>
     <String>Umbrella</String>
     <String>cauliflower</String>
     <String>ou</String>

@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import "./index.css";
 
 const Example = props => {
-    const { source, flags } = props;
-    const regex = new RegExp(source, flags);
+    const { regex } = props;
 
     const children = props.children;
 
@@ -50,9 +49,7 @@ const Example = props => {
 
     return (
         <figure className="example">
-            <span className="regex-name">
-                /{source}/{flags}
-            </span>
+            <span className="regex-name">{regex.toString()}</span>
 
             <ul>{testCases}</ul>
         </figure>
@@ -60,8 +57,7 @@ const Example = props => {
 };
 
 Example.propTypes = {
-    source: PropTypes.string.isRequired,
-    flags: PropTypes.string,
+    regex: PropTypes.instanceOf(RegExp).isRequired,
     children: PropTypes.element
 };
 

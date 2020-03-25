@@ -6,19 +6,19 @@ Character escapes act as shorthands for some common character classes.
 
 The character escape `\d` matches digit characters, from `0` to `9`. It is equivalent to the character class `[0-9]`.
 
-<Example source="\d" flags="g">
+<Example regex={/\d/g}>
     <String>2020</String>
     <String>100/100</String>
     <String>It costs $5.45</String>
     <String>3.14159</String>
 </Example>
-<Example source="\d\d" flags="g">
+<Example regex={/\d\d/g}>
     <String>2020</String>
     <String>100/100</String>
     <String>It costs $5.45</String>
     <String>3.14159</String>
 </Example>
-<Example source="\D" flags="g">
+<Example regex={/\D/g}>
     <String>2020</String>
     <String>100/100</String>
     <String>It costs $5.45</String>
@@ -36,7 +36,7 @@ The escape `\w` matches characters deemed "word characters". These include:
 
 It is thus equivalelnt to the character class `[a-zA-Z0-9_]`.
 
-<Example source="\w" flags="g">
+<Example regex={/\w/g}>
     <String>john_s</String>
     <String>matej29</String>
     <String>Ayesha?!</String>
@@ -46,7 +46,7 @@ It is thus equivalelnt to the character class `[a-zA-Z0-9_]`.
     <String>get out</String>
     <String>21*2 = 42(1)</String>
 </Example>
-<Example source="\W" flags="g">
+<Example regex={/\W/g}>
     <String>john_s</String>
     <String>Ayesha?!</String>
     <String>4952</String>
@@ -73,12 +73,12 @@ The technicalities, however, will usually not be important.
 
 This escape is difficult to demonstrate through my `Example` component. However, a few elementary examples follow anyway.
 
-<Example source="\s" flags="g">
+<Example regex={/\s/g}>
     <String>word word</String>
     <String>tabs vs spaces</String>
     <String>snake_case.jpg</String>
 </Example>
-<Example source="\S" flags="g">
+<Example regex={/\S/g}>
     <String>word word</String>
     <String>tabs vs spaces</String>
     <String>snake_case.jpg</String>
@@ -88,7 +88,7 @@ This escape is difficult to demonstrate through my `Example` component. However,
 
 While not a typical character escape, `.` matches any[^1] character.
 
-<Example source="." flags="g">
+<Example regex={/./g}>
     <String>john_s</String>
     <String>Ayesha?!</String>
     <String>4952</String>

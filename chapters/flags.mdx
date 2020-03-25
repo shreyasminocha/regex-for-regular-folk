@@ -12,12 +12,12 @@ There are 5 kinds of flags:
 
 All examples thus far have had the global flag. When the global flag isn't enabled, the regex doesn't match anything beyond the first match.
 
-<Example source="[aeiou]" flags="g">
+<Example regex={/[aeiou]/g}>
     <String>corona</String>
     <String>cancel</String>
     <String>rhythm</String>
 </Example>
-<Example source="[aeiou]" flags="">
+<Example regex={/[aeiou]/}>
     <String>corona</String>
     <String>cancel</String>
     <String>rhythm</String>
@@ -27,19 +27,19 @@ All examples thus far have had the global flag. When the global flag isn't enabl
 
 As the name suggests, enabling the "insensitive" flag makes the regex case insensitive about matching text.
 
-<Example source="#[0-9A-F]{6}" flags="i">
+<Example regex={/#[0-9A-F]{6}/i}>
     <String>#AE25AE</String>
     <String>#555555</String>
     <String>Even #a2ca2c?</String>
     <String>#FFF</String>
 </Example>
-<Example source="#[0-9A-F]{6}" flags="">
+<Example regex={/#[0-9A-F]{6}/}>
     <String>#AE25AE</String>
     <String>#555555</String>
     <String>Even #a2ca2c?</String>
     <String>#FFF</String>
 </Example>
-<Example source="#[0-9A-Fa-f]{6}" flags="">
+<Example regex={/#[0-9A-Fa-f]{6}/}>
     <String>#AE25AE</String>
     <String>#555555</String>
     <String>Even #a2ca2c?</String>

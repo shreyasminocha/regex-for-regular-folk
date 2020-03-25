@@ -4,7 +4,7 @@ Regular expressions are typically formatted as `/<rules>/<flags>`. Often people 
 
 Let's start with the regex `/p/g`.
 
-<Example source="p" flags="g">
+<Example regex={/p/g}>
     <String>pancake</String>
     <String>pineapple</String>
     <String>apple</String>
@@ -14,7 +14,7 @@ Let's start with the regex `/p/g`.
 
 As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more "matches" within the input string, it is said to "match" the regex. Think of "the matches" as an array, and whether an input "matches" a regex as a boolean.
 
-<Example source="pp" flags="g">
+<Example regex={/pp/g}>
     <String>apple</String>
     <String>pineapple</String>
     <String>happiness</String>
