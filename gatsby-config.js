@@ -1,4 +1,9 @@
 module.exports = {
+    siteMetadata: {
+        title: "Regular Expressions for Regular Folk",
+        description:
+            "A visual, example-based introduction to regular expressions"
+    },
     plugins: [
         {
             resolve: "gatsby-source-filesystem",
