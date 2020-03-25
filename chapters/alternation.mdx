@@ -1,19 +1,36 @@
 ## Alternation
 
+Alternation allows matching _one_ of several phrases. This is more powerful than character classes, which allow matching one of several characters.
+
+Delimit the set of phrases with pipes—`|`.
+
 <Example source="foo|bar|baz" flags="g">
     <String>foo baz</String>
     <String>Your food</String>
     <String>Behind bars</String>
 </Example>
+
+> One of `foo`, `bar`, and `baz`
+
+---
+
+If only a part of the regex is to be "alternated", wrap that part with a [group](/chapter/groups)—capturing or non-capturing.
+
 <Example source="Try (foo|bar|baz)" flags="g">
     <String>Try foo</String>
     <String>Try bar</String>
     <String>Try baz</String>
+    <String>Try food</String>
 </Example>
+
+> `Try` followed by one of `foo`, `bar`, and `baz`
+
+---
+
+Matching numbers between 100 and 250:
+
 <Example source="1\d\d|2[0-4]\d|250" flags="g">
-    <String>100</String>
-    <String>157</String>
-    <String>199</String>
+    <String>100, 157, 199</String>
     <String>139 + 140 = 279</String>
     <String>201 INR</String>
     <String>$220</String>
