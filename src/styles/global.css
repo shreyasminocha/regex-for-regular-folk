@@ -75,3 +75,11 @@ a {
 a:hover {
     color: var(--pseudo-black);
 }
+
+ul {
+    list-style-position: outside;
+}
+
+.footnotes {
+    font-size: small;
+}

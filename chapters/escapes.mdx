@@ -1,1 +1,83 @@
 ## Escapes
+
+In regex, some characters have special meanings as we have explored in the last few chapters:
+
+-   `|`
+-   `{`, `}`
+-   `(`, `)`
+-   `[`, `]`
+-   `^`, `$`
+-   `+`, `*`, `?`
+-   `\`
+-   `.`
+
+    Literal only within character classes.
+
+-   `-`
+
+    _Sometimes_ a special character within character classes. Literal otherwise.
+
+---
+
+When we wish to match these character _literally_, we need to "escape" them.
+
+This is done by **prefixing the character with a `\`**.
+
+---
+
+<Example source="\(paren\)" flags="g">
+    <String>paren</String>
+    <String>(paren)</String>
+    <String>a (paren)</String>
+</Example>
+<Example source="(paren)" flags="g">
+    <String>paren</String>
+    <String>parents</String>
+    <String>(paren)</String>
+    <String>a (paren)</String>
+</Example>
+
+---
+
+<Example source="example\.com" flags="g">
+    <String>example.com</String>
+    <String>a.example.com/foo</String>
+    <String>example_com</String>
+    <String>example@com</String>
+    <String>example_com/foo</String>
+</Example>
+<Example source="example.com" flags="g">
+    <String>example.com</String>
+    <String>a.example.com/foo</String>
+    <String>example_com</String>
+    <String>example@com</String>
+    <String>example_com/foo</String>
+</Example>
+
+---
+
+<Example source="A\+" flags="g">
+    <String>A+</String>
+    <String>A+B</String>
+    <String>5A+</String>
+    <String>AAA</String>
+</Example>
+<Example source="A+" flags="g">
+    <String>A+</String>
+    <String>A+B</String>
+    <String>5A+</String>
+    <String>AAA</String>
+</Example>
+
+---
+
+<Example source="worth \$5" flags="g">
+    <String>worth $5</String>
+    <String>worth $54</String>
+    <String>not worth $5</String>
+</Example>
+<Example source="worth $5" flags="g">
+    <String>worth $5</String>
+    <String>worth $54</String>
+    <String>not worth $5</String>
+</Example>
