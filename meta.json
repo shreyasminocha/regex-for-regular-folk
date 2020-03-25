@@ -6,7 +6,6 @@
 
     "chapters": [
         "introduction",
-        "conventions",
         "basics",
         "character-classes",
         "character-escapes",
