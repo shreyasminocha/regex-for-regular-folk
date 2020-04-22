@@ -3,9 +3,14 @@
     page-break-inside: avoid;
 }
 
-.example .regex-name {
+.example code.regex-name {
+    font-family: monospace;
     font-size: large;
     font-weight: bold;
+    border-radius: 0.3em;
+    white-space: normal;
+    background-color: whitesmoke;
+    padding: 0;
 }
 
 .example ul {
@@ -60,7 +65,7 @@
     display: inline;
     background-color: hsl(33, 100%, 88%, 0.7);
     border-radius: 3px;
-    border-bottom: 0.1px solid slategrey;
+    border-bottom: 1px solid slategrey;
     padding: 0.2em 0;
     color: transparent;
     position: relative;

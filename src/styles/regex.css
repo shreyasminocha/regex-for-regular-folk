@@ -1,0 +1,29 @@
+.token.quantifier {
+    color: #58f;
+}
+
+.token.escape,
+.token.special-escape {
+    color: #c0c;
+}
+
+.token.charclass {
+    color: #d70;
+}
+
+.token.anchor {
+    color: #840;
+}
+
+.token.group {
+    color: #0a0;
+    /* background: rgba(0, 238, 0, 0.11); */
+}
+
+.token.charset {
+    background: rgba(255, 238, 0, 0.3);
+}
+
+.token.charset-punctuation {
+    color: #d70;
+}

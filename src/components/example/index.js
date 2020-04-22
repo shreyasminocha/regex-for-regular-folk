@@ -1,11 +1,10 @@
 import React from "react";
+import {Prism} from  "react-syntax-highlighter";
 import PropTypes from "prop-types";
 import "./index.css";
 
-const Example = props => {
-    const { regex } = props;
-
-    const children = props.children;
+const Example = (props) => {
+    const { regex, children } = props;
 
     const testCases = children.map(str => {
         const string = str.props.children || "";
@@ -47,9 +46,14 @@ const Example = props => {
         );
     });
 
+    const noop = ({children}) => <>{children}</>;
+    const code = ({children}) => <code className="regex-name">{children}</code>;
+
     return (
         <figure className="example">
-            <span className="regex-name">{regex.toString()}</span>
+            <Prism language="regex" PreTag={noop} CodeTag={code}>
+                {regex.toString()}
+            </Prism>
 
             <ul>{testCases}</ul>
         </figure>
