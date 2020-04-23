@@ -15,6 +15,16 @@
     line-height: 1.9;
 }
 
+.example .regexr-link {
+    margin-left: 1em;
+}
+
+.example .regexr-link:hover,
+.example .regexr-link:active,
+.example .regexr-link:focus {
+    color: hsl(219, 100%, 47%);
+}
+
 .example ul {
     margin: 1.5em 0 0 2em;
     font-size: large;
@@ -30,7 +40,7 @@
     font-size: large;
 }
 
-.example .pass-fail {
+.example .indicator {
     display: inline-block;
     width: 16px;
     height: 16px;
