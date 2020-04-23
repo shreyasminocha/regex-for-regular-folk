@@ -1,0 +1,124 @@
+### Query String Parameters
+
+<Example regex={/^\?(\w+)=(\w+)(?:&(\w+)=(\w+))*$/g}>
+    <String></String>
+    <String>?</String>
+    <String>?a=b</String>
+    <String>?a=b&foo=bar</String>
+</Example>
+
+We match the first key-value pair separately because that allows us to use `&`, the separator, as part of the repeating group.
+
+### Floating point numbers
+
+- optional sign
+- optional integer part
+- optional decimal part
+- optional exponent part
+
+<Example regex={/^([+-]?(?=\.\d|\d)(?:\d+)?(?:\.?\d*))(?:[eE]([+-]?\d+))?$/g}>
+    <String>987</String>
+    <String>-8</String>
+    <String>0.1</String>
+    <String>2.</String>
+    <String>.987</String>
+    <String>+4.0</String>
+    <String>1.1e+1</String>
+    <String>1.e+1</String>
+    <String>1e2</String>
+    <String>0.2e2</String>
+    <String>.987e2</String>
+    <String>+4e-1</String>
+    <String>-8.e+2</String>
+    <String>.</String>
+</Example>
+
+The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
+
+### HSL colours
+
+#### Integers from `0` to `360`
+
+- `360`
+- `300` to `359` — `3`, `[0-5]`, any digit
+- `0` to `299`
+    - optionally `1` or `2` as the hundreds digit
+    - optionally any tens digit
+    - a units digit
+
+<Example regex={/^0*(?:360|3[0-5]\d|[12]?\d?\d)$/g}>
+    <String>360</String>
+    <String>349</String>
+    <String>235</String>
+    <String>152</String>
+    <String>68</String>
+    <String>9</String>
+    <String>361</String>
+    <String>404</String>
+</Example>
+
+#### Percentages
+
+- `100`, optionally followed by `.000…`
+- one or two digit integer, optionally followed decimal part
+
+<Example regex={/^(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%$/g}>
+    <String>100%</String>
+    <String>100.0%</String>
+    <String>25%</String>
+    <String>52.32%</String>
+    <String>9%</String>
+    <String>0.5%</String>
+    <String>100.5%</String>
+    <String>42</String>
+</Example>
+
+#### Bringing it all together
+
+<Example regex={/^hsl\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2}\)$/ig}>
+    <String>hsl(0,20%,100%)</String>
+    <String>HSL(0350, 002%,4.1%)</String>
+    <String>hsl(360,10% , 0.2% )</String>
+</Example>
+
+### Password validation
+
+<Example regex={/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/}>
+    <String>.</String>
+    <String>abc</String>
+</Example>
+
+### IP Addresses
+
+<Example regex={/\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/}>
+    <String>.</String>
+    <String>abc</String>
+</Example>
+
+### Javascript comments
+
+<Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
+    <String>.</String>
+    <String>abc</String>
+</Example>
+
+### Trailing whitespace
+
+<Example regex={/\s+$/gm}>
+    <String>.</String>
+    <String>abc   </String>
+</Example>
+
+### 24-Hour Time
+
+<Example regex={/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/g}>
+    <String>.</String>
+    <String>.</String>
+</Example>
+
+### Meta
+
+<Example regex={/<Example source="(.*?)" flags="(.*?)">/gm}>
+    <String>.</String>
+    <String>&lt;Example source="\s+$" flags="gm"&gt;</String>
+</Example>
