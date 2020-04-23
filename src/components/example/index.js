@@ -51,7 +51,7 @@ const Example = (props) => {
 
     return (
         <figure className="example">
-            <Prism language="regex" PreTag={noop} CodeTag={code}>
+            <Prism language="javascript" PreTag={noop} CodeTag={code}>
                 {regex.toString()}
             </Prism>
 
