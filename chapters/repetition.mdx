@@ -2,7 +2,7 @@
 title: Repetition
 ---
 
-### Making things optional
+## Making things optional
 
 We can make parts of regex optional. We achieve this (among other things) using the `?` operator.
 
@@ -35,7 +35,7 @@ We can also make capturing and non-capturing groups optional. The ability to rep
     <String>Here's the url: example.com.</String>
 </Example>
 
-### Zero or more
+## Zero or more
 
 If we wish to match zero or more of a token, we can suffix it with a `*`.
 
@@ -50,7 +50,7 @@ If we wish to match zero or more of a token, we can suffix it with a `*`.
 
 Our regex matches even an empty string `""`.
 
-### One or more
+## One or more
 
 If we wish to match zero or more of a token, we can suffix it with a `+`.
 
@@ -63,7 +63,7 @@ If we wish to match zero or more of a token, we can suffix it with a `+`.
     <String>aaaaa</String>
 </Example>
 
-### Exactly `x` times
+## Exactly `x` times
 
 If we wish to match a particular token exactly `x` times, we can suffix with with `{x}`. This is functionally identical to repeatedly copy-pasting the token `x` times, but using `{x}` is often a lot less tedious.
 
@@ -88,7 +88,7 @@ Here's an example that matches an uppercase six-character hex colour code.
 
 Here, the token `{6}` applies to the character class `[0-9A-F]`.
 
-### Between `min` and `max` times
+## Between `min` and `max` times
 
 If we wish to match a particular token between `min` and `max` times, we can suffix it with `{min,max}`.
 
@@ -105,7 +105,7 @@ Warning: There must be no space after the comma in `{min,max}`.
 
 Note: Both `min` and `max` is included in the range.
 
-### At least `x` times
+## At least `x` times
 
 If we wish to match a particular token at least, we can suffix it with `{x,}`. Think of it as [`{min,max}`](#between-min-and-max-times), but without an upper bound.
 
@@ -118,4 +118,4 @@ If we wish to match a particular token at least, we can suffix it with `{x,}`. T
     <String>aaaaa</String>
 </Example>
 
-### A note on _greediness_
+## A note on _greediness_
