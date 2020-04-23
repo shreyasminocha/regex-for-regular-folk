@@ -35,6 +35,7 @@
 body {
     max-width: 630px;
     margin: 2em auto;
+    padding: 0 0.5em;
     line-height: 1.4;
     color: var(--pseudo-black);
     font-family: "LIbre Baskerville", "Baskerville", "Garamond", serif;

@@ -17,12 +17,14 @@
 
 .example .regexr-link {
     margin-left: 1em;
+    opacity: 0.6;
 }
 
 .example .regexr-link:hover,
 .example .regexr-link:active,
 .example .regexr-link:focus {
     color: hsl(219, 100%, 47%);
+    opacity: 1;
 }
 
 .example ul {
