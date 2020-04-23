@@ -84,36 +84,51 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 ## Password validation
 
 <Example regex={/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/}>
-    <String>.</String>
-    <String>abc</String>
+    <String>hunter2</String>
+    <String>zsofpghedake</String>
+    <String>zsofpghedak4e</String>
+    <String>zSoFpghEdaK4E</String>
+    <String>zSoFpg!hEd!aK4E</String>
 </Example>
 
 ## IP Addresses
 
-<Example regex={/\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/}>
-    <String>.</String>
-    <String>abc</String>
+<Example regex={/\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g}>
+    <String>9.9.9.9</String>
+    <String>127.0.0.1:8080</String>
+    <String>It's 192.168.1.9</String>
+    <String>255.193.09.243</String>
+    <String>123.123.123.123</String>
+    <String>123.123.123.256</String>
+    <String>0.0.x.0</String>
 </Example>
+
 
 ## Javascript comments
 
+`[\s\S]` is a hack to match any character *including newlines*.
+
 <Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
-    <String>.</String>
-    <String>abc</String>
+    <String>const a = 0; // comment</String>
+    <String>/* multiline */</String>
 </Example>
 
 ## Trailing whitespace
 
 <Example regex={/\s+$/gm}>
-    <String>.</String>
     <String>abc   </String>
+    <String>{`def \t`}</String>
+    <String>abc  def</String>
 </Example>
 
 ## 24-Hour Time
 
 <Example regex={/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/g}>
-    <String>.</String>
-    <String>.</String>
+    <String>23:59:00</String>
+    <String>14:00</String>
+    <String>23:00</String>
+    <String>29:00</String>
+    <String>32:32</String>
 </Example>
 
 ## Meta
@@ -121,4 +136,32 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 <Example regex={/<Example source="(.*?)" flags="(.*?)">/gm}>
     <String>.</String>
     <String>&lt;Example source="\s+$" flags="gm"&gt;</String>
+</Example>
+
+## Bitcoin address
+
+<Example regex={/\b([13][a-km-zA-HJ-NP-Z0-9]{26,33})\b/g}>
+    <String>3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v</String>
+    <String>1HQ3Go3ggs8pFnXuHVHRytPCq5fGG8Hbhx</String>
+    <String>2016-03-09,18f1yugoAJuXcHAbsuRVLQC9TezJ</String>
+</Example>
+
+## Youtube Video
+
+<Example regex={/^(?:https?:\/\/)?(?:www\.?)?youtube\.com\/watch\?.*?v=([^&\s]+).*$/gm}>
+    <String>youtube.com/watch?feature=sth&v=dQw4w9WgXcQ</String>
+    <String>https://www.youtube.com/watch?v=dQw4w9WgXcQ</String>
+    <String>www.youtube.com/watch?v=dQw4w9WgXcQ</String>
+    <String>youtube.com/watch?v=dQw4w9WgXcQ</String>
+</Example>
+
+## Roman numerals
+
+<Example regex={/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/g}>
+    <String>MMXX</String>
+    <String>VI</String>
+    <String>XX</String>
+    <String>XI</String>
+    <String>IXI</String>
+    <String>VV</String>
 </Example>
