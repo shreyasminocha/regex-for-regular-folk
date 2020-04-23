@@ -1,6 +1,7 @@
 .example {
     font-family: monospace;
     page-break-inside: avoid;
+    margin-right: 0;
 }
 
 .example code.regex-name {
@@ -15,10 +16,9 @@
 }
 
 .example ul {
-    margin-left: 2em;
+    margin: 1.5em 0 0 2em;
     font-size: large;
     list-style-type: none;
-    margin-top: 1.5em;
 }
 
 .example ul > li {

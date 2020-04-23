@@ -49,11 +49,27 @@ const Example = (props) => {
     const noop = ({children}) => <>{children}</>;
     const code = ({children}) => <code className="regex-name">{children}</code>;
 
+    const playGroundText = children.map(
+        str => str.props.children || ""
+    ).join("\n");
+
+    const playGroundUrl = `
+        https://regexr.com/?expression=${
+            encodeURIComponent(`${regex.toString()}m`)
+        }&text=${
+            encodeURIComponent(playGroundText)
+        }
+    `.trim();
+
     return (
         <figure className="example">
             <Prism language="javascript" PreTag={noop} CodeTag={code}>
                 {regex.toString()}
             </Prism>
+
+            <a href={playGroundUrl} target="_blank" style={{marginLeft: "1em"}}>
+                [RegExr]
+            </a>
 
             <ul>{testCases}</ul>
         </figure>
