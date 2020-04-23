@@ -7,7 +7,7 @@ const chaptersList = meta.chapters.map(chapter => {
     const title = toTitleCase(chapter.replace(/-/g, " "));
 
     return (
-        <li>
+        <li key={link}>
             <a href={link}>{title}</a>
         </li>
     );

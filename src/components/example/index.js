@@ -19,7 +19,7 @@ const Example = (props) => {
             const left = index - runningMatchLength;
 
             matchesListItems.push(
-                <li style={{ width: `${str.length}ch`, left: `${left}ch` }}>
+                <li style={{ width: `${str.length}ch`, left: `${left}ch` }} key={str}>
                     {str}
                 </li>
             );
