@@ -62,7 +62,7 @@ const Example = (props) => {
 
 Example.propTypes = {
     regex: PropTypes.instanceOf(RegExp).isRequired,
-    children: PropTypes.element
+    children: PropTypes.arrayOf(PropTypes.element)
 };
 
 Example.defaultProps = {
