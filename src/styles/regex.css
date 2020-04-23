@@ -1,3 +1,7 @@
+.token.language-regex {
+    color: #4d4d4d;
+}
+
 .token.quantifier {
     color: #58f;
 }
@@ -7,7 +11,8 @@
     color: #c0c;
 }
 
-.token.charclass {
+.token.charclass,
+.token.charset-punctuation {
     color: #d70;
 }
 
@@ -20,10 +25,16 @@
     /* background: rgba(0, 238, 0, 0.11); */
 }
 
+.token.backreference,
+.token.alternation {
+    color: #0a0;
+}
+
 .token.charset {
     background: rgba(255, 238, 0, 0.3);
 }
 
-.token.charset-punctuation {
-    color: #d70;
+.token.regex-delimiter,
+.token.regex-flags {
+    color: #b7bcc0;
 }
