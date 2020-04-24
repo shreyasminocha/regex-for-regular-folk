@@ -7,8 +7,8 @@
     "spellcheck": "mdspell -r chapters/*.md !node_modules !dist --ignore-numbers",
     "proselint": "proselint chapters/*.mdx",
     "alex": "alex chapters/*.mdx",
-    "lint-check": "prettier --ignore-path .gitignore --check '**/*.{css,js,md,mdx,yml}'",
-    "lint": "prettier --ignore-path .gitignore --write '**/*.{css,js,md,mdx,yml}'",
+    "lint-check": "prettier --check .",
+    "lint": "prettier --write .",
     "test": "status=0; npm run spellcheck || status=$?; npm run alex || status=$?; npm run lint-check || status=$?; exit $status",
     "dev": "gatsby develop",
     "build": "gatsby build"
@@ -30,7 +30,7 @@
   "devDependencies": {
     "alex": "^8.1.1",
     "markdown-spellcheck": "^1.3.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "proselint": "^0.1.7"
   },
   "dependencies": {

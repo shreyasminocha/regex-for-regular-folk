@@ -11,10 +11,10 @@ We match the first key-value pair separately because that allows us to use `&`, 
 
 ## Floating point numbers
 
-- optional sign
-- optional integer part
-- optional decimal part
-- optional exponent part
+-   optional sign
+-   optional integer part
+-   optional decimal part
+-   optional exponent part
 
 <Example regex={/^([+-]?(?=\.\d|\d)(?:\d+)?(?:\.?\d*))(?:[eE]([+-]?\d+))?$/g}>
     <String>987</String>
@@ -39,12 +39,12 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 
 ### Integers from `0` to `360`
 
-- `360`
-- `300` to `359` — `3`, `[0-5]`, any digit
-- `0` to `299`
-    - optionally `1` or `2` as the hundreds digit
-    - optionally any tens digit
-    - a units digit
+-   `360`
+-   `300` to `359` — `3`, `[0-5]`, any digit
+-   `0` to `299`
+    -   optionally `1` or `2` as the hundreds digit
+    -   optionally any tens digit
+    -   a units digit
 
 <Example regex={/^0*(?:360|3[0-5]\d|[12]?\d?\d)$/g}>
     <String>360</String>
@@ -59,8 +59,8 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 
 ### Percentages
 
-- `100`, optionally followed by `.000…`
-- one or two digit integer, optionally followed decimal part
+-   `100`, optionally followed by `.000…`
+-   one or two digit integer, optionally followed decimal part
 
 <Example regex={/^(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%$/g}>
     <String>100%</String>
@@ -75,7 +75,11 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 
 ### Bringing it all together
 
-<Example regex={/^hsl\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2}\)$/ig}>
+<Example
+    regex={
+        /^hsl\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2}\)$/gi
+    }
+>
     <String>hsl(0,20%,100%)</String>
     <String>HSL(0350, 002%,4.1%)</String>
     <String>hsl(360,10% , 0.2% )</String>
@@ -93,7 +97,11 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 
 ## IP Addresses
 
-<Example regex={/\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g}>
+<Example
+    regex={
+        /\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g
+    }
+>
     <String>9.9.9.9</String>
     <String>127.0.0.1:8080</String>
     <String>It's 192.168.1.9</String>
@@ -103,10 +111,9 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
     <String>0.0.x.0</String>
 </Example>
 
-
 ## Javascript comments
 
-`[\s\S]` is a hack to match any character *including newlines*.
+`[\s\S]` is a hack to match any character _including newlines_.
 
 <Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
     <String>const a = 0; // comment</String>
@@ -116,9 +123,9 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 ## Trailing whitespace
 
 <Example regex={/\s+$/gm}>
-    <String>abc   </String>
-    <String>{`def \t`}</String>
-    <String>abc  def</String>
+    <String>{"abc   "}</String>
+    <String>{"def \t"}</String>
+    <String>abc def</String>
 </Example>
 
 ## 24-Hour Time
@@ -148,7 +155,11 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 
 ## Youtube Video
 
-<Example regex={/^(?:https?:\/\/)?(?:www\.?)?youtube\.com\/watch\?.*?v=([^&\s]+).*$/gm}>
+<Example
+    regex={
+        /^(?:https?:\/\/)?(?:www\.?)?youtube\.com\/watch\?.*?v=([^&\s]+).*$/gm
+    }
+>
     <String>youtube.com/watch?feature=sth&v=dQw4w9WgXcQ</String>
     <String>https://www.youtube.com/watch?v=dQw4w9WgXcQ</String>
     <String>www.youtube.com/watch?v=dQw4w9WgXcQ</String>

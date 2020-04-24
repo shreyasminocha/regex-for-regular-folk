@@ -9,7 +9,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 const shortcodes = { Example, Note, Warning };
 
 export default (props) => {
-    const {mdx} = props.data;
+    const { mdx } = props.data;
 
     return (
         <main>
@@ -25,7 +25,9 @@ export default (props) => {
 export const query = graphql`
     query($id: String!) {
         mdx(fields: { id: { eq: $id } }) {
-            frontmatter { title }
+            frontmatter {
+                title
+            }
             body
             id
         }

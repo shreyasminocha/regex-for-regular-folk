@@ -1,7 +1,7 @@
 const path = require("path");
 
-exports.createPages = ({graphql, actions}) => {
-    const {createPage} = actions;
+exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions;
 
     return new Promise(async (resolve, reject) => {
         resolve(
@@ -11,17 +11,17 @@ exports.createPages = ({graphql, actions}) => {
                     reject(result.errors);
                 }
 
-                result.data.allMdx.edges.forEach(({node}) => {
+                result.data.allMdx.edges.forEach(({ node }) => {
                     createPage({
-                        path: `/chapters/${node.parent.name}` || '/',
-                        component: path.resolve('./src/layouts/chapter.js'),
+                        path: `/chapters/${node.parent.name}` || "/",
+                        component: path.resolve("./src/layouts/chapter.js"),
                         context: {
-                            id: node.id
-                        }
-                    })
+                            id: node.id,
+                        },
+                    });
                 });
             })
-        )
+        );
     });
 };
 
@@ -31,7 +31,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (node.internal.type === `Mdx`) {
         const parent = getNode(node.parent);
 
-        let value = parent.relativePath.replace(parent.ext, '');
+        let value = parent.relativePath.replace(parent.ext, "");
 
         createNodeField({
             node,
@@ -41,14 +41,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
         createNodeField({
             node,
-            name: 'id',
+            name: "id",
             value: node.id,
         });
 
         createNodeField({
             node,
-            name: 'title',
-            value: node.frontmatter.title
+            name: "title",
+            value: node.frontmatter.title,
         });
     }
 };

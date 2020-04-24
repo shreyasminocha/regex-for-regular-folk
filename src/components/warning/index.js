@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Warning = props => {
+const Warning = (props) => {
     return (
         <div className="warning">
             <span>Warning</span>

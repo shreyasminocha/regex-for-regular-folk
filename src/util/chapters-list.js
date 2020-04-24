@@ -2,7 +2,7 @@ import React from "react";
 import * as meta from "../../meta.json";
 import toTitleCase from "titlecase";
 
-const chaptersList = meta.chapters.map(chapter => {
+const chaptersList = meta.chapters.map((chapter) => {
     const link = `/chapters/${chapter}`;
     const title = toTitleCase(chapter.replace(/-/g, " "));
 

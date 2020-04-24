@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Note = props => {
+const Note = (props) => {
     return (
         <div className="note">
             <span>Note</span>
