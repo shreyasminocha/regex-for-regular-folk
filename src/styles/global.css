@@ -90,13 +90,10 @@ h5 {
     line-height: 1.4;
 }
 
-a {
+a,
+a:hover,
+a:focus {
     color: hsl(219, 100%, 47%);
-    transition: color ease-in-out 0.4s;
-}
-
-a:hover {
-    color: var(--pseudo-black);
 }
 
 ul {
@@ -105,6 +102,40 @@ ul {
 
 pre {
     border-left: none;
+}
+
+nav {
+    margin: 3em 0;
+    padding-top: 1em;
+}
+
+nav ul {
+    list-style: none;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-bottom: 0;
+    font-variant: all-petite-caps;
+}
+
+nav ul li::before {
+    content: "[";
+}
+
+nav ul li::after {
+    content: "]";
+}
+
+nav ul li:nth-child(1) {
+    margin-right: 2em;
+}
+
+nav ul li:nth-child(2) {
+    margin-left: 2em;
 }
 
 .footnotes {
