@@ -1,5 +1,5 @@
 import React from "react";
-import chaptersList from "../src/util/chapters-list";
+import chaptersList from "../util/chapters-list";
 
 const Chapters = () => (
     <>
