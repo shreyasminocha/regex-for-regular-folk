@@ -178,6 +178,10 @@ footer {
     }
 }
 
+footer p {
+    margin-bottom: initial;
+}
+
 footer ul {
     list-style: none;
     margin-bottom: 0;

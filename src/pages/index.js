@@ -36,7 +36,17 @@ const Index = () => (
         {chaptersList}
 
         <footer>
-            Licensed under <code>{meta.rights}</code>.
+            <p>
+                Chapter content is licensed under{" "}
+                <a href="https://creativecommons.org/licenses/by-sa/4.0">
+                    CC BY-SA 4.0
+                </a>
+            </p>
+
+            <p>
+                The source code for the website is licensed under the{" "}
+                <a href="https://shreyas.mit-license.org/2019">MIT License</a>
+            </p>
         </footer>
     </>
 );

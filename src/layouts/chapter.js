@@ -77,8 +77,8 @@ export default (props) => {
                         </a>
                     </li>
                     <li>
-                        <a href="https://creativecommons.org/licenses/by-sa/4.0">
-                            <code>CC-BY-SA 4.0</code>
+                        <a href="https://github.com/shreyasminocha/regex-for-regular-folk#license">
+                            <code>CC-BY-SA 4.0</code>*
                         </a>
                     </li>
 
