@@ -6,20 +6,20 @@
 -   optional exponent part
 
 <Example regex={/^([+-]?(?=\.\d|\d)(?:\d+)?(?:\.?\d*))(?:[eE]([+-]?\d+))?$/g}>
-    <String>987</String>
-    <String>-8</String>
-    <String>0.1</String>
-    <String>2.</String>
-    <String>.987</String>
-    <String>+4.0</String>
-    <String>1.1e+1</String>
-    <String>1.e+1</String>
-    <String>1e2</String>
-    <String>0.2e2</String>
-    <String>.987e2</String>
-    <String>+4e-1</String>
-    <String>-8.e+2</String>
-    <String>.</String>
+    <li>987</li>
+    <li>-8</li>
+    <li>0.1</li>
+    <li>2.</li>
+    <li>.987</li>
+    <li>+4.0</li>
+    <li>1.1e+1</li>
+    <li>1.e+1</li>
+    <li>1e2</li>
+    <li>0.2e2</li>
+    <li>.987e2</li>
+    <li>+4e-1</li>
+    <li>-8.e+2</li>
+    <li>.</li>
 </Example>
 
 The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
@@ -36,14 +36,14 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
     -   a units digit
 
 <Example regex={/^0*(?:360|3[0-5]\d|[12]?\d?\d)$/g}>
-    <String>360</String>
-    <String>349</String>
-    <String>235</String>
-    <String>152</String>
-    <String>68</String>
-    <String>9</String>
-    <String>361</String>
-    <String>404</String>
+    <li>360</li>
+    <li>349</li>
+    <li>235</li>
+    <li>152</li>
+    <li>68</li>
+    <li>9</li>
+    <li>361</li>
+    <li>404</li>
 </Example>
 
 ### Percentages
@@ -52,14 +52,14 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 -   one or two digit integer, optionally followed decimal part
 
 <Example regex={/^(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%$/g}>
-    <String>100%</String>
-    <String>100.0%</String>
-    <String>25%</String>
-    <String>52.32%</String>
-    <String>9%</String>
-    <String>0.5%</String>
-    <String>100.5%</String>
-    <String>42</String>
+    <li>100%</li>
+    <li>100.0%</li>
+    <li>25%</li>
+    <li>52.32%</li>
+    <li>9%</li>
+    <li>0.5%</li>
+    <li>100.5%</li>
+    <li>42</li>
 </Example>
 
 ### Bringing it all together
@@ -69,9 +69,9 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
         /^hsl\(\s*0*(?:360|3[0-5]\d|[12]?\d?\d)\s*(?:,\s*0*(?:100(?:\.0+)?|\d?\d(?:\.\d+)?)%\s*){2}\)$/gi
     }
 >
-    <String>hsl(0,20%,100%)</String>
-    <String>HSL(0350, 002%,4.1%)</String>
-    <String>hsl(360,10% , 0.2% )</String>
+    <li>hsl(0,20%,100%)</li>
+    <li>HSL(0350, 002%,4.1%)</li>
+    <li>hsl(360,10% , 0.2% )</li>
 </Example>
 
 ## Javascript comments
@@ -79,23 +79,23 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
 `[\s\S]` is a hack to match any character _including newlines_.
 
 <Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
-    <String>const a = 0; // comment</String>
-    <String>/* multiline */</String>
+    <li>const a = 0; // comment</li>
+    <li>/* multiline */</li>
 </Example>
 
 ## 24-Hour Time
 
 <Example regex={/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/g}>
-    <String>23:59:00</String>
-    <String>14:00</String>
-    <String>23:00</String>
-    <String>29:00</String>
-    <String>32:32</String>
+    <li>23:59:00</li>
+    <li>14:00</li>
+    <li>23:00</li>
+    <li>29:00</li>
+    <li>32:32</li>
 </Example>
 
 ## Meta
 
 <Example regex={/<Example source="(.*?)" flags="(.*?)">/gm}>
-    <String>.</String>
-    <String>&lt;Example source="\s+$" flags="gm"&gt;</String>
+    <li>.</li>
+    <li>&lt;Example source="\s+$" flags="gm"&gt;</li>
 </Example>

@@ -15,14 +15,14 @@ There are 5 kinds of flags:
 All examples thus far have had the global flag. When the global flag isn't enabled, the regex doesn't match anything beyond the first match.
 
 <Example regex={/[aeiou]/g}>
-    <String>corona</String>
-    <String>cancel</String>
-    <String>rhythm</String>
+    <li>corona</li>
+    <li>cancel</li>
+    <li>rhythm</li>
 </Example>
 <Example regex={/[aeiou]/}>
-    <String>corona</String>
-    <String>cancel</String>
-    <String>rhythm</String>
+    <li>corona</li>
+    <li>cancel</li>
+    <li>rhythm</li>
 </Example>
 
 ## (Case) Insensitive (`i`)
@@ -30,22 +30,22 @@ All examples thus far have had the global flag. When the global flag isn't enabl
 As the name suggests, enabling the "insensitive" flag makes the regex case insensitive about matching text.
 
 <Example regex={/#[0-9A-F]{6}/i}>
-    <String>#AE25AE</String>
-    <String>#555555</String>
-    <String>Even #a2ca2c?</String>
-    <String>#FFF</String>
+    <li>#AE25AE</li>
+    <li>#555555</li>
+    <li>Even #a2ca2c?</li>
+    <li>#FFF</li>
 </Example>
 <Example regex={/#[0-9A-F]{6}/}>
-    <String>#AE25AE</String>
-    <String>#555555</String>
-    <String>Even #a2ca2c?</String>
-    <String>#FFF</String>
+    <li>#AE25AE</li>
+    <li>#555555</li>
+    <li>Even #a2ca2c?</li>
+    <li>#FFF</li>
 </Example>
 <Example regex={/#[0-9A-Fa-f]{6}/}>
-    <String>#AE25AE</String>
-    <String>#555555</String>
-    <String>Even #a2ca2c?</String>
-    <String>#FFF</String>
+    <li>#AE25AE</li>
+    <li>#555555</li>
+    <li>Even #a2ca2c?</li>
+    <li>#FFF</li>
 </Example>
 
 ## Multiline (`m`)

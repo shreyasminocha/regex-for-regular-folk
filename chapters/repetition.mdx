@@ -7,22 +7,22 @@ title: Repetition
 We can make parts of regex optional. We achieve this (among other things) using the `?` operator.
 
 <Example regex={/a?/g}>
-    <String></String>
-    <String>a</String>
-    <String>aa</String>
-    <String>aaa</String>
-    <String>aaaa</String>
-    <String>aaaaa</String>
+    <li></li>
+    <li>a</li>
+    <li>aa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
 
 Here's another example:
 
 <Example regex={/https?/g}>
-    <String>http</String>
-    <String>https</String>
-    <String>http/2</String>
-    <String>shttp</String>
-    <String>ftp</String>
+    <li>http</li>
+    <li>https</li>
+    <li>http/2</li>
+    <li>shttp</li>
+    <li>ftp</li>
 </Example>
 
 Here the`s` following `http` is optional.
@@ -30,9 +30,9 @@ Here the`s` following `http` is optional.
 We can also make capturing and non-capturing groups optional. The ability to repeat groups is really powerful.
 
 <Example regex={/url: (www\.)?example\.com/g}>
-    <String>url: example.com</String>
-    <String>url: www.example.com/foo</String>
-    <String>Here's the url: example.com.</String>
+    <li>url: example.com</li>
+    <li>url: www.example.com/foo</li>
+    <li>Here's the url: example.com.</li>
 </Example>
 
 ## Zero or more
@@ -40,12 +40,12 @@ We can also make capturing and non-capturing groups optional. The ability to rep
 If we wish to match zero or more of a token, we can suffix it with a `*`.
 
 <Example regex={/a*/g}>
-    <String></String>
-    <String>a</String>
-    <String>aa</String>
-    <String>aaa</String>
-    <String>aaaa</String>
-    <String>aaaaa</String>
+    <li></li>
+    <li>a</li>
+    <li>aa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
 
 Our regex matches even an empty string `""`.
@@ -55,12 +55,12 @@ Our regex matches even an empty string `""`.
 If we wish to match zero or more of a token, we can suffix it with a `+`.
 
 <Example regex={/a+/g}>
-    <String></String>
-    <String>a</String>
-    <String>aa</String>
-    <String>aaa</String>
-    <String>aaaa</String>
-    <String>aaaaa</String>
+    <li></li>
+    <li>a</li>
+    <li>aa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
 
 ## Exactly `x` times
@@ -68,22 +68,22 @@ If we wish to match zero or more of a token, we can suffix it with a `+`.
 If we wish to match a particular token exactly `x` times, we can suffix with with `{x}`. This is functionally identical to repeatedly copy-pasting the token `x` times, but using `{x}` is often a lot less tedious.
 
 <Example regex={/a{3}/g}>
-    <String></String>
-    <String>a</String>
-    <String>aa</String>
-    <String>aaa</String>
-    <String>aaaa</String>
-    <String>aaaaa</String>
+    <li></li>
+    <li>a</li>
+    <li>aa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
 
 Here's an example that matches an uppercase six-character hex colour code.
 
 <Example regex={/#[0-9A-F]{6}/g}>
-    <String>#AE25AE</String>
-    <String>#555555</String>
-    <String>How about #73FA79?</String>
-    <String>#FFF</String>
-    <String>#a2ca2c</String>
+    <li>#AE25AE</li>
+    <li>#555555</li>
+    <li>How about #73FA79?</li>
+    <li>#FFF</li>
+    <li>#a2ca2c</li>
 </Example>
 
 Here, the token `{6}` applies to the character class `[0-9A-F]`.
@@ -93,12 +93,12 @@ Here, the token `{6}` applies to the character class `[0-9A-F]`.
 If we wish to match a particular token between `min` and `max` times, we can suffix it with `{min,max}`.
 
 <Example regex={/a{2,4}/g}>
-    <String></String>
-    <String>a</String>
-    <String>aa</String>
-    <String>aaa</String>
-    <String>aaaa</String>
-    <String>aaaaa</String>
+    <li></li>
+    <li>a</li>
+    <li>aa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
 
 <Warning>
@@ -114,12 +114,12 @@ If we wish to match a particular token between `min` and `max` times, we can suf
 If we wish to match a particular token at least, we can suffix it with `{x,}`. Think of it as [`{min,max}`](#between-min-and-max-times), but without an upper bound.
 
 <Example regex={/a{2,}/g}>
-    <String></String>
-    <String>a</String>
-    <String>aa</String>
-    <String>aaa</String>
-    <String>aaaa</String>
-    <String>aaaaa</String>
+    <li></li>
+    <li>a</li>
+    <li>aa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
 
 ## A note on _greediness_
@@ -129,9 +129,9 @@ If we wish to match a particular token at least, we can suffix it with `{x,}`. T
 ### Bitcoin address
 
 <Example regex={/\b([13][a-km-zA-HJ-NP-Z0-9]{26,33})\b/g}>
-    <String>3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v</String>
-    <String>1HQ3Go3ggs8pFnXuHVHRytPCq5fGG8Hbhx</String>
-    <String>2016-03-09,18f1yugoAJuXcHAbsuRVLQC9TezJ</String>
+    <li>3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v</li>
+    <li>1HQ3Go3ggs8pFnXuHVHRytPCq5fGG8Hbhx</li>
+    <li>2016-03-09,18f1yugoAJuXcHAbsuRVLQC9TezJ</li>
 </Example>
 
 ### Youtube Video
@@ -141,8 +141,8 @@ If we wish to match a particular token at least, we can suffix it with `{x,}`. T
         /^(?:https?:\/\/)?(?:www\.?)?youtube\.com\/watch\?.*?v=([^&\s]+).*$/gm
     }
 >
-    <String>youtube.com/watch?feature=sth&v=dQw4w9WgXcQ</String>
-    <String>https://www.youtube.com/watch?v=dQw4w9WgXcQ</String>
-    <String>www.youtube.com/watch?v=dQw4w9WgXcQ</String>
-    <String>youtube.com/watch?v=dQw4w9WgXcQ</String>
+    <li>youtube.com/watch?feature=sth&v=dQw4w9WgXcQ</li>
+    <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ</li>
+    <li>www.youtube.com/watch?v=dQw4w9WgXcQ</li>
+    <li>youtube.com/watch?v=dQw4w9WgXcQ</li>
 </Example>

@@ -6,45 +6,45 @@ Lookarounds can be used to verify conditions, without matching any text.
 
 > You're just **look**ing, not moving.
 
-- Lookahead
-    - Positive
-    - Negative
-- Lookbehind
-    - Positive
-    - Negative
+-   Lookahead
+    -   Positive
+    -   Negative
+-   Lookbehind
+    -   Positive
+    -   Negative
 
 ## Lookahead
 
 ### Positive
 
 <Example regex={/^(?=.*#).*$/g}>
-    <String>abc#def</String>
-    <String>#def</String>
-    <String>abc#</String>
-    <String>abcdef</String>
+    <li>abc#def</li>
+    <li>#def</li>
+    <li>abc#</li>
+    <li>abcdef</li>
 </Example>
 
 ### Negative
 
 <Example regex={/^(?!.*#).*$/g}>
-    <String>abc#def</String>
-    <String>#def</String>
-    <String>abc#</String>
-    <String>abcdef</String>
+    <li>abc#def</li>
+    <li>#def</li>
+    <li>abc#</li>
+    <li>abcdef</li>
 </Example>
 
 These are commonly used to prevent phrases from matching.
 
 <Example regex={/foo(?!bar)/g}>
-    <String>foobaz</String>
-    <String>foobarbaz</String>
-    <String>bazfoobar</String>
+    <li>foobaz</li>
+    <li>foobarbaz</li>
+    <li>bazfoobar</li>
 </Example>
 
 <Example regex={/---(?:(?!---).)*---/g}>
-    <String>---foo---</String>
-    <String>---fo-o---</String>
-    <String>--------</String>
+    <li>---foo---</li>
+    <li>---fo-o---</li>
+    <li>--------</li>
 </Example>
 
 ## Lookbehind
@@ -58,29 +58,29 @@ These are commonly used to prevent phrases from matching.
 ### Password validation
 
 <Example regex={/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/}>
-    <String>hunter2</String>
-    <String>zsofpghedake</String>
-    <String>zsofpghedak4e</String>
-    <String>zSoFpghEdaK4E</String>
-    <String>zSoFpg!hEd!aK4E</String>
+    <li>hunter2</li>
+    <li>zsofpghedake</li>
+    <li>zsofpghedak4e</li>
+    <li>zSoFpghEdaK4E</li>
+    <li>zSoFpg!hEd!aK4E</li>
 </Example>
 
 ### Quoted strings
 
 <Example regex={/(['"])(?:(?!\1).)*\1/g}>
-    <String>foo "bar" baz</String>
-    <String>foo 'bar' baz</String>
-    <String>foo 'bat's' baz</String>
-    <String>foo "bat's" baz</String>
-    <String>foo 'bat"s' baz</String>
+    <li>foo "bar" baz</li>
+    <li>foo 'bar' baz</li>
+    <li>foo 'bat's' baz</li>
+    <li>foo "bat's" baz</li>
+    <li>foo 'bat"s' baz</li>
 </Example>
 
 Without lookaheads, this is the best we can do:
 
 <Example regex={/(['"])[^'"]*\1/g}>
-    <String>foo "bar" baz</String>
-    <String>foo 'bar' baz</String>
-    <String>foo 'bat's' baz</String>
-    <String>foo "bat's" baz</String>
-    <String>foo 'bat"s' baz</String>
+    <li>foo "bar" baz</li>
+    <li>foo 'bar' baz</li>
+    <li>foo 'bat's' baz</li>
+    <li>foo "bat's" baz</li>
+    <li>foo 'bat"s' baz</li>
 </Example>

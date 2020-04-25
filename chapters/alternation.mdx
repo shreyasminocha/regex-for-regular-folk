@@ -7,9 +7,9 @@ Alternation allows matching _one_ of several phrases. This is more powerful than
 Delimit the set of phrases with pipes—`|`.
 
 <Example regex={/foo|bar|baz/g}>
-    <String>foo baz</String>
-    <String>Your food</String>
-    <String>Behind bars</String>
+    <li>foo baz</li>
+    <li>Your food</li>
+    <li>Behind bars</li>
 </Example>
 
 > One of `foo`, `bar`, and `baz`
@@ -19,10 +19,10 @@ Delimit the set of phrases with pipes—`|`.
 If only a part of the regex is to be "alternated", wrap that part with a [group](/chapter/groups)—capturing or non-capturing.
 
 <Example regex={/Try (foo|bar|baz)/g}>
-    <String>Try foo</String>
-    <String>Try bar</String>
-    <String>Try baz</String>
-    <String>Try food</String>
+    <li>Try foo</li>
+    <li>Try bar</li>
+    <li>Try baz</li>
+    <li>Try food</li>
 </Example>
 
 > `Try` followed by one of `foo`, `bar`, and `baz`
@@ -32,15 +32,15 @@ If only a part of the regex is to be "alternated", wrap that part with a [group]
 Matching numbers between 100 and 250:
 
 <Example regex={/1\d\d|2[0-4]\d|250/g}>
-    <String>100, 157, 199</String>
-    <String>139 + 140 = 279</String>
-    <String>201 INR</String>
-    <String>$220</String>
-    <String>250</String>
-    <String>1250</String>
-    <String>e = 2.71828182...</String>
-    <String>251</String>
-    <String>729</String>
+    <li>100, 157, 199</li>
+    <li>139 + 140 = 279</li>
+    <li>201 INR</li>
+    <li>$220</li>
+    <li>250</li>
+    <li>1250</li>
+    <li>e = 2.71828182...</li>
+    <li>251</li>
+    <li>729</li>
 </Example>
 
 ## Examples
@@ -52,22 +52,22 @@ Matching numbers between 100 and 250:
         /\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g
     }
 >
-    <String>9.9.9.9</String>
-    <String>127.0.0.1:8080</String>
-    <String>It's 192.168.1.9</String>
-    <String>255.193.09.243</String>
-    <String>123.123.123.123</String>
-    <String>123.123.123.256</String>
-    <String>0.0.x.0</String>
+    <li>9.9.9.9</li>
+    <li>127.0.0.1:8080</li>
+    <li>It's 192.168.1.9</li>
+    <li>255.193.09.243</li>
+    <li>123.123.123.123</li>
+    <li>123.123.123.256</li>
+    <li>0.0.x.0</li>
 </Example>
 
 ### Roman numerals
 
 <Example regex={/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/g}>
-    <String>MMXX</String>
-    <String>VI</String>
-    <String>XX</String>
-    <String>XI</String>
-    <String>IXI</String>
-    <String>VV</String>
+    <li>MMXX</li>
+    <li>VI</li>
+    <li>XX</li>
+    <li>XI</li>
+    <li>IXI</li>
+    <li>VV</li>
 </Example>

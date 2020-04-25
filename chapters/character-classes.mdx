@@ -5,10 +5,10 @@ title: Character classes
 It's possible to match a character from one of several characters. Here's an example:
 
 <Example regex={/[aeiou]/g}>
-    <String>avocado</String>
-    <String>brinjal</String>
-    <String>onion</String>
-    <String>rhythm</String>
+    <li>avocado</li>
+    <li>brinjal</li>
+    <li>onion</li>
+    <li>rhythm</li>
 </Example>
 
 Our regex `/[aeiou]/g` matches all vowels in our input strings.
@@ -16,12 +16,12 @@ Our regex `/[aeiou]/g` matches all vowels in our input strings.
 Here's another example of these in action:
 
 <Example regex={/p[aeiou]t/g}>
-    <String>pat</String>
-    <String>pet</String>
-    <String>pit</String>
-    <String>spat</String>
-    <String>spot a pet</String>
-    <String>bat</String>
+    <li>pat</li>
+    <li>pet</li>
+    <li>pit</li>
+    <li>spat</li>
+    <li>spot a pet</li>
+    <li>bat</li>
 </Example>
 
 We match a `p`, followed by one of the vowels, followed by a `t`.
@@ -29,11 +29,11 @@ We match a `p`, followed by one of the vowels, followed by a `t`.
 There's an intuitive shortcut for matching a character from within a continuous _range_.
 
 <Example regex={/[a-z]/g}>
-    <String>john_s</String>
-    <String>matej29</String>
-    <String>Ayesha?!</String>
-    <String>4952</String>
-    <String>LOUD</String>
+    <li>john_s</li>
+    <li>matej29</li>
+    <li>Ayesha?!</li>
+    <li>4952</li>
+    <li>LOUD</li>
 </Example>
 <Warning>
     The regex <code>/[a-z]/g</code> matches only one character. In the example
@@ -44,11 +44,11 @@ There's an intuitive shortcut for matching a character from within a continuous 
 We can combine ranges and individual characters in our regexes.
 
 <Example regex={/[A-Za-z0-9_-]/g}>
-    <String>john_s</String>
-    <String>matej29</String>
-    <String>Ayesha?!</String>
-    <String>4952</String>
-    <String>LOUD</String>
+    <li>john_s</li>
+    <li>matej29</li>
+    <li>Ayesha?!</li>
+    <li>4952</li>
+    <li>LOUD</li>
 </Example>
 
 Our regex `/[A-Za-z0-9_-]/g` matches a single character, which must be (at least) one of the following:
@@ -61,9 +61,9 @@ Our regex `/[A-Za-z0-9_-]/g` matches a single character, which must be (at least
 We can also "negate" these rules:
 
 <Example regex={/[^aeiou]/g}>
-    <String>Umbrella</String>
-    <String>cauliflower</String>
-    <String>ou</String>
+    <li>Umbrella</li>
+    <li>cauliflower</li>
+    <li>ou</li>
 </Example>
 
 The only difference between the first regex of this chapter and `/[^aeiou]/g` is the `^` immediately after the opening bracket. Its purpose is to negate the rules defined within the brackets. We are now saying:
@@ -81,17 +81,17 @@ Here, _«blah»_ is either an individual character or a range of characters.
 ### Username validation
 
 <Example regex={/^[a-zA-Z_0-9-]+$/g}>
-    <String>TheLegend27</String>
-    <String>WaterGuy12</String>
-    <String>Smokie_Bear</String>
-    <String>Robert'); DROP TABLE Students;--</String>
+    <li>TheLegend27</li>
+    <li>WaterGuy12</li>
+    <li>Smokie_Bear</li>
+    <li>Robert'); DROP TABLE Students;--</li>
 </Example>
 
 ### Ambiguous characters
 
 <Example regex={/[^A-HJ-NP-Za-kmnp-z2-9]/g}>
-    <String>foo</String>
-    <String>lily</String>
-    <String>lI0O1</String>
-    <String>unambiguity</String>
+    <li>foo</li>
+    <li>lily</li>
+    <li>lI0O1</li>
+    <li>unambiguity</li>
 </Example>

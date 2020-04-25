@@ -16,9 +16,9 @@ We'll see how to do a lot of this in later chapters, but learning how groups wor
 Capturing groups are denoted by `(` … `)`. Here's an expository example:
 
 <Example regex={/a(bcd)e/g}>
-    <String>abcde</String>
-    <String>abcdefg?</String>
-    <String>abcde</String>
+    <li>abcde</li>
+    <li>abcdefg?</li>
+    <li>abcde</li>
 </Example>
 
 This regex is functionally identical to `/abcde/g`.
@@ -30,19 +30,19 @@ Capturing groups allow _extracting_ parts of matches.
 Capturing groups can also be used to group regex parts for ease of [repetition](/repetition) of said group.[^1] While we will cover repetition in detail in chapters that follow, here's an example that demonstrates the utility of groups.
 
 <Example regex={/a(bcd)+e/g}>
-    <String>abcdefg</String>
-    <String>abcdbcde</String>
-    <String>abcdbcdbcdef</String>
-    <String>ae</String>
+    <li>abcdefg</li>
+    <li>abcdbcde</li>
+    <li>abcdbcdbcdef</li>
+    <li>ae</li>
 </Example>
 
 Other times, they are used to group logically similar parts of the regex for readability.
 
 <Example regex={/(\d\d\d\d)-W(\d\d)/g}>
-    <String>2020-W12</String>
-    <String>1970-W01</String>
-    <String>2050-W50-6</String>
-    <String>12050-W50</String>
+    <li>2020-W12</li>
+    <li>1970-W01</li>
+    <li>2050-W50-6</li>
+    <li>12050-W50</li>
 </Example>
 
 ## Non-capturing groups
@@ -56,10 +56,10 @@ Non-capturing groups are usually used in conjunction with capturing groups. Perh
 ### Query String Parameters
 
 <Example regex={/^\?(\w+)=(\w+)(?:&(\w+)=(\w+))*$/g}>
-    <String></String>
-    <String>?</String>
-    <String>?a=b</String>
-    <String>?a=b&foo=bar</String>
+    <li></li>
+    <li>?</li>
+    <li>?a=b</li>
+    <li>?a=b&foo=bar</li>
 </Example>
 
 We match the first key-value pair separately because that allows us to use `&`, the separator, as part of the repeating group.

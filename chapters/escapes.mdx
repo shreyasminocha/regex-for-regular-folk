@@ -25,61 +25,61 @@ This is done by **prefixing the character with a `\`**.
 ---
 
 <Example regex={/\(paren\)/g}>
-    <String>paren</String>
-    <String>parents</String>
-    <String>(paren)</String>
-    <String>a (paren)</String>
+    <li>paren</li>
+    <li>parents</li>
+    <li>(paren)</li>
+    <li>a (paren)</li>
 </Example>
 <Example regex={/(paren)/g}>
-    <String>paren</String>
-    <String>parents</String>
-    <String>(paren)</String>
-    <String>a (paren)</String>
+    <li>paren</li>
+    <li>parents</li>
+    <li>(paren)</li>
+    <li>a (paren)</li>
 </Example>
 
 ---
 
 <Example regex={/example\.com/g}>
-    <String>example.com</String>
-    <String>a.example.com/foo</String>
-    <String>example_com</String>
-    <String>example@com</String>
-    <String>example_com/foo</String>
+    <li>example.com</li>
+    <li>a.example.com/foo</li>
+    <li>example_com</li>
+    <li>example@com</li>
+    <li>example_com/foo</li>
 </Example>
 <Example regex={/example.com/g}>
-    <String>example.com</String>
-    <String>a.example.com/foo</String>
-    <String>example_com</String>
-    <String>example@com</String>
-    <String>example_com/foo</String>
+    <li>example.com</li>
+    <li>a.example.com/foo</li>
+    <li>example_com</li>
+    <li>example@com</li>
+    <li>example_com/foo</li>
 </Example>
 
 ---
 
 <Example regex={/A\+/g}>
-    <String>A+</String>
-    <String>A+B</String>
-    <String>5A+</String>
-    <String>AAA</String>
+    <li>A+</li>
+    <li>A+B</li>
+    <li>5A+</li>
+    <li>AAA</li>
 </Example>
 <Example regex={/A+/g}>
-    <String>A+</String>
-    <String>A+B</String>
-    <String>5A+</String>
-    <String>AAA</String>
+    <li>A+</li>
+    <li>A+B</li>
+    <li>5A+</li>
+    <li>AAA</li>
 </Example>
 
 ---
 
 <Example regex={/worth \$5/g}>
-    <String>worth $5</String>
-    <String>worth $54</String>
-    <String>not worth $5</String>
+    <li>worth $5</li>
+    <li>worth $54</li>
+    <li>not worth $5</li>
 </Example>
 <Example regex={/worth $5/g}>
-    <String>worth $5</String>
-    <String>worth $54</String>
-    <String>not worth $5</String>
+    <li>worth $5</li>
+    <li>worth $54</li>
+    <li>not worth $5</li>
 </Example>
 
 ## Examples
@@ -87,19 +87,19 @@ This is done by **prefixing the character with a `\`**.
 ### JavaScript in-line comments
 
 <Example regex={/\/\/.*/g}>
-    <String>console.log(); // comment</String>
-    <String>console.log(); // // comment</String>
-    <String>console.log();</String>
+    <li>console.log(); // comment</li>
+    <li>console.log(); // // comment</li>
+    <li>console.log();</li>
 </Example>
 
 ### Asterisk-surrounded substrings
 
 <Example regex={/\*[^\*]*\*/g}>
-    <String>here be *italics*</String>
-    <String>permitted**</String>
-    <String>a*b*c*d</String>
-    <String>a*b*c*d*e</String>
-    <String>a️bcd</String>
+    <li>here be *italics*</li>
+    <li>permitted**</li>
+    <li>a*b*c*d</li>
+    <li>a*b*c*d*e</li>
+    <li>a️bcd</li>
 </Example>
 
 The first and last asterisks are literal since they are escaped — `\*`.

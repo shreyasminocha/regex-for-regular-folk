@@ -13,12 +13,12 @@ Marked by a carat (`^`) at the beginning of the regex, this anchor makes it nece
 You can think of it as matching an _invisible character_ always present at the _beginning_ of the string.
 
 <Example regex={/^p/g}>
-    <String>photoshop</String>
-    <String>pineapple</String>
-    <String>tap</String>
-    <String>apple</String>
-    <String>ppap</String>
-    <String>mango</String>
+    <li>photoshop</li>
+    <li>pineapple</li>
+    <li>tap</li>
+    <li>apple</li>
+    <li>ppap</li>
+    <li>mango</li>
 </Example>
 
 ## End of line — `$`
@@ -28,12 +28,12 @@ This anchor marked by a dollar (`$`) at the end of the regex. It is analogous to
 You can think of it as matching an _invisible character_ always present at the _end_ of the string.
 
 <Example regex={/p$/g}>
-    <String>photoshop</String>
-    <String>pineapple</String>
-    <String>apple</String>
-    <String>app</String>
-    <String>Plum</String>
-    <String>mango</String>
+    <li>photoshop</li>
+    <li>pineapple</li>
+    <li>apple</li>
+    <li>app</li>
+    <li>Plum</li>
+    <li>mango</li>
 </Example>
 
 ---
@@ -41,21 +41,21 @@ You can think of it as matching an _invisible character_ always present at the _
 The `^` and `$` anchors are often used in conjunction to ensure that the regex matches the entirety of the string, rather than just a part.
 
 <Example regex={/^p$/g}>
-    <String>p</String>
-    <String>pi</String>
-    <String>pea</String>
-    <String>tarp</String>
-    <String>apple</String>
+    <li>p</li>
+    <li>pi</li>
+    <li>pea</li>
+    <li>tarp</li>
+    <li>apple</li>
 </Example>
 
 Let's revisit an example from [_Repetition_](/chapters/repetition), except we add the two anchors at the ends of the regex.
 
 <Example regex={/^https?$/g}>
-    <String>http</String>
-    <String>https</String>
-    <String>http/2</String>
-    <String>shttp</String>
-    <String>ftp</String>
+    <li>http</li>
+    <li>https</li>
+    <li>http/2</li>
+    <li>shttp</li>
+    <li>ftp</li>
 </Example>
 
 In the absence of the anchors, both `http/2` and `shttp` would match.
@@ -67,25 +67,25 @@ A word boundary is a _position_ between a [word character](/chapters/character-e
 The word boundary anchor, `\b`, once again matches an imaginary invisible character that exists between consecutive word and non-word characters.
 
 <Example regex={/\bp/g}>
-    <String>peach</String>
-    <String>banana, peach</String>
-    <String>banana+peach</String>
-    <String>banana-peach</String>
-    <String>banana_peach</String>
-    <String>banana%20peach</String>
-    <String>grape</String>
+    <li>peach</li>
+    <li>banana, peach</li>
+    <li>banana+peach</li>
+    <li>banana-peach</li>
+    <li>banana_peach</li>
+    <li>banana%20peach</li>
+    <li>grape</li>
 </Example>
 <Note>
     Words characters include <code>a-z</code>, <code>A-Z</code>,{" "}
     <code>0-9</code>, and <code>_</code>.
 </Note>
 <Example regex={/\bp\b/g}>
-    <String>word p word</String>
-    <String>(p)</String>
-    <String>p+q+r</String>
-    <String>(paren)</String>
-    <String>(loop)</String>
-    <String>loops</String>
+    <li>word p word</li>
+    <li>(p)</li>
+    <li>p+q+r</li>
+    <li>(paren)</li>
+    <li>(loop)</li>
+    <li>loops</li>
 </Example>
 
 ---
@@ -95,19 +95,19 @@ There is also a non-word-boundary anchors: `\B`.
 As the name suggests, it matches everything apart from word boundaries.
 
 <Example regex={/\Bp/g}>
-    <String>ape</String>
-    <String>leap</String>
-    <String>(leap)</String>
-    <String>a pot</String>
-    <String>pea</String>
+    <li>ape</li>
+    <li>leap</li>
+    <li>(leap)</li>
+    <li>a pot</li>
+    <li>pea</li>
 </Example>
 <Example regex={/\Bp\B/g}>
-    <String>ape</String>
-    <String>_peel</String>
-    <String>leap</String>
-    <String>(leap)</String>
-    <String>a pot</String>
-    <String>pea</String>
+    <li>ape</li>
+    <li>_peel</li>
+    <li>leap</li>
+    <li>(leap)</li>
+    <li>a pot</li>
+    <li>pea</li>
 </Example>
 
 ## Examples
@@ -115,7 +115,7 @@ As the name suggests, it matches everything apart from word boundaries.
 ### Trailing whitespace
 
 <Example regex={/\s+$/gm}>
-    <String>{"abc   "}</String>
-    <String>{"def \t"}</String>
-    <String>abc def</String>
+    <li>{"abc   "}</li>
+    <li>{"def \t"}</li>
+    <li>abc def</li>
 </Example>

@@ -9,22 +9,22 @@ Character escapes act as shorthands for some common character classes.
 The character escape `\d` matches digit characters, from `0` to `9`. It is equivalent to the character class `[0-9]`.
 
 <Example regex={/\d/g}>
-    <String>2020</String>
-    <String>100/100</String>
-    <String>It costs $5.45</String>
-    <String>3.14159</String>
+    <li>2020</li>
+    <li>100/100</li>
+    <li>It costs $5.45</li>
+    <li>3.14159</li>
 </Example>
 <Example regex={/\d\d/g}>
-    <String>2020</String>
-    <String>100/100</String>
-    <String>It costs $5.45</String>
-    <String>3.14159</String>
+    <li>2020</li>
+    <li>100/100</li>
+    <li>It costs $5.45</li>
+    <li>3.14159</li>
 </Example>
 <Example regex={/\D/g}>
-    <String>2020</String>
-    <String>100/100</String>
-    <String>It costs $5.45</String>
-    <String>3.14159</String>
+    <li>2020</li>
+    <li>100/100</li>
+    <li>It costs $5.45</li>
+    <li>3.14159</li>
 </Example>
 
 ## Word character — `\w`
@@ -39,24 +39,24 @@ The escape `\w` matches characters deemed "word characters". These include:
 It is thus equivalelnt to the character class `[a-zA-Z0-9_]`.
 
 <Example regex={/\w/g}>
-    <String>john_s</String>
-    <String>matej29</String>
-    <String>Ayesha?!</String>
-    <String>4952</String>
-    <String>LOUD</String>
-    <String>lo-fi</String>
-    <String>get out</String>
-    <String>21*2 = 42(1)</String>
+    <li>john_s</li>
+    <li>matej29</li>
+    <li>Ayesha?!</li>
+    <li>4952</li>
+    <li>LOUD</li>
+    <li>lo-fi</li>
+    <li>get out</li>
+    <li>21*2 = 42(1)</li>
 </Example>
 <Example regex={/\W/g}>
-    <String>john_s</String>
-    <String>Ayesha?!</String>
-    <String>4952</String>
-    <String>LOUD</String>
-    <String>lo-fi</String>
-    <String>get out</String>
-    <String>;-;</String>
-    <String>21*2 = 42(1)</String>
+    <li>john_s</li>
+    <li>Ayesha?!</li>
+    <li>4952</li>
+    <li>LOUD</li>
+    <li>lo-fi</li>
+    <li>get out</li>
+    <li>;-;</li>
+    <li>21*2 = 42(1)</li>
 </Example>
 
 ## Whitespace character — `\s`
@@ -76,14 +76,14 @@ The technicalities, however, will usually not be important.
 This escape is difficult to demonstrate through my `Example` component. However, a few elementary examples follow anyway.
 
 <Example regex={/\s/g}>
-    <String>word word</String>
-    <String>tabs vs spaces</String>
-    <String>snake_case.jpg</String>
+    <li>word word</li>
+    <li>tabs vs spaces</li>
+    <li>snake_case.jpg</li>
 </Example>
 <Example regex={/\S/g}>
-    <String>word word</String>
-    <String>tabs vs spaces</String>
-    <String>snake_case.jpg</String>
+    <li>word word</li>
+    <li>tabs vs spaces</li>
+    <li>snake_case.jpg</li>
 </Example>
 
 ## Any character — `.`
@@ -91,14 +91,14 @@ This escape is difficult to demonstrate through my `Example` component. However,
 While not a typical character escape, `.` matches any[^1] character.
 
 <Example regex={/./g}>
-    <String>john_s</String>
-    <String>Ayesha?!</String>
-    <String>4952</String>
-    <String>LOUD</String>
-    <String>lo-fi</String>
-    <String>get out</String>
-    <String>;-;</String>
-    <String>21*2 = 42(1)</String>
+    <li>john_s</li>
+    <li>Ayesha?!</li>
+    <li>4952</li>
+    <li>LOUD</li>
+    <li>lo-fi</li>
+    <li>get out</li>
+    <li>;-;</li>
+    <li>21*2 = 42(1)</li>
 </Example>
 
 [^1]: Except the newline character `\n`. This can be changed using the "dotAll" flag, if supported by the regex engine in question.

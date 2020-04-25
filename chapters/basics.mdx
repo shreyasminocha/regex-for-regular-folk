@@ -7,19 +7,19 @@ Regular expressions are typically formatted as `/<rules>/<flags>`. Often people 
 Let's start with the regex `/p/g`.
 
 <Example regex={/p/g}>
-    <String>pancake</String>
-    <String>pineapple</String>
-    <String>apple</String>
-    <String>mango</String>
-    <String>Plum</String>
+    <li>pancake</li>
+    <li>pineapple</li>
+    <li>apple</li>
+    <li>mango</li>
+    <li>Plum</li>
 </Example>
 
 As we can see, `/p/g` matches all lowercase `p` characters. Note that regexes are case sensitive by default. If the regex has one or more "matches" within the input string, it is said to "match" the regex. Think of "the matches" as an array, and whether an input "matches" a regex as a boolean.
 
 <Example regex={/pp/g}>
-    <String>apple</String>
-    <String>pineapple</String>
-    <String>happiness</String>
-    <String>sipping apple juice</String>
-    <String>papaya</String>
+    <li>apple</li>
+    <li>pineapple</li>
+    <li>happiness</li>
+    <li>sipping apple juice</li>
+    <li>papaya</li>
 </Example>
