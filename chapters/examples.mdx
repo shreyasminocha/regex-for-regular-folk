@@ -74,16 +74,6 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
     <String>hsl(360,10% , 0.2% )</String>
 </Example>
 
-## Password validation
-
-<Example regex={/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/}>
-    <String>hunter2</String>
-    <String>zsofpghedake</String>
-    <String>zsofpghedak4e</String>
-    <String>zSoFpghEdaK4E</String>
-    <String>zSoFpg!hEd!aK4E</String>
-</Example>
-
 ## Javascript comments
 
 `[\s\S]` is a hack to match any character _including newlines_.

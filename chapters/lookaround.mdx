@@ -1,3 +1,86 @@
 ---
 title: Lookaround
 ---
+
+Lookarounds can be used to verify conditions, without matching any text.
+
+> You're just **look**ing, not moving.
+
+- Lookahead
+    - Positive
+    - Negative
+- Lookbehind
+    - Positive
+    - Negative
+
+## Lookahead
+
+### Positive
+
+<Example regex={/^(?=.*#).*$/g}>
+    <String>abc#def</String>
+    <String>#def</String>
+    <String>abc#</String>
+    <String>abcdef</String>
+</Example>
+
+### Negative
+
+<Example regex={/^(?!.*#).*$/g}>
+    <String>abc#def</String>
+    <String>#def</String>
+    <String>abc#</String>
+    <String>abcdef</String>
+</Example>
+
+These are commonly used to prevent phrases from matching.
+
+<Example regex={/foo(?!bar)/g}>
+    <String>foobaz</String>
+    <String>foobarbaz</String>
+    <String>bazfoobar</String>
+</Example>
+
+<Example regex={/---(?:(?!---).)*---/g}>
+    <String>---foo---</String>
+    <String>---fo-o---</String>
+    <String>--------</String>
+</Example>
+
+## Lookbehind
+
+### Positive
+
+### Negative
+
+## Examples
+
+### Password validation
+
+<Example regex={/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/}>
+    <String>hunter2</String>
+    <String>zsofpghedake</String>
+    <String>zsofpghedak4e</String>
+    <String>zSoFpghEdaK4E</String>
+    <String>zSoFpg!hEd!aK4E</String>
+</Example>
+
+### Quoted strings
+
+<Example regex={/(['"])(?:(?!\1).)*\1/g}>
+    <String>foo "bar" baz</String>
+    <String>foo 'bar' baz</String>
+    <String>foo 'bat's' baz</String>
+    <String>foo "bat's" baz</String>
+    <String>foo 'bat"s' baz</String>
+</Example>
+
+Without lookaheads, this is the best we can do:
+
+<Example regex={/(['"])[^'"]*\1/g}>
+    <String>foo "bar" baz</String>
+    <String>foo 'bar' baz</String>
+    <String>foo 'bat's' baz</String>
+    <String>foo "bat's" baz</String>
+    <String>foo 'bat"s' baz</String>
+</Example>
