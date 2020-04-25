@@ -158,6 +158,39 @@ nav ul li:nth-child(2) {
     margin-left: 4ch;
 }
 
+footer {
+    font-size: small;
+    text-align: center;
+    margin-bottom: 3em;
+    padding-top: 2em;
+    border-top: 1px solid #777;
+    opacity: 0.6;
+}
+
+footer ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 1em;
+    margin-bottom: 0;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+
+footer ul li::after {
+    content: "•";
+    margin-left: 1em;
+}
+
+footer ul li:last-child::after {
+    display: none;
+}
+
 li::marker {
     font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
         monospace;

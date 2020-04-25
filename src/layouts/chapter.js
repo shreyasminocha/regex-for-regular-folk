@@ -42,25 +42,48 @@ export default (props) => {
     }
 
     return (
-        <main>
+        <>
             <header>
                 <a href="/" className="title">
                     Regular Expressions For Regular Folk
                 </a>
             </header>
 
-            <h1>{title}</h1>
+            <main>
+                <article>
+                    <h1>{title}</h1>
 
-            <MDXProvider components={shortcodes}>
-                <MDXRenderer>{mdx.body}</MDXRenderer>
-            </MDXProvider>
+                    <MDXProvider components={shortcodes}>
+                        <MDXRenderer>{mdx.body}</MDXRenderer>
+                    </MDXProvider>
+                </article>
 
-            <nav>
+                <nav>
+                    <ul>
+                        {prevItem} {nextItem}
+                    </ul>
+                </nav>
+            </main>
+
+            <footer>
                 <ul>
-                    {prevItem} {nextItem}
+                    <li>
+                        <a href="https://github.com/shreyasminocha/regex-for-regular-folk">
+                            Source Code
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0">
+                            <code>CC-BY-SA 4.0</code>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://shreyasminocha.me">Shreyas Minocha</a>
+                    </li>
                 </ul>
-            </nav>
-        </main>
+            </footer>
+        </>
     );
 };
 
