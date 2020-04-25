@@ -16,6 +16,12 @@ const Index = () => (
             to choose test cases that highlight some common gotchas. I think
             it’ll be worth your time.
         </p>
+
+        <img
+            src="/images/screenshot.jpg"
+            alt="Screenshot from /chapters/escapes"
+        />
+
         <p>
             This book’s intended audience is <em>regex beginners</em>. Some
             programming experience is assumed. It does not go into advanced
