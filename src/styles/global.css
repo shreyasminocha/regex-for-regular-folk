@@ -39,6 +39,7 @@ body {
     line-height: 1.4;
     color: var(--pseudo-black);
     font-family: "LIbre Baskerville", "Baskerville", "Garamond", serif;
+    font-variant-numeric: lining-nums;
 }
 
 @media (max-width: 600px) {
@@ -104,6 +105,16 @@ pre {
     border-left: none;
 }
 
+header {
+    margin-bottom: 2em;
+    font-family: monospace;
+}
+
+.title,
+.title:hover {
+    color: hsl(219, 100%, 47%);
+}
+
 nav {
     margin: 3em 0;
     padding-top: 1em;
@@ -140,4 +151,14 @@ nav ul li:nth-child(2) {
 
 .footnotes {
     font-size: small;
+}
+
+.chapter-list {
+    list-style: decimal-leading-zero outside;
+    margin-left: 4ch;
+}
+
+li::marker {
+    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
+        monospace;
 }

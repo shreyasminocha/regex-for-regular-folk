@@ -43,6 +43,12 @@ export default (props) => {
 
     return (
         <main>
+            <header>
+                <a href="/" className="title">
+                    Regular Expressions For Regular Folk
+                </a>
+            </header>
+
             <h1>{title}</h1>
 
             <MDXProvider components={shortcodes}>

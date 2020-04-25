@@ -13,4 +13,4 @@ const chaptersList = meta.chapters.map((chapter) => {
     );
 });
 
-export default <ol>{chaptersList}</ol>;
+export default <ol className="chapter-list">{chaptersList}</ol>;

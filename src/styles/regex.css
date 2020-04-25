@@ -12,7 +12,8 @@
 }
 
 .token.charclass,
-.token.charset-punctuation {
+.token.charset-punctuation,
+.token.charset-negation {
     color: #d70;
 }
 
