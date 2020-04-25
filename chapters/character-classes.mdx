@@ -75,3 +75,23 @@ The only difference between the first regex of this chapter and `/[^aeiou]/g` is
 > "match any character that is at least one of _«blah»_, _«blah»_ and _«blah»_"
 
 Here, _«blah»_ is either an individual character or a range of characters.
+
+## Examples
+
+### Username validation
+
+<Example regex={/^[a-zA-Z_0-9-]+$/g}>
+    <String>TheLegend27</String>
+    <String>WaterGuy12</String>
+    <String>Smokie_Bear</String>
+    <String>Robert'); DROP TABLE Students;--</String>
+</Example>
+
+### Ambiguous characters
+
+<Example regex={/[^A-HJ-NP-Za-kmnp-z2-9]/g}>
+    <String>foo</String>
+    <String>lily</String>
+    <String>lI0O1</String>
+    <String>unambiguity</String>
+</Example>

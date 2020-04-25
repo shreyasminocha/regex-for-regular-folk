@@ -42,3 +42,32 @@ Matching numbers between 100 and 250:
     <String>251</String>
     <String>729</String>
 </Example>
+
+## Examples
+
+### IP Addresses
+
+<Example
+    regex={
+        /\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g
+    }
+>
+    <String>9.9.9.9</String>
+    <String>127.0.0.1:8080</String>
+    <String>It's 192.168.1.9</String>
+    <String>255.193.09.243</String>
+    <String>123.123.123.123</String>
+    <String>123.123.123.256</String>
+    <String>0.0.x.0</String>
+</Example>
+
+### Roman numerals
+
+<Example regex={/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/g}>
+    <String>MMXX</String>
+    <String>VI</String>
+    <String>XX</String>
+    <String>XI</String>
+    <String>IXI</String>
+    <String>VV</String>
+</Example>

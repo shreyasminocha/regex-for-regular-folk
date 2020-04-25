@@ -109,3 +109,13 @@ As the name suggests, it matches everything apart from word boundaries.
     <String>a pot</String>
     <String>pea</String>
 </Example>
+
+## Examples
+
+### Trailing whitespace
+
+<Example regex={/\s+$/gm}>
+    <String>{"abc   "}</String>
+    <String>{"def \t"}</String>
+    <String>abc def</String>
+</Example>

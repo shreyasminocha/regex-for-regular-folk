@@ -50,3 +50,16 @@ Other times, they are used to group logically similar parts of the regex for rea
 Non-capturing groups are very similar to capturing groups, except that they don't create "captures". They take the form `(?:` … `)`.
 
 Non-capturing groups are usually used in conjunction with capturing groups. Perhaps you are attempting to extract some parts of the matches using capturing groups. You may wish to use a group _without messing up the order of the captures_. This is where non-capturing groups come handy.
+
+## Examples
+
+### Query String Parameters
+
+<Example regex={/^\?(\w+)=(\w+)(?:&(\w+)=(\w+))*$/g}>
+    <String></String>
+    <String>?</String>
+    <String>?a=b</String>
+    <String>?a=b&foo=bar</String>
+</Example>
+
+We match the first key-value pair separately because that allows us to use `&`, the separator, as part of the repeating group.

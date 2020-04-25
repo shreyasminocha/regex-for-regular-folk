@@ -2,7 +2,7 @@
 title: Escapes
 ---
 
-In regex, some characters have special meanings as we have explored in the last few chapters:
+In regex, some characters have special meanings as we will explore across the chapters:
 
 -   `|`
 -   `{`, `}`
@@ -11,13 +11,10 @@ In regex, some characters have special meanings as we have explored in the last 
 -   `^`, `$`
 -   `+`, `*`, `?`
 -   `\`
--   `.`
+-   `.` — Literal only within character classes.[^1]
+-   `-` — _Sometimes_ a special character within character classes.
 
-    Literal only within character classes.
-
--   `-`
-
-    _Sometimes_ a special character within character classes. Literal otherwise.
+[^1]: Many special characters that would otherwise have special meanings are treated literally by-default inside character classes.
 
 ---
 
@@ -29,6 +26,7 @@ This is done by **prefixing the character with a `\`**.
 
 <Example regex={/\(paren\)/g}>
     <String>paren</String>
+    <String>parents</String>
     <String>(paren)</String>
     <String>a (paren)</String>
 </Example>
@@ -83,3 +81,29 @@ This is done by **prefixing the character with a `\`**.
     <String>worth $54</String>
     <String>not worth $5</String>
 </Example>
+
+## Examples
+
+### JavaScript in-line comments
+
+<Example regex={/\/\/.*/g}>
+    <String>console.log(); // comment</String>
+    <String>console.log(); // // comment</String>
+    <String>console.log();</String>
+</Example>
+
+### Asterisk-surrounded substrings
+
+<Example regex={/\*[^\*]*\*/g}>
+    <String>here be *italics*</String>
+    <String>permitted**</String>
+    <String>a*b*c*d</String>
+    <String>a*b*c*d*e</String>
+    <String>a️bcd</String>
+</Example>
+
+The first and last asterisks are literal since they are escaped — `\*`.
+
+The asterisk inside the character class does not necessarily need to be escaped[^1], but I've escaped it anyway for clarity.
+
+The asterisk immediately following the character class indicates [repetition of the character class](/chapters/repetition#zero-or-more), which we'll explore in chapters that follow.

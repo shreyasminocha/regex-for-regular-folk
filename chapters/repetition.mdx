@@ -123,3 +123,26 @@ If we wish to match a particular token at least, we can suffix it with `{x,}`. T
 </Example>
 
 ## A note on _greediness_
+
+## Examples
+
+### Bitcoin address
+
+<Example regex={/\b([13][a-km-zA-HJ-NP-Z0-9]{26,33})\b/g}>
+    <String>3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v</String>
+    <String>1HQ3Go3ggs8pFnXuHVHRytPCq5fGG8Hbhx</String>
+    <String>2016-03-09,18f1yugoAJuXcHAbsuRVLQC9TezJ</String>
+</Example>
+
+### Youtube Video
+
+<Example
+    regex={
+        /^(?:https?:\/\/)?(?:www\.?)?youtube\.com\/watch\?.*?v=([^&\s]+).*$/gm
+    }
+>
+    <String>youtube.com/watch?feature=sth&v=dQw4w9WgXcQ</String>
+    <String>https://www.youtube.com/watch?v=dQw4w9WgXcQ</String>
+    <String>www.youtube.com/watch?v=dQw4w9WgXcQ</String>
+    <String>youtube.com/watch?v=dQw4w9WgXcQ</String>
+</Example>
