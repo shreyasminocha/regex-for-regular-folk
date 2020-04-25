@@ -22,10 +22,10 @@
 }
 
 @font-face {
-    font-family: "Raleway";
+    font-family: "Lato";
     font-style: normal;
-    font-weight: 500;
-    src: local("Raleway SemiBold"), url("/fonts/raleway-500.ttf");
+    font-weight: normal;
+    src: local("Lato"), url("/fonts/lato.ttf");
 }
 
 :root {
@@ -60,7 +60,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Raleway", "Arial", "Helvetica", sans-serif;
+    font-family: "Lato", "Raleway", "Arial", "Helvetica", sans-serif;
     font-weight: 500;
     letter-spacing: normal;
 }
