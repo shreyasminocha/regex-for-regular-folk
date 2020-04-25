@@ -1,8 +1,9 @@
 module.exports = {
     siteMetadata: {
         title: "Regular Expressions for Regular Folk",
+        titleTemplate: "%s | Regular Expressions for Regular Folk (REFRF)",
         description:
-            "A visual, example-based introduction to regular expressions",
+            "REFRF is a visual, example-based introduction to regular expressions in the form of an experimental e-book",
     },
     plugins: [
         {

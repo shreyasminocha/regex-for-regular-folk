@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import Example from "../components/example";
 import Note from "../components/note";
 import Warning from "../components/warning";
+import SEO from "../components/seo";
 import * as meta from "../../meta.json";
 
 const shortcodes = { Example, Note, Warning };
@@ -12,6 +13,7 @@ const shortcodes = { Example, Note, Warning };
 export default (props) => {
     const { mdx } = props.data;
     const { title } = mdx.frontmatter;
+    const { excerpt } = mdx;
 
     const slugifiedTitle = mdx.fields.slug.split("/")[1];
 
@@ -43,6 +45,8 @@ export default (props) => {
 
     return (
         <>
+            <SEO title={title} description={excerpt} />
+
             <header>
                 <a href="/" className="title">
                     Regular Expressions For Regular Folk
@@ -93,6 +97,7 @@ export const query = graphql`
             frontmatter {
                 title
             }
+            excerpt
             body
             id
             fields {
