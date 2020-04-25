@@ -5,7 +5,10 @@ import "./index.css";
 
 const Example = (props) => {
     const { regex, children } = props;
-    const testStrings = children.map((str) => str.props.children || "");
+    const testStrings = React.Children.map(
+        children,
+        (str) => str.props.children || ""
+    );
 
     const multiLineRegex = `${regex.toString()}m`; // works fine even if `regex` is multiline
     const playGroundText = testStrings.join("\n");
