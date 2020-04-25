@@ -27,6 +27,12 @@
     opacity: 1;
 }
 
+@media print {
+    .example .regexr-link {
+        display: none;
+    }
+}
+
 .example ul {
     margin: 1.5em 0 0 2em;
     font-size: large;

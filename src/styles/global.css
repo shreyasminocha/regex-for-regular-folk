@@ -71,7 +71,6 @@ h1 {
 }
 
 h2 {
-    page-break-before: always;
     font-size: 2.8rem;
     line-height: 1.3;
 }
@@ -120,6 +119,12 @@ nav {
     padding-top: 1em;
 }
 
+@media print {
+    nav {
+        display: none;
+    }
+}
+
 nav ul {
     list-style: none;
     width: 70%;
@@ -165,6 +170,12 @@ footer {
     padding-top: 2em;
     border-top: 1px solid #777;
     opacity: 0.6;
+}
+
+@media print {
+    footer {
+        opacity: 1;
+    }
 }
 
 footer ul {
