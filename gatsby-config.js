@@ -5,6 +5,7 @@ module.exports = {
         description:
             "REFRF is a visual, example-based introduction to regular expressions in the form of an experimental e-book",
     },
+    pathPrefix: "",
     plugins: [
         {
             resolve: "gatsby-source-filesystem",

@@ -113,6 +113,12 @@ header {
     font-family: monospace;
 }
 
+@media print {
+    header {
+        display: none;
+    }
+}
+
 .title,
 .title:hover {
     color: hsl(219, 100%, 47%);
@@ -178,7 +184,7 @@ footer {
 
 @media print {
     footer {
-        opacity: 1;
+        display: none;
     }
 }
 
