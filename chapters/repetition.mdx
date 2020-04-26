@@ -82,6 +82,7 @@ Here's an example that matches an uppercase six-character hex colour code.
     <li>#AE25AE</li>
     <li>#555555</li>
     <li>How about #73FA79?</li>
+    <li>Part of #73FA79BAC too</li>
     <li>#FFF</li>
     <li>#a2ca2c</li>
 </Example>
@@ -123,6 +124,46 @@ If we wish to match a particular token at least, we can suffix it with `{x,}`. T
 </Example>
 
 ## A note on _greediness_
+
+Regular expressions, by default, are greedy. They attempt to match as much as possible.
+
+<Example regex={/a*/g}>
+    <li>aaaaaa</li>
+</Example>
+
+<Example regex={/".*"/g}>
+    <li>"quote"</li>
+    <li>"quote", "quote"</li>
+    <li>"quote"quote"</li>
+</Example>
+
+Suffixing a repetition token with a `?`, one can make it "lazy".
+
+<Example regex={/".*?"/g}>
+    <li>"quote"</li>
+    <li>"quote", "quote"</li>
+    <li>"quote"quote"</li>
+</Example>
+
+Here, this could also be achieved by using `[^"]` instead of `.` (as is best practice).
+
+<Example regex={/"[^"]*"/g}>
+    <li>"quote"</li>
+    <li>"quote", "quote"</li>
+    <li>"quote"quote"</li>
+</Example>
+
+> […] Lazy will stop as soon as the _condition is satisfied_, but greedy means it will stop only once the condition is _not satisfied any more_
+>
+> —[Andrew S](https://stackoverflow.com/users/966656/andrew-s) on StackOverflow
+
+<Example regex={/<.+>/g}>
+    <li>{"<em>g r e e d y</em>"}</li>
+</Example>
+
+<Example regex={/<.+?>/g}>
+    <li>{"<em>lazy</em>"}</li>
+</Example>
 
 ## Examples
 
