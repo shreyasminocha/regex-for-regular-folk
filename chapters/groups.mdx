@@ -6,6 +6,7 @@ Groups, as the name suggests, are meant to be used to "group" components of regu
 
 -   Extract subsets of matches
 -   Repeat groups an arbitrary number of times
+-   Backreferences
 -   Enhance readability
 -   Allow complex alternations
 
@@ -45,6 +46,54 @@ Other times, they are used to group logically similar parts of the regex for rea
     <li>12050-W50</li>
 </Example>
 
+### Backreferences
+
+Backreferences allow matching previously _capture substrings_ multiple times.
+
+The match from the first group would be `\1`, that from the second would be `\2`, and so on…
+
+<Example regex={/([abc])×\1×\1/g}>
+    <li>a×a×a</li>
+    <li>ab×b×b</li>
+    <li>a×b×c</li>
+</Example>
+
+Backreferences _cannot_ be used to reduce duplication in regexes. They refer to _the match_ of groups, not the pattern.
+
+<Example regex={/[abc][abc][abc]/g}>
+    <li>abc</li>
+    <li>a cable</li>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</Example>
+
+<Example regex={/([abc])\1\1/g}>
+    <li>abc</li>
+    <li>a cable</li>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</Example>
+
+Here's an example that demonstrates a common use-case:
+
+<Example regex={/\w+([,|])\w+\1\w+/g}>
+    <li>comma,separated,values</li>
+    <li>pipe|separated|values</li>
+    <li>wb|mixed,delimiters</li>
+    <li>wb,mixed|delimiters</li>
+</Example>
+
+This cannot be achieved with a repeated character classes.
+
+<Example regex={/\w+[,|]\w+[,|]\w+/g}>
+    <li>comma,separated,values</li>
+    <li>pipe|separated|values</li>
+    <li>wb|mixed,delimiters</li>
+    <li>wb,mixed|delimiters</li>
+</Example>
+
 ## Non-capturing groups
 
 Non-capturing groups are very similar to capturing groups, except that they don't create "captures". They take the form `(?:` … `)`.
@@ -63,3 +112,22 @@ Non-capturing groups are usually used in conjunction with capturing groups. Perh
 </Example>
 
 We match the first key-value pair separately because that allows us to use `&`, the separator, as part of the repeating group.
+
+### (Basic) HTML tags
+
+As a rule of thumb, _do not_ use regex to match XML/HTML.[^1][^2][^3][^4]
+
+However, it's a relevant example:
+
+<Example regex={/<([a-z]+)+>(.*)<\/\1>/gi}>
+    <li>{"<p>paragraph</p>"}</li>
+    <li>{"<li>list item</li>"}</li>
+    <li>{"<p><span>nesting</span></p>"}</li>
+    <li>{"<p>hmm</li>"}</li>
+    <li>{"<p><p>not clever</p></p></p>"}</li>
+</Example>
+
+[^1]: https://stackoverflow.com/a/590789
+[^2]: https://stackoverflow.com/a/6751339
+[^3]: https://blog.codinghorror.com/parsing-html-the-cthulhu-way/
+[^4]: https://web.archive.org/web/20071018202901/http://oubliette.alpha-geek.com/2004/01/12/bring_me_your_regexs_i_will_create_html_to_break_them

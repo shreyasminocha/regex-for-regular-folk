@@ -164,6 +164,10 @@ nav ul li:nth-child(2) {
     margin-left: 2em;
 }
 
+.footnote-ref {
+    margin-right: 0.5em;
+}
+
 .footnotes {
     font-size: small;
 }
