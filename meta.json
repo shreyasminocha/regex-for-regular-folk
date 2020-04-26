@@ -16,7 +16,7 @@
         "flags",
         "anchors",
         "lookaround",
-        "some-words-of-caution",
-        "using-regex"
+        "advanced-examples",
+        "next-steps"
     ]
 }
