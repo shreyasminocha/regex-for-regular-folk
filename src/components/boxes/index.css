@@ -1,0 +1,25 @@
+.note,
+.warning {
+    padding: 1em;
+    margin-bottom: 2.5em;
+}
+
+.note span,
+.warning span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.note p,
+.warning p {
+    margin-bottom: 0;
+}
+
+.note {
+    background-color: hsl(199, 90%, 90%);
+}
+
+.warning {
+    background-color: hsl(48, 90%, 85%);
+}

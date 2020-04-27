@@ -3,8 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import Example from "../components/example";
-import Note from "../components/note";
-import Warning from "../components/warning";
+import { Note, Warning } from "../components/boxes";
 import SEO from "../components/seo";
 import * as meta from "../../meta.json";
 
