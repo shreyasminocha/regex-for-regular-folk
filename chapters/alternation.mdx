@@ -45,21 +45,31 @@ Matching numbers between 100 and 250:
 
 ## Examples
 
-### IP Addresses
+### Hex colours (including shorthand)
 
-<Example
-    regex={
-        /\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g
-    }
->
-    <li>9.9.9.9</li>
-    <li>127.0.0.1:8080</li>
-    <li>It's 192.168.1.9</li>
-    <li>255.193.09.243</li>
-    <li>123.123.123.123</li>
-    <li>123.123.123.256</li>
-    <li>0.0.x.0</li>
+Let's revisit and improve one of our older examples.
+
+<Example regex={/#([0-9A-F]{6}|[0-9A-F]{3})/g}>
+    <li>#AE25AE</li>
+    <li>#555555</li>
+    <li>How about #73FA79?</li>
+    <li>Part of #73FA79BAC too</li>
+    <li>#FFF</li>
+    <li>#a2ca2c</li>
 </Example>
+
+It is important that `[0-9A-F]{6}` comes before `[0-9A-F]{3}`. Else:
+
+<Example regex={/#([0-9A-F]{3}|[0-9A-F]{6})/g}>
+    <li>#AE25AE</li>
+    <li>#555555</li>
+    <li>How about #73FA79?</li>
+    <li>Part of #73FA79BAC too</li>
+    <li>#FFF</li>
+    <li>#a2ca2c</li>
+</Example>
+
+Regex engines try alternatives from the left to the right.
 
 ### Roman numerals
 

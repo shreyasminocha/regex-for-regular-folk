@@ -2,6 +2,48 @@
 title: Advanced Examples
 ---
 
+## Javascript comments
+
+`[\s\S]` is a hack to match any character _including newlines_.
+
+<Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
+    <li>const a = 0; // comment</li>
+    <li>/* multiline */</li>
+</Example>
+
+## 24-Hour Time
+
+<Example regex={/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/g}>
+    <li>23:59:00</li>
+    <li>14:00</li>
+    <li>23:00</li>
+    <li>29:00</li>
+    <li>32:32</li>
+</Example>
+
+### IP Addresses
+
+<Example
+    regex={
+        /\b(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))\b/g
+    }
+>
+    <li>9.9.9.9</li>
+    <li>127.0.0.1:8080</li>
+    <li>It's 192.168.1.9</li>
+    <li>255.193.09.243</li>
+    <li>123.123.123.123</li>
+    <li>123.123.123.256</li>
+    <li>0.0.x.0</li>
+</Example>
+
+## Meta
+
+<Example regex={/<Example source="(.*?)" flags="(.*?)">/gm}>
+    <li>.</li>
+    <li>&lt;Example source="\s+$" flags="gm"&gt;</li>
+</Example>
+
 ## Floating point numbers
 
 -   optional sign
@@ -76,30 +118,4 @@ The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
     <li>hsl(0,20%,100%)</li>
     <li>HSL(0350, 002%,4.1%)</li>
     <li>hsl(360,10% , 0.2% )</li>
-</Example>
-
-## Javascript comments
-
-`[\s\S]` is a hack to match any character _including newlines_.
-
-<Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
-    <li>const a = 0; // comment</li>
-    <li>/* multiline */</li>
-</Example>
-
-## 24-Hour Time
-
-<Example regex={/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/g}>
-    <li>23:59:00</li>
-    <li>14:00</li>
-    <li>23:00</li>
-    <li>29:00</li>
-    <li>32:32</li>
-</Example>
-
-## Meta
-
-<Example regex={/<Example source="(.*?)" flags="(.*?)">/gm}>
-    <li>.</li>
-    <li>&lt;Example source="\s+$" flags="gm"&gt;</li>
 </Example>
