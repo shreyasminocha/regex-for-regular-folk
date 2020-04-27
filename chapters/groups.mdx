@@ -131,3 +131,17 @@ However, it's a relevant example:
 [^2]: https://stackoverflow.com/a/6751339
 [^3]: https://blog.codinghorror.com/parsing-html-the-cthulhu-way/
 [^4]: https://web.archive.org/web/20071018202901/http://oubliette.alpha-geek.com/2004/01/12/bring_me_your_regexs_i_will_create_html_to_break_them
+
+### Names
+
+**Find**: `\b(\w+) (\w+)\b`
+
+**Replace**: `$2, $1`[^5]
+
+[^5]: In replacement contexts, `$1`, `$2` etc are usually used in place of `\1`, `\2` … to refer to captured strings.
+
+### Backreferences and plurals
+
+**Find**: `\bboy(s?)\b`
+
+**Replace**: `girl$1`[^5]
