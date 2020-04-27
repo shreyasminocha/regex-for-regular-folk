@@ -1,40 +1,18 @@
 import React from "react";
 import "./index.css";
 
-const Note = (props) => {
+const Box = (props, className, name) => {
     return (
-        <div className="note">
-            <span>Note</span>
+        <div className={className}>
+            <span>{name}</span>
             <p>{props.children}</p>
         </div>
     );
 };
 
-const Warning = (props) => {
-    return (
-        <div className="warning">
-            <span>Warning</span>
-            <p>{props.children}</p>
-        </div>
-    );
-};
-
-const Tip = (props) => {
-    return (
-        <div className="tip">
-            <span>Tip</span>
-            <p>{props.children}</p>
-        </div>
-    );
-};
-
-const Support = (props) => {
-    return (
-        <div className="support">
-            <span>Limited Support</span>
-            <p>{props.children}</p>
-        </div>
-    );
-};
+const Note = (props) => Box(props, "note", "Note");
+const Warning = (props) => Box(props, "warning", "Warning");
+const Tip = (props) => Box(props, "tip", "Tip");
+const Support = (props) => Box(props, "support", "Limited Support");
 
 export { Note, Warning, Tip, Support };
