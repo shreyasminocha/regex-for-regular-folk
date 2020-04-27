@@ -3,11 +3,11 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import Example from "../components/example";
-import { Note, Warning } from "../components/boxes";
+import { Note, Warning, Tip, Support } from "../components/boxes";
 import SEO from "../components/seo";
 import * as meta from "../../meta.json";
 
-const shortcodes = { Example, Note, Warning };
+const shortcodes = { Example, Note, Warning, Tip, Support };
 
 export default (props) => {
     const { mdx } = props.data;

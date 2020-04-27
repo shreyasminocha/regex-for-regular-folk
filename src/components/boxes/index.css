@@ -1,18 +1,24 @@
 .note,
-.warning {
+.warning,
+.tip,
+.support {
     padding: 1em;
     margin-bottom: 2.5em;
 }
 
 .note span,
-.warning span {
+.warning span,
+.tip span,
+.support span {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5em;
 }
 
 .note p,
-.warning p {
+.warning p,
+.tip p,
+.support p {
     margin-bottom: 0;
 }
 
@@ -21,5 +27,13 @@
 }
 
 .warning {
-    background-color: hsl(48, 90%, 85%);
+    background-color: hsl(48, 90%, 90%);
+}
+
+.tip {
+    background-color: hsl(90, 90%, 90%);
+}
+
+.support {
+    background-color: hsl(0, 90%, 90%);
 }
