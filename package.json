@@ -4,12 +4,10 @@
   "description": "todo",
   "main": "book.md",
   "scripts": {
-    "spellcheck": "mdspell -r chapters/*.md !node_modules !dist --ignore-numbers",
-    "proselint": "proselint chapters/*.mdx",
     "alex": "alex chapters/*.mdx",
     "lint-check": "prettier --check .",
     "lint": "prettier --write .",
-    "test": "status=0; npm run spellcheck || status=$?; npm run alex || status=$?; npm run lint-check || status=$?; exit $status",
+    "test": "status=0; npm run alex || status=$?; npm run lint-check || status=$?; exit $status",
     "dev": "gatsby develop",
     "build": "gatsby build"
   },
@@ -29,9 +27,7 @@
   "homepage": "https://github.com/shreyasminocha/regex-for-regular-folk#readme",
   "devDependencies": {
     "alex": "^8.1.1",
-    "markdown-spellcheck": "^1.3.1",
-    "prettier": "^2.0.5",
-    "proselint": "^0.1.7"
+    "prettier": "^2.0.5"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
