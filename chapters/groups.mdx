@@ -26,9 +26,18 @@ This regex is functionally identical to `/abcde/g`.
 
 Capturing groups allow _extracting_ parts of matches.
 
-<!-- Insert example -->
+<Example regex={/\{([^{}]*)\}/g}>
+    <li>{"{braces}"}</li>
+    <li>{"{two} {pairs}"}</li>
+    <li>{"{ {nested} }"}</li>
+    <li>{"{ incomplete } }"}</li>
+    <li>{"{}"}</li>
+    <li>{"{unmatched"}</li>
+</Example>
 
-Capturing groups can also be used to group regex parts for ease of [repetition](/repetition) of said group.[^1] While we will cover repetition in detail in chapters that follow, here's an example that demonstrates the utility of groups.
+Using your language's regex functions, you would be able to extract the text between the matched braces for each of these strings.
+
+Capturing groups can also be used to group regex parts for ease of [repetition](/repetition) of said group. While we will cover repetition in detail in chapters that follow, here's an example that demonstrates the utility of groups.
 
 <Example regex={/a(bcd)+e/g}>
     <li>abcdefg</li>
@@ -132,16 +141,58 @@ However, it's a relevant example:
 [^3]: https://blog.codinghorror.com/parsing-html-the-cthulhu-way/
 [^4]: https://web.archive.org/web/20071018202901/http://oubliette.alpha-geek.com/2004/01/12/bring_me_your_regexs_i_will_create_html_to_break_them
 
-### Names
+### Simple names
 
 **Find**: `\b(\w+) (\w+)\b`
 
 **Replace**: `$2, $1`[^5]
 
+#### Before
+
+```
+John Doe
+Jane Doe
+Sven Svensson
+Janez Novak
+Janez Kranjski
+Tim Joe
+```
+
+#### After
+
+```
+Doe, John
+Doe, Jane
+Svensson, Sven
+Novak, Janez
+Kranjski, Janez
+Joe, Tim
+```
+
 [^5]: In replacement contexts, `$1`, `$2` etc are usually used in place of `\1`, `\2` … to refer to captured strings.
 
 ### Backreferences and plurals
 
-**Find**: `\bboy(s?)\b`
+**Find**: `\bword(s?)\b`
 
-**Replace**: `girl$1`[^5]
+**Replace**: `phrase$1`[^5]
+
+#### Before
+
+```
+This is a paragraph with some words.
+
+Some instances of the word "word" are in their plural form: "words".
+
+Yet, some are in their singular form: "word".
+```
+
+#### After
+
+```
+This is a paragraph with some phrases.
+
+Some instances of the phrase "phrase" are in their plural form: "phrases".
+
+Yet, some are in their singular form: "phrase".
+```
