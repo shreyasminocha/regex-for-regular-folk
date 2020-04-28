@@ -1,13 +1,12 @@
 import React from "react";
 import SEO from "../components/seo";
-import * as meta from "../../meta.json";
 import chaptersList from "../util/chapters-list";
 
 const Index = () => (
     <>
         <SEO />
 
-        <h1>{meta.title}</h1>
+        <h1>Regular Expressions for Regular Folk</h1>
 
         <p>
             This is an experimental “book” about regular expressions. It is
