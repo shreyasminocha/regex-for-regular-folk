@@ -42,7 +42,7 @@ body {
     font-variant-numeric: lining-nums;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     body {
         width: 90%;
     }
@@ -97,7 +97,8 @@ a:focus {
 }
 
 ul {
-    list-style-position: inside;
+    list-style: disc inside;
+    margin-left: 2em;
 }
 
 pre {
@@ -106,6 +107,10 @@ pre {
 
 img {
     margin: 2em 0;
+}
+
+blockquote {
+    font-style: italic;
 }
 
 header {
@@ -164,6 +169,15 @@ nav ul li:nth-child(2) {
     margin-left: 2em;
 }
 
+@media (max-width: 650px) {
+    nav ul li:nth-child(1),
+    nav ul li:nth-child(2) {
+        display: block;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
 .footnote-ref {
     margin-right: 0.5em;
 }
@@ -175,6 +189,11 @@ nav ul li:nth-child(2) {
 .chapter-list {
     list-style: decimal-leading-zero outside;
     margin-left: 4ch;
+}
+
+.chapter-list li::marker {
+    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
+        monospace;
 }
 
 footer {
@@ -199,12 +218,25 @@ footer p {
 footer ul {
     list-style: none;
     margin-bottom: 0;
+    margin-left: 0;
 }
 
 footer ul li {
     display: inline;
     margin-right: 1em;
     margin-bottom: 0;
+}
+
+@media (max-width: 650px) {
+    footer ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5em;
+    }
+
+    footer ul li::after {
+        display: none;
+    }
 }
 
 footer ul li:last-child {
@@ -218,9 +250,4 @@ footer ul li::after {
 
 footer ul li:last-child::after {
     display: none;
-}
-
-li::marker {
-    font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
-        monospace;
 }

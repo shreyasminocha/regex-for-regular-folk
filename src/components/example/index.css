@@ -72,7 +72,7 @@
     vertical-align: -10%;
 }
 
-.example ul ol {
+.example ul li ol {
     margin: 0 2em;
     position: relative;
     top: -22px;
@@ -80,7 +80,7 @@
     z-index: -1;
 }
 
-.example ul ol li {
+.example ul li ol li {
     display: inline;
     background-color: hsl(33, 100%, 88%, 0.7);
     border-radius: 3px;
@@ -90,4 +90,5 @@
     position: relative;
     left: 0;
     white-space: pre;
+    user-select: none;
 }

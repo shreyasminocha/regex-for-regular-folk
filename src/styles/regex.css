@@ -35,7 +35,10 @@
     background: rgba(255, 238, 0, 0.3);
 }
 
-.token.regex-delimiter,
-.token.regex-flags {
+.token.regex-delimiter {
     color: #b7bcc0;
+}
+
+.token.regex-flags {
+    color: #999;
 }
