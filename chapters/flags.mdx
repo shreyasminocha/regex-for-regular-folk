@@ -2,13 +2,7 @@
 title: Flags
 ---
 
-Think of flags as a means of allowing us to put our regexes into different "modes". Remember how we took for granted the part after the final `/` in `/pattern/`? We'll get into the details of those now.
-
-There are 5 kinds of flags:
-
--   `g` — global
--   `i` — (case) insensitive
--   `m` — multiline
+Think of flags as a means of allowing us to put our regexes into different "modes". Flags (or "modifiers") are the part after the final `/` in `/pattern/`. Different engines support different flags. We'll explore some of the most common flags here.
 
 ## Global (`g`)
 
@@ -19,6 +13,7 @@ All examples thus far have had the global flag. When the global flag isn't enabl
     <li>cancel</li>
     <li>rhythm</li>
 </Example>
+
 <Example regex={/[aeiou]/}>
     <li>corona</li>
     <li>cancel</li>
@@ -35,12 +30,14 @@ As the name suggests, enabling the "insensitive" flag makes the regex case insen
     <li>Even #a2ca2c?</li>
     <li>#FFF</li>
 </Example>
+
 <Example regex={/#[0-9A-F]{6}/}>
     <li>#AE25AE</li>
     <li>#555555</li>
     <li>Even #a2ca2c?</li>
     <li>#FFF</li>
 </Example>
+
 <Example regex={/#[0-9A-Fa-f]{6}/}>
     <li>#AE25AE</li>
     <li>#555555</li>
@@ -49,6 +46,10 @@ As the name suggests, enabling the "insensitive" flag makes the regex case insen
 </Example>
 
 ## Multiline (`m`)
+
+<Support>
+    In Ruby, the <code>m</code> flag performs other functions.
+</Support>
 
 The multiline flag has to do with the regex's handling of anchors when dealing with "multiline" strings, that is strings that include newlines (`\n`) and thus spans over multiple lines. By default, the regex `/^foo$/` would match only `"foo"`.
 
@@ -65,3 +66,16 @@ baz
 Without the multiline flag, the string above would be considered as a single line for matching purposes. The regex `^foo$` **would not** match since the beginning of line would be before `b` and the end of line would be after `z`.
 
 With the multiline flag, it would be considered as three "lines": `bar`, `foo`, and `baz`. The regex `^foo$` _would match_ the "line" in the middle—`foo`.
+
+## Dot-all (`s`)
+
+<Support>
+    JavaScript, prior to ES2018, did ont support this flag. Ruby does not
+    support the flag.
+</Support>
+
+The `.` typically matches any character except newlines. With the dot-all flag, it matches newlines too.
+
+## Unicode (`u`)
+
+## Whitespace extended (`x`)
