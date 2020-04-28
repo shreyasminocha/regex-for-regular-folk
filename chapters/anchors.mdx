@@ -4,7 +4,7 @@ title: Anchors
 
 Anchors do not match anything by themselves. Instead, they place restrictions on where matches may appear—"anchoring" matches.
 
-You could also think about anchors as "zero-width" characters.
+You could also think about anchors as "invisible characters".
 
 ## Beginning of line — `^`
 
@@ -75,10 +75,12 @@ The word boundary anchor, `\b`, once again matches an imaginary invisible charac
     <li>banana%20peach</li>
     <li>grape</li>
 </Example>
+
 <Note>
     Words characters include <code>a-z</code>, <code>A-Z</code>,{" "}
     <code>0-9</code>, and <code>_</code>.
 </Note>
+
 <Example regex={/\bp\b/g}>
     <li>word p word</li>
     <li>(p)</li>
@@ -86,6 +88,14 @@ The word boundary anchor, `\b`, once again matches an imaginary invisible charac
     <li>(paren)</li>
     <li>(loop)</li>
     <li>loops</li>
+</Example>
+
+<Example regex={/\bcat\b/g}>
+    <li>cat</li>
+    <li>the cat?</li>
+    <li>catch</li>
+    <li>concat it</li>
+    <li>concatenate</li>
 </Example>
 
 ---
@@ -101,6 +111,7 @@ As the name suggests, it matches everything apart from word boundaries.
     <li>a pot</li>
     <li>pea</li>
 </Example>
+
 <Example regex={/\Bp\B/g}>
     <li>ape</li>
     <li>_peel</li>
@@ -109,6 +120,11 @@ As the name suggests, it matches everything apart from word boundaries.
     <li>a pot</li>
     <li>pea</li>
 </Example>
+
+<Tip>
+    <code>^…$</code> and <code>\b…\b</code> are common patterns and you will
+    almost always need either one or the other in practice.
+</Tip>
 
 ## Examples
 
