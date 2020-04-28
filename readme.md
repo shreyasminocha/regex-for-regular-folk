@@ -1,5 +1,7 @@
 # Regular Expressions for Regular Folk
 
+![Node CI](https://github.com/shreyasminocha/regex-for-regular-folk/workflows/Node%20CI/badge.svg)
+
 This is an experimental “book” about regular expressions. It is largely _visual_ and _example-based_, as opposed to most regex resources I found while I was learning. I also attempted to choose test cases that highlight some common gotchas. I think it’ll be worth your time.
 
 ![Screenshot from /chapters/escapes](https://raw.githubusercontent.com/shreyasminocha/regex-for-regular-folk/master/static/images/screenshot.jpg)
