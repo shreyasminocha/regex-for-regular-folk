@@ -5,10 +5,10 @@ title: Groups
 Groups, as the name suggests, are meant to be used to "group" components of regular expressions. These groups can be used to:
 
 -   Extract subsets of matches
--   Repeat groups an arbitrary number of times
--   Backreferences
+-   [Repeat groups an arbitrary number of times](/chapters/repetition)
+-   Refer to previously matched substrings
 -   Enhance readability
--   Allow complex alternations
+-   [Allow complex alternations](/chapters/alternations)
 
 We'll see how to do a lot of this in later chapters, but learning how groups work will allow us to study some great examples in these later chapters.
 
@@ -21,8 +21,6 @@ Capturing groups are denoted by `(` … `)`. Here's an expository example:
     <li>abcdefg?</li>
     <li>abcde</li>
 </Example>
-
-This regex is functionally identical to `/abcde/g`.
 
 Capturing groups allow _extracting_ parts of matches.
 
@@ -57,7 +55,7 @@ Other times, they are used to group logically similar parts of the regex for rea
 
 ### Backreferences
 
-Backreferences allow matching previously _capture substrings_ multiple times.
+Backreferences allow referring to _previously captured substrings_.
 
 The match from the first group would be `\1`, that from the second would be `\2`, and so on…
 
@@ -169,7 +167,7 @@ Kranjski, Janez
 Joe, Tim
 ```
 
-[^5]: In replacement contexts, `$1`, `$2` etc are usually used in place of `\1`, `\2` … to refer to captured strings.
+[^5]: In replacement contexts, `$1`, `$2`, … are usually used in place of `\1`, `\2`, … to refer to captured strings.
 
 ### Backreferences and plurals
 

@@ -14,12 +14,16 @@ The character escape `\d` matches digit characters, from `0` to `9`. It is equiv
     <li>It costs $5.45</li>
     <li>3.14159</li>
 </Example>
+
 <Example regex={/\d\d/g}>
     <li>2020</li>
     <li>100/100</li>
     <li>It costs $5.45</li>
     <li>3.14159</li>
 </Example>
+
+`\D` is the negation of `\d` and is equivalent to `[^0-9]`.
+
 <Example regex={/\D/g}>
     <li>2020</li>
     <li>100/100</li>
@@ -48,6 +52,7 @@ It is thus equivalelnt to the character class `[a-zA-Z0-9_]`.
     <li>get out</li>
     <li>21*2 = 42(1)</li>
 </Example>
+
 <Example regex={/\W/g}>
     <li>john_s</li>
     <li>Ayesha?!</li>
@@ -73,13 +78,12 @@ Many also include vertical tabs (`\v`). Unicode-aware engines usually match all 
 
 The technicalities, however, will usually not be important.
 
-This escape is difficult to demonstrate through my `Example` component. However, a few elementary examples follow anyway.
-
 <Example regex={/\s/g}>
     <li>word word</li>
     <li>tabs vs spaces</li>
     <li>snake_case.jpg</li>
 </Example>
+
 <Example regex={/\S/g}>
     <li>word word</li>
     <li>tabs vs spaces</li>
@@ -101,4 +105,4 @@ While not a typical character escape, `.` matches any[^1] character.
     <li>21*2 = 42(1)</li>
 </Example>
 
-[^1]: Except the newline character `\n`. This can be changed using the "dotAll" flag, if supported by the regex engine in question.
+[^1]: Except the newline character `\n`. This can be changed using the ["dotAll" flag](/chapters/flags#dot-all-s), if supported by the regex engine in question.

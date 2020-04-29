@@ -2,9 +2,11 @@
 title: Repetition
 ---
 
+Repetition is a powerful and ubiquitous regex feature. There are several ways to represent repetition in regex.
+
 ## Making things optional
 
-We can make parts of regex optional. We achieve this (among other things) using the `?` operator.
+We can make parts of regex optional using the `?` operator.
 
 <Example regex={/a?/g}>
     <li></li>
@@ -25,9 +27,9 @@ Here's another example:
     <li>ftp</li>
 </Example>
 
-Here the`s` following `http` is optional.
+Here the `s` following `http` is optional.
 
-We can also make capturing and non-capturing groups optional. The ability to repeat groups is really powerful.
+We can also make capturing and non-capturing groups optional.
 
 <Example regex={/url: (www\.)?example\.com/g}>
     <li>url: example.com</li>
@@ -37,7 +39,7 @@ We can also make capturing and non-capturing groups optional. The ability to rep
 
 ## Zero or more
 
-If we wish to match zero or more of a token, we can suffix it with a `*`.
+If we wish to match zero or more of a token, we can suffix it with `*`.
 
 <Example regex={/a*/g}>
     <li></li>
@@ -65,7 +67,7 @@ If we wish to match zero or more of a token, we can suffix it with a `+`.
 
 ## Exactly `x` times
 
-If we wish to match a particular token exactly `x` times, we can suffix with with `{x}`. This is functionally identical to repeatedly copy-pasting the token `x` times, but using `{x}` is often a lot less tedious.
+If we wish to match a particular token exactly `x` times, we can suffix it with `{x}`. This is functionally identical to repeatedly copy-pasting the token `x` times.
 
 <Example regex={/a{3}/g}>
     <li></li>
@@ -91,7 +93,7 @@ Here, the token `{6}` applies to the character class `[0-9A-F]`.
 
 ## Between `min` and `max` times
 
-If we wish to match a particular token between `min` and `max` times, we can suffix it with `{min,max}`.
+If we wish to match a particular token between `min` and `max` (inclusive) times, we can suffix it with `{min,max}`.
 
 <Example regex={/a{2,4}/g}>
     <li></li>
@@ -106,13 +108,9 @@ If we wish to match a particular token between `min` and `max` times, we can suf
     There must be no space after the comma in <code>{"{min,max}"}</code>.
 </Warning>
 
-<Note>
-    Both <code>min</code> and <code>max</code> is included in the range.
-</Note>
-
 ## At least `x` times
 
-If we wish to match a particular token at least, we can suffix it with `{x,}`. Think of it as [`{min,max}`](#between-min-and-max-times), but without an upper bound.
+If we wish to match a particular token at least `x` times, we can suffix it with `{x,}`. Think of it as [`{min,max}`](#between-min-and-max-times), but without an upper bound.
 
 <Example regex={/a{2,}/g}>
     <li></li>
@@ -125,7 +123,7 @@ If we wish to match a particular token at least, we can suffix it with `{x,}`. T
 
 ## A note on _greediness_
 
-Regular expressions, by default, are greedy. They attempt to match as much as possible.
+Regular expressions, by default, are _greedy_. They attempt to match as much as possible.
 
 <Example regex={/a*/g}>
     <li>aaaaaa</li>
@@ -137,7 +135,7 @@ Regular expressions, by default, are greedy. They attempt to match as much as po
     <li>"quote"quote"</li>
 </Example>
 
-Suffixing a repetition token with a `?`, one can make it "lazy".
+Suffixing a repetition operator (`?`, `*`, `+`, …) with a `?`, one can make it "lazy".
 
 <Example regex={/".*?"/g}>
     <li>"quote"</li>

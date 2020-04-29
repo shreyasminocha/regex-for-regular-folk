@@ -4,12 +4,12 @@ title: Advanced Examples
 
 ## Javascript comments
 
-`[\s\S]` is a hack to match any character _including newlines_.
-
 <Example regex={/\/\*[\s\S]*?\*\/|\/\/.*/g}>
     <li>const a = 0; // comment</li>
     <li>/* multiline */</li>
 </Example>
+
+`[\s\S]` is a hack to match any character _including newlines_. We avoid the [dot-all flag](/chapters/flags#dot-all-s) because we need to use the ordinary `.` for single-line comments.
 
 ## 24-Hour Time
 

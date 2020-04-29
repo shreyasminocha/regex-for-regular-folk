@@ -23,7 +23,7 @@ You can think of it as matching an _invisible character_ always present at the _
 
 ## End of line — `$`
 
-This anchor marked by a dollar (`$`) at the end of the regex. It is analogous to the beginning of the line anchor.
+This anchor is marked by a dollar (`$`) at the end of the regex. It is analogous to the beginning of the line anchor.
 
 You can think of it as matching an _invisible character_ always present at the _end_ of the string.
 
@@ -48,7 +48,7 @@ The `^` and `$` anchors are often used in conjunction to ensure that the regex m
     <li>apple</li>
 </Example>
 
-Let's revisit an example from [_Repetition_](/chapters/repetition), except we add the two anchors at the ends of the regex.
+Let's revisit an example from [_Repetition_](/chapters/repetition), and add the two anchors at the ends of the regex.
 
 <Example regex={/^https?$/g}>
     <li>http</li>
@@ -58,13 +58,13 @@ Let's revisit an example from [_Repetition_](/chapters/repetition), except we ad
     <li>ftp</li>
 </Example>
 
-In the absence of the anchors, both `http/2` and `shttp` would match.
+In the absence of the anchors, `http/2` and `shttp` would also match.
 
 ## Word boundary — `\b`
 
 A word boundary is a _position_ between a [word character](/chapters/character-escapes#word-character--w) and a non-word character.
 
-The word boundary anchor, `\b`, once again matches an imaginary invisible character that exists between consecutive word and non-word characters.
+The word boundary anchor, `\b`, matches an imaginary invisible character that exists between consecutive word and non-word characters.
 
 <Example regex={/\bp/g}>
     <li>peach</li>
@@ -123,7 +123,7 @@ As the name suggests, it matches everything apart from word boundaries.
 
 <Tip>
     <code>^…$</code> and <code>\b…\b</code> are common patterns and you will
-    almost always need either one or the other in practice.
+    almost always need one or the other to prevent accidental matches.
 </Tip>
 
 ## Examples

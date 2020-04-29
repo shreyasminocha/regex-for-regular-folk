@@ -2,7 +2,7 @@
 title: Alternation
 ---
 
-Alternation allows matching _one_ of several phrases. This is more powerful than character classes, which allow matching one of several characters.
+Alternation allows matching _one_ of several phrases. This is more powerful than character classes, which are limited to characters.
 
 Delimit the set of phrases with pipes—`|`.
 
@@ -43,11 +43,13 @@ Matching numbers between 100 and 250:
     <li>729</li>
 </Example>
 
+This can be generalized to [match arbitrary number ranges](http://gamon.webfactional.com/regexnumericrangegenerator)!
+
 ## Examples
 
-### Hex colours (including shorthand)
+### Hex colours
 
-Let's revisit and improve one of our older examples.
+Let's improve one of our older examples to also match shorthand hex colours.
 
 <Example regex={/#([0-9A-F]{6}|[0-9A-F]{3})/g}>
     <li>#AE25AE</li>
@@ -69,7 +71,7 @@ It is important that `[0-9A-F]{6}` comes before `[0-9A-F]{3}`. Else:
     <li>#a2ca2c</li>
 </Example>
 
-Regex engines try alternatives from the left to the right.
+<Tip>Regex engines try alternatives from the left to the right.</Tip>
 
 ### Roman numerals
 

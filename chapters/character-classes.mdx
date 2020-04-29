@@ -2,7 +2,7 @@
 title: Character classes
 ---
 
-It's possible to match a character from one of several characters. Here's an example:
+It's possible to match a character from within a set of characters.
 
 <Example regex={/[aeiou]/g}>
     <li>avocado</li>
@@ -11,7 +11,7 @@ It's possible to match a character from one of several characters. Here's an exa
     <li>rhythm</li>
 </Example>
 
-Our regex `/[aeiou]/g` matches all vowels in our input strings.
+`/[aeiou]/g` matches all vowels in our input strings.
 
 Here's another example of these in action:
 
@@ -68,13 +68,9 @@ We can also "negate" these rules:
 
 The only difference between the first regex of this chapter and `/[^aeiou]/g` is the `^` immediately after the opening bracket. Its purpose is to negate the rules defined within the brackets. We are now saying:
 
-> "match any character that is _not_ any of _«blah»_, _«blah»_ or _«blah»_.
+> "match any character that is _not_ any of `x`, `y` and `z`"
 
-… instead of:
-
-> "match any character that is at least one of _«blah»_, _«blah»_ and _«blah»_"
-
-Here, _«blah»_ is either an individual character or a range of characters.
+Here, `x`, `y`, and `z` are either individual characters, ranges, or a combination of the two.
 
 ## Examples
 
