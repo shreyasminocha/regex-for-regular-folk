@@ -67,12 +67,12 @@ const testCases = (regex, strings) =>
         };
 
         return (
-            <li>
+            <li key={string}>
                 <span className="indicator" style={indicator}>
-                    {numMatches} match{numMatches !== 1 ? "es" : ""}
+                    {`${numMatches} match${numMatches === 1 ? "" : "es"}`}
                 </span>
 
-                {string}
+                <code>{string}</code>
 
                 <ol>{matchesListItems}</ol>
             </li>
@@ -93,8 +93,12 @@ function matchesList(regex, string) {
         };
 
         items.push(
-            <li style={matchStyling} key={str}>
-                {str}
+            <li
+                style={matchStyling}
+                aria-label={`Match at index ${index}`}
+                key={index}
+            >
+                <code>{str}</code>
             </li>
         );
     }

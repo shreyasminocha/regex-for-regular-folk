@@ -43,6 +43,16 @@
     height: 2em;
 }
 
+.example ul code {
+    background: none;
+    margin: 0;
+    padding: 0;
+    white-space: initial;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 .example ul li,
 .example ul li ol li {
     font-size: large;
@@ -83,10 +93,10 @@
 
 .example ul li ol li {
     display: inline;
-    background-color: hsl(33, 100%, 88%, 0.7);
+    background: hsl(33, 100%, 88%, 0.7);
     border-radius: 3px;
     border-bottom: 1px solid slategrey;
-    padding: 0.2em 0;
+    padding: 0;
     color: transparent;
     position: absolute;
     left: 0;
