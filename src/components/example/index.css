@@ -46,6 +46,7 @@
 .example ul li,
 .example ul li ol li {
     font-size: large;
+    letter-spacing: normal;
 }
 
 .example .indicator {
