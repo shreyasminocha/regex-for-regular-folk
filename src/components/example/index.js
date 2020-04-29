@@ -83,15 +83,13 @@ function matchesList(regex, string) {
     const matches = string.matchAll(regex);
 
     const items = [];
-    let runningMatchLength = 0;
-
     for (const match of matches) {
         const [str] = match;
         const { index } = match;
 
         const matchStyling = {
             width: `${str.length}ch`,
-            left: `${index - runningMatchLength}ch`,
+            left: `${index}ch`,
         };
 
         items.push(
@@ -99,8 +97,6 @@ function matchesList(regex, string) {
                 {str}
             </li>
         );
-
-        runningMatchLength += str.length;
     }
 
     return items;

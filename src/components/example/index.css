@@ -87,7 +87,7 @@
     border-bottom: 1px solid slategrey;
     padding: 0.2em 0;
     color: transparent;
-    position: relative;
+    position: absolute;
     left: 0;
     white-space: pre;
     user-select: none;
