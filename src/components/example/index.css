@@ -47,7 +47,7 @@
     background: none;
     margin: 0;
     padding: 0;
-    white-space: initial;
+    white-space: inherit;
     border-radius: 0;
     font-family: inherit;
     font-size: inherit;

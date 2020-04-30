@@ -105,6 +105,10 @@ pre {
     border-left: none;
 }
 
+code {
+    white-space: pre;
+}
+
 img {
     margin: 2em 0;
 }
