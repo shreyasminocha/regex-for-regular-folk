@@ -8,7 +8,7 @@ This is an experimental “book” about regular expressions. It is largely _vis
 
 This book’s intended audience is _regex beginners_. Some programming experience is assumed. It does not go into advanced regex concepts like engine backtracking and recursive regexes—at least not at the moment.
 
-This is also an open source project, and contributions are welcome. I’m not quite sure how this part of this experiment is going to turn out, but I’m excited to see what comes from it.
+This is also an open source project, and contributions are welcome.
 
 ## Contributing
 

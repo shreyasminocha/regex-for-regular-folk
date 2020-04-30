@@ -32,9 +32,7 @@ const Index = () => (
             <a href="https://github.com/shreyasminocha/regex-for-regular-folk">
                 open source project
             </a>
-            , and contributions are welcome. I’m not quite sure how this part of
-            this experiment is going to turn out, but I’m excited to see what
-            comes from it.
+            , and contributions are welcome.
         </p>
 
         <h2>Contents</h2>
