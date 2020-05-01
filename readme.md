@@ -1,14 +1,16 @@
-# Regular Expressions for Regular Folk
+# [Regular Expressions for Regular Folk](https://refrf.shreyasminocha.me)
 
 ![Node CI](https://github.com/shreyasminocha/regex-for-regular-folk/workflows/Node%20CI/badge.svg)
 
 This is an experimental “book” about regular expressions. It is largely _visual_ and _example-based_, as opposed to most regex resources I found while I was learning. I also attempted to choose test cases that highlight some common gotchas. I think it’ll be worth your time.
 
-![Screenshot from /chapters/escapes](https://raw.githubusercontent.com/shreyasminocha/regex-for-regular-folk/master/static/images/screenshot.jpg)
+[![Screenshot from /chapters/escapes](https://raw.githubusercontent.com/shreyasminocha/regex-for-regular-folk/master/static/images/screenshot.jpg)](https://refrf.shreyasminocha.me)
 
 This book’s intended audience is _regex beginners_. Some programming experience is assumed. It does not go into advanced regex concepts like engine backtracking and recursive regexes—at least not at the moment.
 
 This is also an open source project, and contributions are welcome.
+
+[Read it online](https://refrf.shreyasminocha.me).
 
 ## Contributing
 
