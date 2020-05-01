@@ -29,7 +29,7 @@
 }
 
 :root {
-    --pseudo-black: hsl(0, 0%, 30%);
+    --pseudo-black: hsl(0, 0%, 20%);
 }
 
 body {
@@ -68,6 +68,11 @@ h6 {
 h1 {
     font-size: 3.6rem;
     line-height: 1.25;
+    page-break-before: always;
+}
+
+h1:first-of-type {
+    page-break-before: avoid;
 }
 
 h2 {
@@ -120,12 +125,6 @@ blockquote {
 header {
     margin-bottom: 2em;
     font-family: monospace;
-}
-
-@media print {
-    header {
-        display: none;
-    }
 }
 
 .title,

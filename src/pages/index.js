@@ -38,6 +38,14 @@ const Index = () => (
         <h2>Contents</h2>
         {chaptersList}
 
+        <h2>Printing</h2>
+        <p>
+            A <a href="/book">single-page version of the book</a> is available.
+            Print it ordinarily. Make sure to enable “Print Background Colors”
+            on Firefox and “Background graphics” (under “More settings”) on
+            Chrome.
+        </p>
+
         <footer>
             <p>
                 Chapter content is licensed under{" "}
