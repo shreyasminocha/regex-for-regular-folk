@@ -1,8 +1,7 @@
 {
   "name": "regex-for-regular-folk",
-  "version": "0.0.0",
-  "description": "todo",
-  "main": "book.md",
+  "version": "0.1.0",
+  "description": "A visual, example-based introduction to Regular Expressions",
   "scripts": {
     "alex": "alex chapters/*.mdx",
     "lint-check": "prettier --check .",
