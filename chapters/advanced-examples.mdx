@@ -40,9 +40,14 @@ title: Advanced Examples
 ## Meta
 
 <Example regex={/<Example source="(.*?)" flags="(.*?)">/gm}>
-    <li>.</li>
-    <li>&lt;Example source="\s+$" flags="gm"&gt;</li>
+    <li>{'<Example source="p[aeiou]t" flags="g">'}</li>
+    <li>{'<Example source="s+$" flags="gm">'}</li>
+    <li>{`<Example source="(['"])(?:(?!\\1).)*\\1" flags="g">`}</li>
+    <li>{"<Example source='s+$' flags='gm'>"}</li>
+    <li>{"</Example>"}</li>
 </Example>
+
+**Replace**: `<Example regex={/$1/$2}>`
 
 ## Floating point numbers
 
@@ -68,7 +73,7 @@ title: Advanced Examples
     <li>.</li>
 </Example>
 
-The positive lookahead `(?=\.\d|\d)` ensures that `.` does not match.
+The positive lookahead `(?=\.\d|\d)` ensures that the regex does not match `.`.
 
 ## HSL colours
 
