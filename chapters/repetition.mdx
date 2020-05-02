@@ -167,7 +167,7 @@ Here, this could also be achieved by using `[^"]` instead of `.` (as is best pra
 
 ### Bitcoin address
 
-<Example regex={/\b([13][a-km-zA-HJ-NP-Z0-9]{26,33})\b/g}>
+<Example regex={/([13][a-km-zA-HJ-NP-Z0-9]{26,33})/g}>
     <li>3Nxwenay9Z8Lc9JBiywExpnEFiLp6Afp8v</li>
     <li>1HQ3Go3ggs8pFnXuHVHRytPCq5fGG8Hbhx</li>
     <li>2016-03-09,18f1yugoAJuXcHAbsuRVLQC9TezJ</li>
@@ -176,12 +176,13 @@ Here, this could also be achieved by using `[^"]` instead of `.` (as is best pra
 ### Youtube Video
 
 <Example
-    regex={
-        /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?.*?v=([^&\s]+).*$/gm
-    }
+    regex={/(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?.*?v=([^&\s]+).*/gm}
 >
     <li>youtube.com/watch?feature=sth&v=dQw4w9WgXcQ</li>
     <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ</li>
     <li>www.youtube.com/watch?v=dQw4w9WgXcQ</li>
     <li>youtube.com/watch?v=dQw4w9WgXcQ</li>
+    <li>fakeyoutube.com/watch?v=dQw4w9WgXcQ</li>
 </Example>
+
+We can adjust this to not match the last broken link using [anchors](/chapters/anchors), which we shall encounter soon.
