@@ -50,7 +50,7 @@ const Example = (props) => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                [Visualization]
+                [Visual]
             </a>
 
             <ul>{testCases(regex, testStrings)}</ul>
