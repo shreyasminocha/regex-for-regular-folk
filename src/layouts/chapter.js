@@ -14,7 +14,7 @@ export default (props) => {
     const { title } = mdx.frontmatter;
     const { excerpt } = mdx;
 
-    const slugifiedTitle = mdx.fields.slug.split("/")[1];
+    const slugifiedTitle = mdx.fields.slug.split("/")[2];
 
     const prevIndex = meta.chapters.indexOf(slugifiedTitle) - 1;
     const nextIndex = meta.chapters.indexOf(slugifiedTitle) + 1;
