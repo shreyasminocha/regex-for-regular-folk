@@ -18,6 +18,10 @@ const Example = (props) => {
         )}&text=${encodeURIComponent(playGroundText)}
     `.trim();
 
+    const visualizationUrl = `
+        https://regexper.com/#${encodeURIComponent(regex.toString())}
+    `.trim();
+
     const noop = ({ children }) => <>{children}</>;
     const code = ({ children }) => (
         <code className="regex-name">{children}</code>
@@ -33,11 +37,20 @@ const Example = (props) => {
 
             <a
                 href={playGroundUrl}
-                className="regexr-link"
+                className="demo-link"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 [RegExr]
+            </a>
+
+            <a
+                href={visualizationUrl}
+                className="demo-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                [Visualization]
             </a>
 
             <ul>{testCases(regex, testStrings)}</ul>

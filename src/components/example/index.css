@@ -15,20 +15,20 @@
     line-height: 1.9;
 }
 
-.example .regexr-link {
+.example .demo-link {
     margin-left: 1em;
     opacity: 0.6;
 }
 
-.example .regexr-link:hover,
-.example .regexr-link:active,
-.example .regexr-link:focus {
+.example .demo-link:hover,
+.example .demo-link:active,
+.example .demo-link:focus {
     color: hsl(219, 100%, 47%);
     opacity: 1;
 }
 
 @media print {
-    .example .regexr-link {
+    .example .demo-link {
         display: none;
     }
 }
