@@ -98,6 +98,7 @@
     top: -22px;
     left: -2px;
     z-index: -1;
+    font-size: inherit;
 }
 
 .example ul li ol li {
