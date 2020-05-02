@@ -135,3 +135,21 @@ As the name suggests, it matches everything apart from word boundaries.
     <li>{"def \t"}</li>
     <li>abc def</li>
 </Example>
+
+### Markdown headings
+
+<Example regex={/^## /gm}>
+    <li># Heading 1</li>
+    <li>## Heading 2</li>
+    <li>### Heading 3</li>
+    <li>#### Heading 4</li>
+</Example>
+
+Without anchors:
+
+<Example regex={/## /gm}>
+    <li># Heading 1</li>
+    <li>## Heading 2</li>
+    <li>### Heading 3</li>
+    <li>#### Heading 4</li>
+</Example>
