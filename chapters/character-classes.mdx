@@ -72,18 +72,18 @@ The only difference between the first regex of this chapter and `/[^aeiou]/g` is
 
 ## Examples
 
-### Username validation
+### Invalid username characters
 
-<Example regex={/^[a-zA-Z_0-9-]+$/g}>
+<Example regex={/[^a-zA-Z_0-9-]/g}>
     <li>TheLegend27</li>
     <li>WaterGuy12</li>
     <li>Smokie_Bear</li>
     <li>Robert'); DROP TABLE Students;--</li>
 </Example>
 
-### Ambiguous characters
+### Unambiguous characters
 
-<Example regex={/[^A-HJ-NP-Za-kmnp-z2-9]/g}>
+<Example regex={/[A-HJ-NP-Za-kmnp-z2-9]/g}>
     <li>foo</li>
     <li>lily</li>
     <li>lI0O1</li>
