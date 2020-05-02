@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { graphql } from "gatsby";
 import Example from "../components/example";
 import { Note, Warning, Tip, Support } from "../components/boxes";
-
+import SEO from "../components/seo";
 import * as meta from "../../meta.json";
 
 const shortcodes = { Example, Note, Warning, Tip, Support };
@@ -24,6 +24,8 @@ const SinglePage = (props) => {
 
         return (
             <>
+                <SEO description="Single-page, print-ready version of Regular Expressions for Regular Folk" />
+
                 <h1>{chapter.title}</h1>
 
                 <MDXProvider components={shortcodes}>
