@@ -74,14 +74,11 @@ const testCases = (regex, strings) =>
 
         const numMatches = matchesListItems.length;
         const didMatch = numMatches !== 0;
-
-        const indicator = {
-            backgroundColor: didMatch ? "#73fa79" : "#ff7e79",
-        };
+        const passOrFail = didMatch ? "pass" : "fail";
 
         return (
             <li key={string}>
-                <span className="indicator" style={indicator}>
+                <span className={`indicator ${passOrFail}`}>
                     {`${numMatches} match${numMatches === 1 ? "" : "es"}`}
                 </span>
 

@@ -83,6 +83,14 @@
     vertical-align: -10%;
 }
 
+.example .indicator.pass {
+    background-color: #73fa79;
+}
+
+.example .indicator.fail {
+    background-color: #ff7e79;
+}
+
 .example ul li ol {
     margin: 0 2em;
     position: relative;
