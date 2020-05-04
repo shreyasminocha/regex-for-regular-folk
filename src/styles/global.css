@@ -32,10 +32,15 @@
     --pseudo-black: hsl(0, 0%, 20%);
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     max-width: 630px;
     margin: 2em auto;
     padding: 0 0.5em;
+    font-size: 1.6em;
     line-height: 1.4;
     color: var(--pseudo-black);
     font-family: "LIbre Baskerville", "Baskerville", "Garamond", serif;
@@ -95,10 +100,26 @@ h5 {
     line-height: 1.4;
 }
 
+blockquote,
+figure,
+ol,
+p,
+pre,
+ul {
+    margin-bottom: 2.5rem;
+}
+
 a,
 a:hover,
 a:focus {
+    text-decoration: none;
     color: hsl(219, 100%, 47%);
+}
+
+ol,
+ul {
+    margin-top: 0;
+    padding-left: 0;
 }
 
 ul {
@@ -106,20 +127,52 @@ ul {
     margin-left: 2em;
 }
 
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    font-size: 90%;
+    margin: 1.5rem 0 1.5rem 3rem;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
 pre {
-    border-left: none;
+    overflow-y: hidden;
 }
 
 code {
     white-space: pre;
 }
 
+hr {
+    border: none;
+    border-top: 0.1rem solid hsl(0, 0%, 80%);
+    margin: 3rem 0;
+}
+
 img {
     margin: 2em 0;
+    max-width: 100%;
 }
 
 blockquote {
     font-style: italic;
+    border-left: 0.3rem solid #d1d1d1;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.5rem;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
 }
 
 header {

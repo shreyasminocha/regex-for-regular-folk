@@ -37,7 +37,6 @@
     "gatsby-remark-autolink-headers": "^2.2.0",
     "gatsby-remark-smartypants": "^2.2.0",
     "gatsby-source-filesystem": "^2.2.1",
-    "milligram": "^1.3.0",
     "modern-normalize": "^0.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
