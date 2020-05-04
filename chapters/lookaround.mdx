@@ -9,17 +9,36 @@ Lookarounds can be used to verify conditions, without matching any text.
 > You're only **look**ing, not moving.
 
 -   Lookahead
-    -   Positive
-    -   Negative
+    -   Positive — `(?=…)`
+    -   Negative — `(?!…)`
 -   Lookbehind
-    -   Positive
-    -   Negative
+    -   Positive — `(?<=…)`
+    -   Negative — `(?<!…)`
 
 ## Lookahead
 
 ### Positive
 
-<Example regex={/^(?=.*#).*$/g}>
+<Example regex={/_(?=[aeiou])/g}>
+    <li>_a</li>
+    <li>e_e</li>
+    <li>_f</li>
+</Example>
+
+Note how the character following the `_` isn't matched. Yet, its _nature is confirmed_ by the positive lookahead.
+
+<Example regex={/(.+)_(?=[aeiou])(?=\1)/g}>
+    <li>e_e</li>
+    <li>u_u</li>
+    <li>uw_uw</li>
+    <li>uw_uwa</li>
+    <li>f_f</li>
+    <li>a_e</li>
+</Example>
+
+After `(?=[aeiou])`, the regex engine _hasn't moved_ and checks for `(?=\1)` starting after the `_`.
+
+<Example regex={/(?=.*#).*/g}>
     <li>abc#def</li>
     <li>#def</li>
     <li>abc#</li>
@@ -28,6 +47,12 @@ Lookarounds can be used to verify conditions, without matching any text.
 
 ### Negative
 
+<Example regex={/_(?![aeiou])/g}>
+    <li>_a</li>
+    <li>e_e</li>
+    <li>_f</li>
+</Example>
+
 <Example regex={/^(?!.*#).*$/g}>
     <li>abc#def</li>
     <li>#def</li>
@@ -35,7 +60,11 @@ Lookarounds can be used to verify conditions, without matching any text.
     <li>abcdef</li>
 </Example>
 
-These are commonly used to prevent phrases from matching.
+Without the anchors, this will match the part without the `#` in each test case.
+
+---
+
+Negative lookaheads are commonly used to prevent particular phrases from matching.
 
 <Example regex={/foo(?!bar)/g}>
     <li>foobaz</li>
@@ -50,6 +79,8 @@ These are commonly used to prevent phrases from matching.
 </Example>
 
 ## Lookbehind
+
+<Support>JavaScript, prior to ES2018, did not support this flag.</Support>
 
 ### Positive
 
@@ -66,6 +97,8 @@ These are commonly used to prevent phrases from matching.
     <li>zSoFpghEdaK4E</li>
     <li>zSoFpg!hEd!aK4E</li>
 </Example>
+
+Lookarounds can be used verify _multiple conditions_.
 
 ### Quoted strings
 
