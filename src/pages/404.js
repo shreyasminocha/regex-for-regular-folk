@@ -9,10 +9,20 @@ const FourZeroFour = () => (
 
         <pre>
             <code>$ tree | grep -E "$path"</code>
-            <code>🚫 $</code>
+            <code>
+                <span role="img" aria-label="non-zero exit code">
+                    🚫
+                </span>{" "}
+                $
+            </code>
         </pre>
 
-        <a href="/">🏠 Home?</a>
+        <a href="/">
+            <span role="img" aria-label="Home">
+                🏠
+            </span>{" "}
+            Home?
+        </a>
     </>
 );
 
