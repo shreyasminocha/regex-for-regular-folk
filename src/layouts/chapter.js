@@ -5,42 +5,29 @@ import { graphql } from "gatsby";
 import Example from "../components/example";
 import { Note, Warning, Tip, Support } from "../components/boxes";
 import SEO from "../components/seo";
-import * as meta from "../../meta.json";
+import Footer from "../util/footer";
 
 const shortcodes = { Example, Note, Warning, Tip, Support };
 
-export default (props) => {
+const ChapterTemplate = (props) => {
     const { mdx } = props.data;
     const { title } = mdx.frontmatter;
     const { excerpt } = mdx;
 
-    const slugifiedTitle = mdx.fields.slug.split("/")[2];
+    const { pageContext } = props;
+    const { previous, next } = pageContext;
 
-    const prevIndex = meta.chapters.indexOf(slugifiedTitle) - 1;
-    const nextIndex = meta.chapters.indexOf(slugifiedTitle) + 1;
+    const prevItem = previous && (
+        <li>
+            <a href={previous.fields.slug}>Previous</a>
+        </li>
+    );
 
-    const prev = prevIndex >= 0 ? meta.chapters[prevIndex] : undefined;
-    const next =
-        nextIndex < meta.chapters.length ? meta.chapters[nextIndex] : undefined;
-
-    let prevItem = <></>;
-    let nextItem = <></>;
-
-    if (prev !== undefined) {
-        prevItem = (
-            <li>
-                <a href={`/chapters/${prev}`}>Previous</a>
-            </li>
-        );
-    }
-
-    if (next !== undefined) {
-        nextItem = (
-            <li>
-                <a href={`/chapters/${next}`}>Next</a>
-            </li>
-        );
-    }
+    const nextItem = next && (
+        <li>
+            <a href={next.fields.slug}>Next</a>
+        </li>
+    );
 
     return (
         <>
@@ -63,32 +50,18 @@ export default (props) => {
 
                 <nav>
                     <ul>
-                        {prevItem} {nextItem}
+                        {prevItem}
+                        {nextItem}
                     </ul>
                 </nav>
             </main>
 
-            <footer>
-                <ul>
-                    <li>
-                        <a href="https://github.com/shreyasminocha/regex-for-regular-folk">
-                            Source Code
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/shreyasminocha/regex-for-regular-folk#license">
-                            <code>CC-BY-SA 4.0</code>*
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://shreyasminocha.me">Shreyas Minocha</a>
-                    </li>
-                </ul>
-            </footer>
+            <Footer />
         </>
     );
 };
+
+export default ChapterTemplate;
 
 export const query = graphql`
     query($id: String!) {

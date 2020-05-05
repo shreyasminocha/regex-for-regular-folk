@@ -1,20 +1,34 @@
 import React from "react";
-import * as meta from "../../meta.json";
-import toTitleCase from "titlecase";
+import { useStaticQuery, graphql } from "gatsby";
 
-const chaptersList = meta.chapters.map((chapter) => {
-    const link = `/chapters/${chapter}`;
-    const title = toTitleCase(chapter.replace(/-/g, " "));
+const Chapters = () => {
+    const data = useStaticQuery(query);
+    const chapters = data.allMdx.nodes;
 
-    return (
-        <li key={link}>
-            <a href={link}>{title}</a>
+    return chapters.map((chapter) => (
+        <li key={chapter.fields.slug}>
+            <a href={chapter.fields.slug}>{chapter.frontmatter.title}</a>
         </li>
-    );
-});
+    ));
+};
 
 export default (
     <ol start="0" className="chapter-list">
-        {chaptersList}
+        <Chapters />
     </ol>
 );
+
+const query = graphql`
+    query ChapterList {
+        allMdx(sort: { fields: fields___chapterNumber }) {
+            nodes {
+                frontmatter {
+                    title
+                }
+                fields {
+                    slug
+                }
+            }
+        }
+    }
+`;

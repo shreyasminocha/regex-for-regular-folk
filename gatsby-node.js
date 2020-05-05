@@ -1,4 +1,5 @@
 const path = require("path");
+const meta = require("./meta.json");
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
@@ -7,16 +8,18 @@ exports.createPages = ({ graphql, actions }) => {
         resolve(
             graphql(query).then((result) => {
                 if (result.errors) {
-                    console.log(result.errors);
+                    console.error(result.errors);
                     reject(result.errors);
                 }
 
-                result.data.allMdx.edges.forEach(({ node }) => {
+                result.data.allMdx.edges.forEach(({ node, next, previous }) => {
                     createPage({
                         path: `/chapters/${node.parent.name}` || "/",
                         component: path.resolve("./src/layouts/chapter.js"),
                         context: {
                             id: node.id,
+                            next,
+                            previous,
                         },
                     });
                 });
@@ -28,15 +31,24 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
 
-    if (node.internal.type === `Mdx`) {
+    if (node.internal.type === "Mdx") {
         const parent = getNode(node.parent);
 
-        let value = parent.relativePath.replace(parent.ext, "");
+        const kebabTitle = parent.relativePath.replace(parent.ext, "");
+        const chapterNumber = meta.chapters.indexOf(kebabTitle);
+
+        if (chapterNumber >= 0) {
+            createNodeField({
+                node,
+                name: "chapterNumber",
+                value: chapterNumber,
+            });
+        }
 
         createNodeField({
             node,
-            name: `slug`,
-            value: `/chapters/${value}`,
+            name: "slug",
+            value: `/chapters/${kebabTitle}`,
         });
 
         createNodeField({
@@ -44,23 +56,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             name: "id",
             value: node.id,
         });
-
-        createNodeField({
-            node,
-            name: "title",
-            value: node.frontmatter.title,
-        });
     }
 };
 
 const query = `
-    {
-        allMdx {
+    query MDXPages {
+        allMdx(sort: { fields: fields___chapterNumber }) {
             edges {
                 node {
                     frontmatter { title }
                     id
                     parent { ... on File { name } }
+                }
+                previous {
+                    fields { slug }
+                }
+                next {
+                    fields { slug }
                 }
             }
         }
