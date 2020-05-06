@@ -14,4 +14,19 @@
         "advanced-examples",
         "next-steps"
     ]
-}
+{
+    "chapters": [
+        "introduction",
+        "basics",
+        "character-classes",
+        "character-escapes",
+        "escapes",
+        "groups",
+        "repetition",
+        "alternation",
+        "flags",
+        "anchors",
+        "lookaround",
+        "advanced-examples",
+        "next-steps"
+    ]
