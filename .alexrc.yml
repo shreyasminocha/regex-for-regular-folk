@@ -1,2 +1,5 @@
 allow:
     - special # many false-positives (when the adjective doesn't refer to people)
+
+allow:
+    - special # many false-positives (when the adjective doesn't refer to people)
