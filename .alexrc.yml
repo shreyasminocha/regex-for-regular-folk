@@ -3,3 +3,7 @@ allow:
 
 allow:
     - special # many false-positives (when the adjective doesn't refer to people)
+
+allow:
+    - special # like a man trycode suggests bravely; if you write ladylike trycode suggests courteous
+    
