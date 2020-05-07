@@ -2,8 +2,6 @@
 title: Flags
 ---
 
-<Note>This section is a Work In Progress.</Note>
-
 Flags (or "modifiers") allow us to put regexes into different "modes".
 
 Flags are the part after the final `/` in `/pattern/`.
@@ -85,4 +83,33 @@ The `.` typically matches any character except newlines. With the dot-all flag, 
 
 ## Unicode (`u`)
 
+In the presence of the `u` flag, the regex and the input string will be interpreted in a unicode-aware way. The details of this are implementation-dependent, but here are some things to expect:
+
+-   [Character classes](/chapters/character-classes) may match [astral symbols](https://mathiasbynens.be/notes/javascript-unicode#unicode-basics).
+-   [Character escapes](/chapters/character-escapes) may match astral symbols and may be unicode-aware.
+-   The [`i` flag](#case-insensitive-i) may use [Unicode's case-folding](https://unicode.org/Public/UCD/latest/ucd/CaseFolding.txt) logic.
+-   The use of some features like unicode codepoint escapes and [unicode property escapes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) may be enabled.
+
 ## Whitespace extended (`x`)
+
+When this flag is set, whitespace in the pattern is ignored (unless escaped or in a [character class](/chapters/character-classes)). Additionally, characters following `#` on any line are ignored. This allows for comments and is useful when writing complex patterns.
+
+Here's an example from [_Advanced Examples_](/chapters/advanced-examples), formatted to take advantage of the whitespace extended flag:
+
+```regex
+^                   # start of line
+    (
+        [+-]?       # sign
+        (?=\.\d|\d) # don't match `.`
+        (?:\d+)?    # integer part
+        (?:\.?\d*)  # fraction part
+    )
+    (?:             # optional exponent part
+        [eE]
+        (
+            [+-]?   # optional sign
+            \d+     # power
+        )
+    )?
+$                   # end of line
+```

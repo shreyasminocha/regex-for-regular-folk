@@ -45,6 +45,7 @@ body {
     color: var(--pseudo-black);
     font-family: "LIbre Baskerville", "Baskerville", "Garamond", serif;
     font-variant-numeric: lining-nums;
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 650px) {
@@ -141,6 +142,8 @@ li {
 
 pre {
     overflow-y: hidden;
+    background: aliceblue;
+    padding: 1.6rem;
 }
 
 code {
