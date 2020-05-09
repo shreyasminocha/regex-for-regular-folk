@@ -59,10 +59,10 @@ Backreferences allow referring to _previously captured substrings_.
 
 The match from the first group would be `\1`, that from the second would be `\2`, and so on…
 
-<Example regex={/([abc])×\1×\1/g}>
-    <li>a×a×a</li>
-    <li>ab×b×b</li>
-    <li>a×b×c</li>
+<Example regex={/([abc])=\1=\1/g}>
+    <li>a=a=a</li>
+    <li>ab=b=b</li>
+    <li>a=b=c</li>
 </Example>
 
 Backreferences _cannot_ be used to reduce duplication in regexes. They refer to _the match_ of groups, not the pattern.
