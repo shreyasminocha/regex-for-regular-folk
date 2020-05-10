@@ -57,6 +57,7 @@
 .example ul li ol li {
     font-size: large;
     letter-spacing: normal;
+    white-space: pre-wrap;
 }
 
 .example .indicator {
@@ -108,6 +109,5 @@
     color: transparent;
     position: absolute;
     left: 0;
-    white-space: pre;
     user-select: none;
 }
