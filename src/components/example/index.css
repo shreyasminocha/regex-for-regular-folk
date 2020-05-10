@@ -110,4 +110,5 @@
     position: absolute;
     left: 0;
     user-select: none;
+    box-sizing: content-box;
 }
