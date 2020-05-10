@@ -34,7 +34,6 @@ const Example = (props) => {
             <Prism language="javascript" PreTag={noop} CodeTag={code}>
                 {regex.toString()}
             </Prism>
-
             <a
                 href={playGroundUrl}
                 className="demo-link"
@@ -43,7 +42,7 @@ const Example = (props) => {
             >
                 [RegExr]
             </a>
-
+            &nbsp;
             <a
                 href={visualizationUrl}
                 className="demo-link"
@@ -52,7 +51,6 @@ const Example = (props) => {
             >
                 [Visual]
             </a>
-
             <ul>{testCases(regex, testStrings)}</ul>
         </figure>
     );
