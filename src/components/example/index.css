@@ -96,15 +96,15 @@
     margin: 0 2em;
     position: relative;
     top: -22px;
-    left: -1px;
+    left: -2px;
     z-index: -1;
 }
 
 .example ul li ol li {
     display: inline;
     background: hsl(33, 100%, 88%, 0.7);
-    border-radius: 3px;
-    border-bottom: 1px solid slategrey;
+    border-left: 1px white solid;
+    border-right: 1px white solid;
     padding: 0;
     color: transparent;
     position: absolute;
