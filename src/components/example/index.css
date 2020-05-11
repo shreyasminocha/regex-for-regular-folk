@@ -22,25 +22,50 @@
     line-height: 1.9;
 }
 
-.example .demo-link {
+.example .demos {
+    display: inline-block;
+    margin: 0;
     margin-left: 1em;
+    list-style-type: none;
+    break-inside: avoid;
+}
+
+@media (max-width: 550px) {
+    .example .demos {
+        display: block;
+        margin-left: 0;
+        margin-top: 1em;
+    }
+}
+
+.example .demos li {
+    display: inline;
+    margin-bottom: 0;
+    margin-left: 1em;
+}
+
+.example .demos li:first-child {
+    margin-left: 0;
+}
+
+.example .demos a {
     opacity: 0.6;
 }
 
-.example .demo-link:hover,
-.example .demo-link:active,
-.example .demo-link:focus {
+.example .demos a:hover,
+.example .demos a:active,
+.example .demos a:focus {
     color: hsl(219, 100%, 47%);
     opacity: 1;
 }
 
 @media print {
-    .example .demo-link {
+    .example .demos a {
         display: none;
     }
 }
 
-.example ul code {
+.example .cases code {
     background: none;
     margin: 0;
     padding: 0;
@@ -51,24 +76,24 @@
     word-break: break-all;
 }
 
-.example ul {
+.example .cases {
     margin: 1.5em 0 0 2em;
     font-size: large;
     list-style-type: none;
 }
 
 @media (max-width: 550px) {
-    .example ul {
+    .example .cases {
         margin-left: 1em;
     }
 }
 
-.example ul > li {
+.example .cases > li {
     margin-bottom: 2em;
     position: relative;
 }
 
-.example ul > li > div {
+.example .cases > li > div {
     margin: 0 28px;
     position: absolute;
     left: 0;
@@ -76,8 +101,8 @@
     width: 100%;
 }
 
-.example ul li,
-.example ul li ol li {
+.example .cases li,
+.example .matches li {
     font-size: large;
     letter-spacing: normal;
     white-space: pre-wrap;
@@ -115,7 +140,7 @@
     background-color: #ff7e79;
 }
 
-.example ul li ol {
+.example .matches {
     margin: 0 28px; /* 28 = 16 + 12 */
     position: absolute;
     top: 0;
@@ -125,7 +150,7 @@
     width: 100%;
 }
 
-.example ul li ol li {
+.example .matches li {
     display: block;
     width: 100%;
     padding: 0;
@@ -134,7 +159,7 @@
     box-sizing: content-box;
 }
 
-.example ul li ol li code {
+.example .matches li code {
     background: hsl(33, 100%, 88%, 0.7);
 
     /* Right "border" without shifting everything by a pixel */

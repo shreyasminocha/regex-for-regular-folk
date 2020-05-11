@@ -22,6 +22,11 @@ const Example = (props) => {
         https://regexper.com/#${encodeURIComponent(regex.toString())}
     `.trim();
 
+    const demoProps = {
+        target: "_blank",
+        rel: "noopener noreferrer",
+    };
+
     const noop = ({ children }) => <>{children}</>;
     const code = ({ children }) => (
         <code className="regex-name">{children}</code>
@@ -34,24 +39,21 @@ const Example = (props) => {
             <Prism language="javascript" PreTag={noop} CodeTag={code}>
                 {regex.toString()}
             </Prism>
-            <a
-                href={playGroundUrl}
-                className="demo-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                [RegExr]
-            </a>
-            &nbsp;
-            <a
-                href={visualizationUrl}
-                className="demo-link"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                [Visual]
-            </a>
-            <ul>{testCases(regex, testStrings)}</ul>
+
+            <ul className="demos">
+                <li>
+                    <a href={playGroundUrl} {...demoProps}>
+                        [RegExr]
+                    </a>
+                </li>
+                <li>
+                    <a href={visualizationUrl} {...demoProps}>
+                        [Visual]
+                    </a>
+                </li>
+            </ul>
+
+            <ul className="cases">{testCases(regex, testStrings)}</ul>
         </figure>
     );
 };
@@ -84,7 +86,7 @@ const testCases = (regex, strings) =>
                     <code>{string}</code>
                 </div>
 
-                <ol>{matchesListItems}</ol>
+                <ol className="matches">{matchesListItems}</ol>
             </li>
         );
     });
