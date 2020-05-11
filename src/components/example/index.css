@@ -4,6 +4,12 @@
     margin-right: 0;
 }
 
+@media (max-width: 550px) {
+    .example {
+        margin-left: 0;
+    }
+}
+
 .example code.regex-name {
     font-family: monospace;
     font-size: large;
@@ -47,6 +53,12 @@
     margin: 1.5em 0 0 2em;
     font-size: large;
     list-style-type: none;
+}
+
+@media (max-width: 550px) {
+    .example ul {
+        margin-left: 1em;
+    }
 }
 
 .example ul > li {
