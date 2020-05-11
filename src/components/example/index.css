@@ -16,6 +16,7 @@
     font-weight: bold;
     border-radius: 0.3em;
     white-space: normal;
+    word-break: break-all;
     background-color: whitesmoke;
     padding: 0.2em;
     line-height: 1.9;
