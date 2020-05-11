@@ -80,7 +80,9 @@ const testCases = (regex, strings) =>
                     {`${numMatches} match${numMatches === 1 ? "" : "es"}`}
                 </span>
 
-                <code>{string}</code>
+                <div>
+                    <code>{string}</code>
+                </div>
 
                 <ol>{matchesListItems}</ol>
             </li>
@@ -101,12 +103,8 @@ function matchesList(regex, string) {
         };
 
         items.push(
-            <li
-                style={matchStyling}
-                aria-label={`Match at index ${index}`}
-                key={index}
-            >
-                <code>{str}</code>
+            <li aria-label={`Match at index ${index}`} key={index}>
+                <code style={matchStyling}>{str}</code>
             </li>
         );
     }

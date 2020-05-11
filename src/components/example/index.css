@@ -47,6 +47,7 @@
     border-radius: 0;
     font-family: inherit;
     font-size: inherit;
+    word-break: break-all;
 }
 
 .example ul {
@@ -64,6 +65,14 @@
 .example ul > li {
     margin-bottom: 2em;
     position: relative;
+}
+
+.example ul > li > div {
+    margin: 0 28px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .example ul li,
@@ -112,10 +121,19 @@
     left: 0;
     z-index: -1;
     font-size: inherit;
+    width: 100%;
 }
 
 .example ul li ol li {
-    display: inline;
+    display: block;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    box-sizing: content-box;
+}
+
+.example ul li ol li code {
     background: hsl(33, 100%, 88%, 0.7);
 
     /* Right "border" without shifting everything by a pixel */
@@ -124,8 +142,8 @@
     border-radius: 3px;
     border-bottom: 1px solid slategrey;
     padding: 0;
-    color: transparent;
-    position: absolute;
+    color: rebeccapurple;
+    position: relative;
     left: 0;
     user-select: none;
     box-sizing: content-box;
