@@ -33,16 +33,6 @@
     }
 }
 
-.example ul {
-    margin: 1.5em 0 0 2em;
-    font-size: large;
-    list-style-type: none;
-}
-
-.example ul > li {
-    height: 2em;
-}
-
 .example ul code {
     background: none;
     margin: 0;
@@ -51,6 +41,17 @@
     border-radius: 0;
     font-family: inherit;
     font-size: inherit;
+}
+
+.example ul {
+    margin: 1.5em 0 0 2em;
+    font-size: large;
+    list-style-type: none;
+}
+
+.example ul > li {
+    margin-bottom: 2em;
+    position: relative;
 }
 
 .example ul li,
@@ -64,6 +65,7 @@
     display: inline-block;
     width: 16px;
     height: 16px;
+    margin-right: 12px;
     border-radius: 50%;
     color: transparent;
 
@@ -80,7 +82,6 @@
         Such is CSS sometimes. I'm so sorry.
     */
     font-size: 6px;
-    margin-right: 12px;
     vertical-align: -10%;
 }
 
@@ -93,11 +94,12 @@
 }
 
 .example ul li ol {
-    margin: 0 2em;
-    position: relative;
-    top: -22px;
-    left: -2px;
+    margin: 0 28px; /* 28 = 16 + 12 */
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: -1;
+    font-size: inherit;
 }
 
 .example ul li ol li {
