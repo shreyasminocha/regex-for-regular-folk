@@ -105,8 +105,12 @@
 .example ul li ol li {
     display: inline;
     background: hsl(33, 100%, 88%, 0.7);
-    border-left: 1px white solid;
-    border-right: 1px white solid;
+
+    /* Right "border" without shifting everything by a pixel */
+    box-shadow: -2px 0px 0px 0px white;
+
+    border-radius: 3px;
+    border-bottom: 1px solid slategrey;
     padding: 0;
     color: transparent;
     position: absolute;
