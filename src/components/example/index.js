@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment as _ } from "react";
 import { Prism } from "react-syntax-highlighter";
 import PropTypes from "prop-types";
 import "./index.css";
@@ -70,48 +70,81 @@ Example.defaultProps = {
 
 const testCases = (regex, strings) =>
     strings.map((string) => {
-        const matchesListItems = matchesList(regex, string);
+        const matchList = matches(regex, string);
 
-        const numMatches = matchesListItems.length;
+        const numMatches = matchList.length;
         const didMatch = numMatches !== 0;
         const passOrFail = didMatch ? "pass" : "fail";
 
         return (
-            <li key={string}>
+            <li key={key(regex, string)}>
                 <span className={`indicator ${passOrFail}`}>
                     {`${numMatches} match${numMatches === 1 ? "" : "es"}`}
                 </span>
 
-                <div>
-                    <code>{string}</code>
-                </div>
-
-                <ol className="matches">{matchesListItems}</ol>
+                {highlightedMarkup(regex, string)}
             </li>
         );
     });
 
-function matchesList(regex, string) {
-    const matches = string.matchAll(regex);
+const highlightedMarkup = (regex, string) => {
+    const elements = [];
+    let endOfPrevious = 0;
 
-    const items = [];
-    for (const match of matches) {
-        const [str] = match;
+    for (const match of matches(regex, string)) {
+        const [current] = match;
         const { index } = match;
 
-        const matchStyling = {
-            width: `${str.length}ch`,
-            left: `${index}ch`,
-        };
+        const beforeCurrent = string.substring(endOfPrevious, index);
+        beforeCurrent &&
+            elements.push(
+                <_ key={key(regex, string, endOfPrevious, beforeCurrent)}>
+                    {beforeCurrent}
+                </_>
+            );
 
-        items.push(
-            <li aria-label={`Match at index ${index}`} key={index}>
-                <code style={matchStyling}>{str}</code>
-            </li>
+        elements.push(
+            <mark
+                aria-label={`Match at index ${index}`}
+                key={key(regex, string, index, current)}
+            >
+                {current}
+            </mark>
         );
+
+        endOfPrevious = index + current.length;
     }
 
-    return items;
-}
+    const afterLast = string.substring(endOfPrevious);
+    afterLast &&
+        elements.push(
+            <_ key={key(regex, string, endOfPrevious, afterLast)}>
+                {afterLast}
+            </_>
+        );
+
+    return <code>{elements}</code>;
+};
+
+const matches = (regex, string) => {
+    if (!regex.global) {
+        const matches = string.match(regex);
+
+        if (matches === null) {
+            return [];
+        }
+
+        const reformatted = [];
+        reformatted[0] = [matches[0]];
+        reformatted[0].index = matches.index;
+        reformatted[0].input = matches.input;
+
+        return reformatted;
+    }
+
+    return Array.from(string.matchAll(regex));
+};
+
+const key = (...params) => params.join();
 
 export default Example;

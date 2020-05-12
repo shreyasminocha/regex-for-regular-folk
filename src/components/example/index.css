@@ -88,21 +88,12 @@
     }
 }
 
-.example .cases > li {
+.example .cases li {
     margin-bottom: 2em;
     position: relative;
 }
 
-.example .cases > li > div {
-    margin: 0 28px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-}
-
-.example .cases li,
-.example .matches li {
+.example .cases li {
     font-size: large;
     letter-spacing: normal;
     white-space: pre-wrap;
@@ -140,37 +131,13 @@
     background-color: #ff7e79;
 }
 
-.example .matches {
-    margin: 0 28px; /* 28 = 16 + 12 */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    font-size: inherit;
-    width: 100%;
-}
-
-.example .matches li {
-    display: block;
-    width: 100%;
-    padding: 0;
-    position: absolute;
-    left: 0;
-    box-sizing: content-box;
-}
-
-.example .matches li code {
+.example mark {
     background: hsl(33, 100%, 88%, 0.7);
 
     /* Right "border" without shifting everything by a pixel */
-    box-shadow: -2px 0px 0px 0px white;
+    box-shadow: -1px 0px 0px 0px white;
 
     border-radius: 3px;
     border-bottom: 1px solid slategrey;
-    padding: 0;
-    color: transparent;
-    position: relative;
-    left: 0;
-    user-select: none;
     box-sizing: content-box;
 }
