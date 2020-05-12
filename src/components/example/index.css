@@ -114,13 +114,8 @@
     -ms-user-select: none;
     user-select: none;
 
-    /*
-        I have no idea why these magic constants work. They just do.
-        If you figure it out, please let me know.
-        Such is CSS sometimes. I'm so sorry.
-    */
-    font-size: 6px;
-    vertical-align: -10%;
+    font-size: 6px; /* Magic constant ✨ */
+    vertical-align: middle;
 }
 
 .example .indicator.pass {
