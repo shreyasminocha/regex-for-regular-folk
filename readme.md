@@ -1,6 +1,7 @@
 # [Regular Expressions for Regular Folk](https://refrf.shreyasminocha.me)
 
-![Node CI](https://github.com/shreyasminocha/regex-for-regular-folk/workflows/Node%20CI/badge.svg)
+[![Node CI](https://github.com/shreyasminocha/regex-for-regular-folk/workflows/Node%20CI/badge.svg)](https://github.com/shreyasminocha/regex-for-regular-folk/actions)
+[![Latest Version](https://img.shields.io/github/v/release/shreyasminocha/regex-for-regular-folk)](https://github.com/shreyasminocha/regex-for-regular-folk/releases/latest)
 
 This is an experimental “book” about regular expressions. It is largely _visual_ and _example-based_, as opposed to most regex resources I found while I was learning. I also attempted to choose test cases that highlight some common gotchas. I think it’ll be worth your time.
 
@@ -16,11 +17,27 @@ This is also an open source project, and contributions are welcome.
 
 A [single-page version of the book](https://refrf.shreyasminocha.me/book) is available. Print it ordinarily. Make sure to enable “Print Background Colors” on Firefox and “Background graphics” (under “More settings”) on Chrome.
 
+## Releases
+
+Check the [releases tab](https://github.com/shreyasminocha/regex-for-regular-folk/releases) for a list of releases. A PDF version of each release—`book.pdf`—is present under “Assets”.
+
+## Built With
+
+-   [MDX](https://mdxjs.com) ✨
+-   [GatsbyJS](https://gatsbyjs.org) 🎩
+-   [Vercel](https://vercel.com) 🚀
+
+## Acknowledgements
+
+Thanks to all [contributors](https://github.com/shreyasminocha/regex-for-regular-folk/graphs/contributors) for creating issues, sharing feedback, and creating pull requests!
+
+I referred to [RegExr](https://regexr.com) and its community patterns—great resources. I also borrowed some examples from the [iHateRegex](https://ihateregex.io) collection.
+
 ## Contributing
 
 Thanks for taking the initiative to contribute to REFRF! 🎉
 
-Please check our [Contribution Guide](.github/contribution.md) for more information.
+Please check our [Contribution Guide](contribution.md) for more information.
 
 ## License
 
