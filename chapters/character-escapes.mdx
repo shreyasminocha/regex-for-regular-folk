@@ -22,6 +22,11 @@ The character escape `\d` matches digit characters, from `0` to `9`. It is equiv
     <li>3.14159</li>
 </Example>
 
+<Note>
+    While <code>59</code> is also a pair of digits, most engines look for{" "}
+    <em>non-overlapping</em> matches from left to right by default.
+</Note>
+
 `\D` is the negation of `\d` and is equivalent to `[^0-9]`.
 
 <Example regex={/\D/g}>
