@@ -1,3 +1,17 @@
+body {
+    --note: hsl(199, 90%, 90%);
+    --warning: hsl(48, 90%, 90%);
+    --tip: hsl(90, 90%, 90%);
+    --support: hsl(0, 90%, 90%);
+}
+
+body.dark {
+    --note: hsl(199, 40%, 40%);
+    --warning: hsl(48, 40%, 40%);
+    --tip: hsl(90, 40%, 40%);
+    --support: hsl(0, 40%, 40%);
+}
+
 .note,
 .warning,
 .tip,
@@ -23,17 +37,17 @@
 }
 
 .note {
-    background-color: hsl(199, 90%, 90%);
+    background-color: var(--note);
 }
 
 .warning {
-    background-color: hsl(48, 90%, 90%);
+    background-color: var(--warning);
 }
 
 .tip {
-    background-color: hsl(90, 90%, 90%);
+    background-color: var(--tip);
 }
 
 .support {
-    background-color: hsl(0, 90%, 90%);
+    background-color: var(--support);
 }

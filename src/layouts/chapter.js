@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import Example from "../components/example";
 import { Note, Warning, Tip, Support } from "../components/boxes";
 import SEO from "../components/seo";
+import ThemeToggle from "../components/theme-toggle";
 import Footer from "../util/footer";
 
 const shortcodes = { Example, Note, Warning, Tip, Support };
@@ -37,6 +38,8 @@ const ChapterTemplate = (props) => {
                 <a href="/" className="title">
                     Regular Expressions For Regular Folk
                 </a>
+
+                <ThemeToggle />
             </header>
 
             <main>

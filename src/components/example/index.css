@@ -1,3 +1,17 @@
+body {
+    --regex-background: whitesmoke;
+    --highlight: hsl(33, 100%, 88%, 0.7);
+    --highlight-bottom: slategrey;
+    --pass: #73fa79;
+    --fail: #ff7e79;
+}
+
+body.dark {
+    --regex-background: #555;
+    --highlight: hsla(261, 80%, 65%, 0.5);
+    --highlight-bottom: #aaa;
+}
+
 .example {
     font-family: monospace;
     page-break-inside: avoid;
@@ -17,9 +31,13 @@
     border-radius: 0.3em;
     white-space: normal;
     word-break: break-all;
-    background-color: whitesmoke;
+    background-color: var(--regex-background);
     padding: 0.2em;
     line-height: 1.9;
+}
+
+body.dark .example code.regex-name {
+    background-color: var(--regex-background);
 }
 
 .example .demos {
@@ -55,7 +73,7 @@
 .example .demos a:hover,
 .example .demos a:active,
 .example .demos a:focus {
-    color: hsl(219, 100%, 47%);
+    color: var(--link);
     opacity: 1;
 }
 
@@ -119,20 +137,21 @@
 }
 
 .example .indicator.pass {
-    background-color: #73fa79;
+    background-color: var(--pass);
 }
 
 .example .indicator.fail {
-    background-color: #ff7e79;
+    background-color: var(--fail);
 }
 
 .example mark {
-    background: hsl(33, 100%, 88%, 0.7);
+    color: var(--body);
+    background: var(--highlight);
 
     /* Right "border" without shifting everything by a pixel */
-    box-shadow: -1px 0px 0px 0px white;
+    box-shadow: -1px 0px 0px 0px var(--background);
 
     border-radius: 3px;
-    border-bottom: 1px solid slategrey;
+    border-bottom: 1px solid var(--highlight-bottom);
     box-sizing: content-box;
 }

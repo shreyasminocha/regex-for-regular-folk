@@ -28,12 +28,22 @@
     src: local("Lato"), url("/fonts/lato.ttf");
 }
 
-:root {
-    --pseudo-black: hsl(0, 0%, 20%);
-}
-
 html {
     font-size: 62.5%;
+}
+
+body {
+    --body: hsl(0, 0%, 20%);
+    --background: white;
+    --link: hsl(219, 100%, 47%);
+    --pre: aliceblue;
+}
+
+body.dark {
+    --body: white;
+    --background: hsl(0, 0%, 20%);
+    --link: hsl(200, 100%, 77%);
+    --pre: #555;
 }
 
 body {
@@ -42,10 +52,13 @@ body {
     padding: 0 0.5em;
     font-size: 1.6em;
     line-height: 1.4;
-    color: var(--pseudo-black);
+    color: var(--body);
+    background: var(--background);
     font-family: "LIbre Baskerville", "Baskerville", "Garamond", serif;
     font-variant-numeric: lining-nums;
     scroll-behavior: smooth;
+    transition: color 0.5s ease-in-out;
+    transition: background 0.25s ease-in-out;
 }
 
 @media (max-width: 650px) {
@@ -114,7 +127,7 @@ a,
 a:hover,
 a:focus {
     text-decoration: none;
-    color: hsl(219, 100%, 47%);
+    color: var(--link);
 }
 
 ol,
@@ -142,7 +155,7 @@ li {
 
 pre {
     overflow-y: hidden;
-    background: aliceblue;
+    background: var(--pre);
     padding: 1.6rem;
 }
 
@@ -185,7 +198,17 @@ header {
 
 .title,
 .title:hover {
-    color: hsl(219, 100%, 47%);
+    color: var(--link);
+}
+
+.theme-toggle {
+    float: right;
+}
+
+@media print {
+    .theme-toggle {
+        display: none;
+    }
 }
 
 nav {
