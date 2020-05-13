@@ -36,7 +36,7 @@ const ChapterTemplate = (props) => {
 
             <header>
                 <a href="/" className="title">
-                    Regular Expressions For Regular Folk
+                    Regular Expressions For Regular&nbsp;Folk
                 </a>
 
                 <ThemeToggle />

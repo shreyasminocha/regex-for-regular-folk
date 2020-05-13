@@ -192,23 +192,30 @@ p {
 }
 
 header {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
     font-family: monospace;
 }
 
-.title,
-.title:hover {
+.title {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 140%;
     color: var(--link);
 }
 
 .theme-toggle {
-    float: right;
+    display: block;
+    float: left;
 }
 
 @media print {
     .theme-toggle {
         display: none;
     }
+}
+
+main {
+    margin-top: 3em;
 }
 
 nav {
