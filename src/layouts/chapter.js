@@ -5,8 +5,8 @@ import { graphql } from "gatsby";
 import Example from "../components/example";
 import { Note, Warning, Tip, Support } from "../components/boxes";
 import SEO from "../components/seo";
-import ThemeToggle from "../components/theme-toggle";
-import Footer from "../util/footer";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const shortcodes = { Example, Note, Warning, Tip, Support };
 
@@ -34,13 +34,7 @@ const ChapterTemplate = (props) => {
         <>
             <SEO title={title} description={excerpt} />
 
-            <header>
-                <a href="/" className="title">
-                    Regular Expressions For Regular&nbsp;Folk
-                </a>
-
-                <ThemeToggle />
-            </header>
+            <Header />
 
             <main>
                 <article>

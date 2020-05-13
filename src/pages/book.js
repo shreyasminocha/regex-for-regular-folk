@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import Example from "../components/example";
 import { Note, Warning, Tip, Support } from "../components/boxes";
 import SEO from "../components/seo";
+import Header from "../components/header";
 
 const shortcodes = { Example, Note, Warning, Tip, Support };
 
@@ -15,11 +16,7 @@ const SinglePage = (props) => {
         <>
             <SEO description="Single-page, print-ready version of Regular Expressions for Regular Folk" />
 
-            <header>
-                <a href="/" className="title">
-                    Regular Expressions For Regular Folk
-                </a>
-            </header>
+            <Header />
 
             {chapters.map((chapter) => (
                 <>

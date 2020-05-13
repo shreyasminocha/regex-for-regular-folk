@@ -1,13 +1,13 @@
 import React from "react";
 import SEO from "../components/seo";
-import chaptersList from "../util/chapters-list";
+import ChapterList from "../components/chapter-list";
 
 const Chapters = () => (
     <>
-        <SEO title={Chapters} />
+        <SEO title="Chapters" />
 
         <h2>Contents</h2>
-        {chaptersList}
+        <ChapterList />
     </>
 );
 

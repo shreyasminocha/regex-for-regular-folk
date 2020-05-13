@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "../components/seo";
-import chaptersList from "../util/chapters-list";
+import ChapterList from "../components/chapter-list";
 
 const Index = () => (
     <>
@@ -36,7 +36,7 @@ const Index = () => (
         </p>
 
         <h2>Contents</h2>
-        {chaptersList}
+        <ChapterList />
 
         <h2>Printing</h2>
         <p>
