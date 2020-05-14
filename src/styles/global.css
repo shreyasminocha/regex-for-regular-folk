@@ -221,7 +221,6 @@ main {
 
 nav {
     margin: 3em 0;
-    padding-top: 1em;
 }
 
 @media print {
@@ -243,14 +242,6 @@ nav ul li {
     font-variant: all-petite-caps;
 }
 
-nav ul li::before {
-    content: "[";
-}
-
-nav ul li::after {
-    content: "]";
-}
-
 nav ul li:nth-child(1) {
     margin-right: 2em;
 }
@@ -259,12 +250,25 @@ nav ul li:nth-child(2) {
     margin-left: 2em;
 }
 
+nav ul li a {
+    padding: 0.5em;
+}
+
 @media (max-width: 650px) {
     nav ul li:nth-child(1),
     nav ul li:nth-child(2) {
         display: block;
         margin-right: 0;
         margin-left: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5em;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
     }
 }
 
