@@ -128,6 +128,7 @@ a:hover,
 a:focus {
     text-decoration: none;
     color: var(--link);
+    word-break: break-word;
 }
 
 ol,
