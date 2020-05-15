@@ -19,7 +19,13 @@ const SEO = (props) => {
     };
 
     return (
-        <Helmet title={seo.title} titleTemplate={titleTemplate}>
+        <Helmet
+            title={seo.title}
+            titleTemplate={titleTemplate}
+            htmlAttributes={{
+                lang: "en-GB",
+            }}
+        >
             {seo.title && <meta property="og:title" content={seo.title} />}
             {seo.title && <meta name="twitter:title" content={seo.title} />}
 
