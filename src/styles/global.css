@@ -3,6 +3,7 @@
     font-style: normal;
     font-weight: normal;
     src: local("Libre Baskerville"), url("/fonts/libre-baskerville.ttf");
+    font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
     font-weight: normal;
     src: local("Libre Baskerville Italic"),
         url("/fonts/libre-baskerville-italic.ttf");
+    font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
     font-weight: bold;
     src: local("Libre Baskerville Bold"),
         url("/fonts/libre-baskerville-bold.ttf");
+    font-display: swap;
 }
 
 @font-face {
@@ -26,6 +29,7 @@
     font-style: normal;
     font-weight: normal;
     src: local("Lato"), url("/fonts/lato.ttf");
+    font-display: swap;
 }
 
 html {
