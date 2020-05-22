@@ -31,7 +31,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
-    "gatsby": "^2.20.2",
+    "gatsby": "^2.22.7",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-mdx": "^1.1.0",
     "gatsby-plugin-sitemap": "^2.4.0",
