@@ -13,6 +13,13 @@ This is also an open source project, and contributions are welcome.
 
 [Read it online](https://refrf.shreyasminocha.me).
 
+## Translations
+
+Translations are welcome, as long as they adhere to the [license](#license).
+
+-   External [Chinese translation](https://elsaooo.github.io/regex/regex-you-should-know.html) by [@ElsaOOo](https://github.com/ElsaOOo)
+-   _Your language?_
+
 ## Printing
 
 A [single-page version of the book](https://refrf.shreyasminocha.me/book) is available. Print it ordinarily. Make sure to enable “Print Background Colors” on Firefox and “Background graphics” (under “More settings”) on Chrome.

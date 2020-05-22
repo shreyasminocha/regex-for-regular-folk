@@ -38,6 +38,24 @@ const Index = () => (
         <h2>Contents</h2>
         <ChapterList />
 
+        <h2>Translations</h2>
+        <p>
+            Translations are welcome, as long as they adhere to the{" "}
+            <a href="#license">license</a>.
+        </p>
+        <ul>
+            <li>
+                External{" "}
+                <a href="https://elsaooo.github.io/regex/regex-you-should-know.html">
+                    Chinese translation
+                </a>{" "}
+                by <a href="https://github.com/ElsaOOo">@ElsaOOo</a>
+            </li>
+            <li>
+                <em>Your language?</em>
+            </li>
+        </ul>
+
         <h2>Printing</h2>
         <p>
             A <a href="/book">single-page version of the book</a> is available.
