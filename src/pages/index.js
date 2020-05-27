@@ -38,6 +38,37 @@ const Index = () => (
         <h2>Contents</h2>
         <ChapterList />
 
+        <h2>Testimonials</h2>
+        <blockquote>
+            “Learned more in just the first few pages than I have in my many
+            years of copy-pasting regex from StackOverflow. Cheers” —
+            <a href="https://news.ycombinator.com/user?id=digitalmaster">
+                digitalmaster
+            </a>
+        </blockquote>
+        <blockquote>
+            “Incredible resource - I liked the structured approach as opposed to
+            guess and check regex which is what most tools offer” —
+            <a href="https://news.ycombinator.com/user?id=scottfits">
+                scottfits
+            </a>
+        </blockquote>
+        <blockquote>
+            “This looks like a great resource! Like others, I vastly prefer an
+            example-based style, and the examples are really well chosen and
+            very illustrative.” —
+            <a href="https://news.ycombinator.com/user?id=twicetwice">
+                twicetwice
+            </a>
+        </blockquote>
+        <blockquote>
+            “I like the example based approach. I learn from examples far
+            quicker than I learn from ‘explanations’. If I attempt to learn from
+            an example and my brain hits an exception, only then do I start
+            reading the supporting text. […]” —
+            <a href="https://news.ycombinator.com/user?id=LeonB">LeonB</a>
+        </blockquote>
+
         <h2>Translations</h2>
         <p>
             Translations are welcome, as long as they adhere to the{" "}
