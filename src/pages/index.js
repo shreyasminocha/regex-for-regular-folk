@@ -76,11 +76,23 @@ const Index = () => (
         </p>
         <ul>
             <li>
-                External{" "}
-                <a href="https://elsaooo.github.io/regex/regex-you-should-know.html">
-                    Chinese translation
-                </a>{" "}
-                by <a href="https://github.com/ElsaOOo">@ElsaOOo</a>
+                Chinese
+                <ul>
+                    <li>
+                        External{" "}
+                        <a href="https://elsaooo.github.io/regex/regex-you-should-know.html">
+                            translation
+                        </a>{" "}
+                        by <a href="https://github.com/ElsaOOo">@ElsaOOo</a>
+                    </li>
+                    <li>
+                        External{" "}
+                        <a href="https://blog.csdn.net/weixin_43466871/article/details/106001050">
+                            translation
+                        </a>{" "}
+                        by <a href="https://github.com/singagain">@singagain</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <em>Your language?</em>

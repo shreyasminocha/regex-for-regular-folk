@@ -17,7 +17,9 @@ This is also an open source project, and contributions are welcome.
 
 Translations are welcome, as long as they adhere to the [license](#license).
 
--   External [Chinese translation](https://elsaooo.github.io/regex/regex-you-should-know.html) by [@ElsaOOo](https://github.com/ElsaOOo)
+-   Chinese
+    -   External [translation](https://elsaooo.github.io/regex/regex-you-should-know.html) by [@ElsaOOo](https://github.com/ElsaOOo)
+    -   External [translation](https://blog.csdn.net/weixin_43466871/article/details/106001050) by [@singagain](https://github.com/singagain)
 -   _Your language?_
 
 ## Printing
