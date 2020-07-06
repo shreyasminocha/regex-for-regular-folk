@@ -6,7 +6,6 @@ const Header = () => (
         <a href="/" className="title">
             Regular Expressions For Regular&nbsp;Folk
         </a>
-
         <ThemeToggle />
     </header>
 );

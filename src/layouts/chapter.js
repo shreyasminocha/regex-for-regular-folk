@@ -7,6 +7,7 @@ import { Note, Warning, Tip, Support } from "../components/boxes";
 import SEO from "../components/seo";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import LangSelector from "../components/lang-selector";
 
 const shortcodes = { Example, Note, Warning, Tip, Support };
 
@@ -35,6 +36,7 @@ const ChapterTemplate = (props) => {
             <SEO title={title} description={excerpt} />
 
             <Header />
+            <LangSelector chapterNumber={mdx.fields.chapterNumber} />
 
             <main>
                 <article>
@@ -71,6 +73,7 @@ export const query = graphql`
             id
             fields {
                 slug
+                chapterNumber
             }
         }
     }
