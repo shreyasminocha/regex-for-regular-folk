@@ -95,9 +95,20 @@ const Index = () => (
                 </ul>
             </li>
             <li>
-                <em>Your language?</em>
+                <a href="https://github.com/shreyasminocha/regex-for-regular-folk/blob/master/contribution.md">
+                    <em>Your language?</em>
+                </a>
             </li>
         </ul>
+
+        <p>
+            You can choose to publish your translation separately, but we
+            welcome{" "}
+            <a href="https://github.com/shreyasminocha/regex-for-regular-folk/blob/master/contribution.md">
+                translations on here
+            </a>{" "}
+            too!
+        </p>
 
         <h2>Printing</h2>
         <p>

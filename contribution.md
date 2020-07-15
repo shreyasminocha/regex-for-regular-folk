@@ -13,7 +13,15 @@ Contributions of all sorts are welcome. Check out [open issues](https://github.c
 -   Add examples and/or illuminating test cases
 -   Improve explanations
 -   Add chapters
+-   Add translations
 -   🎤…
+
+#### Translating
+
+1. Create a directory within `chapters/` with the [two-letter ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) of the language you're translating to (`en` for English, `fr` for French, …).
+2. Duplicate the contents of `chapters/en/` into the new directory.
+3. Translate the newly created files. Do not translate the names of the files themselves.
+4. Create a PR!
 
 ### Web Development
 

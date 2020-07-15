@@ -20,7 +20,9 @@ Translations are welcome, as long as they adhere to the [license](#license).
 -   Chinese
     -   External [translation](https://elsaooo.github.io/regex/regex-you-should-know.html) by [@ElsaOOo](https://github.com/ElsaOOo)
     -   External [translation](https://blog.csdn.net/weixin_43466871/article/details/106001050) by [@singagain](https://github.com/singagain)
--   _Your language?_
+-   [_Your language?_](contribution.md)
+
+You can choose to publish your translation separately, but we welcome [translations on here](contribution.md) too!
 
 ## Printing
 
