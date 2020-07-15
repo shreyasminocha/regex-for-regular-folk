@@ -1,0 +1,5 @@
+{
+    "redirects": [
+        { "source": "/chapters/(.*)", "destination": "/en/chapters/$1" }
+    ]
+}

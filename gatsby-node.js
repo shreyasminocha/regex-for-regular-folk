@@ -115,53 +115,6 @@ exports.createPages = ({ graphql, actions }) => {
                             previous,
                         },
                     });
-
-                    // For backward-compatiblity with old URLs, keep all English chapters under /chapters
-                    // in addition to them being under /en/chapters
-                    if (node.parent.lang === "en") {
-                        let legacyNext = undefined;
-                        if (next) {
-                            legacyNext = JSON.parse(JSON.stringify(next));
-                            if (
-                                legacyNext &&
-                                legacyNext["fields"] &&
-                                legacyNext.fields["slug"]
-                            ) {
-                                legacyNext.fields.slug = legacyNext.fields.slug.replace(
-                                    "/en",
-                                    ""
-                                );
-                            }
-                        }
-
-                        let legacyPrevious = undefined;
-                        if (previous) {
-                            legacyPrevious = JSON.parse(
-                                JSON.stringify(previous)
-                            );
-                            if (
-                                legacyPrevious &&
-                                legacyPrevious["fields"] &&
-                                legacyPrevious.fields["slug"]
-                            ) {
-                                legacyPrevious.fields.slug = legacyPrevious.fields.slug.replace(
-                                    "/en",
-                                    ""
-                                );
-                            }
-                        }
-
-                        createPage({
-                            path: node.fields.slug.replace("/en", "") || "/",
-                            component: path.resolve("./src/layouts/chapter.js"),
-                            context: {
-                                id: node.id,
-                                lang: node.parent.lang,
-                                next: legacyNext,
-                                previous: legacyPrevious,
-                            },
-                        });
-                    }
                 });
             })
         );
