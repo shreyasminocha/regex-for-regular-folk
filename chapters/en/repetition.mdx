@@ -123,11 +123,41 @@ If we wish to match a particular token at least `x` times, we can suffix it with
 
 ## A note on _greediness_
 
-Regular expressions, by default, are _greedy_. They attempt to match as much as possible.
+Repetition operators, by default, are _greedy_. They attempt to match as much as possible.
 
 <Example regex={/a*/g}>
-    <li>aaaaaa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+    <li>aaaaa</li>
 </Example>
+
+`*` can match zero or more instances of `a`. In each of the example strings, it could just as well match, say, zero `a`s. Yet, it matches as many as it can.
+
+---
+
+<Example regex={/a{2,4}/g}>
+    <li>aaaaa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+</Example>
+
+Suffixing a repetition operator (`*`, `+`, `?`, …) with a `?`, one can make it "lazy".
+
+<Example regex={/a{2,4}?/g}>
+    <li>aaaaa</li>
+    <li>aaa</li>
+    <li>aaaa</li>
+</Example>
+
+<Warning>
+    The suffix <code>?</code> here is different from{" "}
+    <a href="#making-things-optional">
+        the repetition operator <code>?</code>
+    </a>
+    .
+</Warning>
+
+---
 
 <Example regex={/".*"/g}>
     <li>"quote"</li>
@@ -135,25 +165,17 @@ Regular expressions, by default, are _greedy_. They attempt to match as much as 
     <li>"quote"quote"</li>
 </Example>
 
-Suffixing a repetition operator (`?`, `*`, `+`, …) with a `?`, one can make it "lazy".
-
 <Example regex={/".*?"/g}>
     <li>"quote"</li>
     <li>"quote", "quote"</li>
     <li>"quote"quote"</li>
 </Example>
 
-Here, this could also be achieved by using `[^"]` instead of `.` (as is best practice).
+Now, `.*` matches no more than the minimum necessary to allow a match.[^1]
 
-<Example regex={/"[^"]*"/g}>
-    <li>"quote"</li>
-    <li>"quote", "quote"</li>
-    <li>"quote"quote"</li>
-</Example>
-
-> […] Lazy will stop as soon as the _condition is satisfied_, but greedy means it will stop only once the condition is _not satisfied any more_
+> […] Lazy will stop as soon as the condition _is satisfied_, but greedy means it will stop only once the condition is _not satisfied any more_.
 >
-> —[Andrew S](https://stackoverflow.com/users/966656/andrew-s) on StackOverflow
+> —[Andrew S](https://stackoverflow.com/users/966656/andrew-s) on Stack Overflow
 
 <Example regex={/<.+>/g}>
     <li>{"<em>g r e e d y</em>"}</li>
@@ -173,7 +195,7 @@ Here, this could also be achieved by using `[^"]` instead of `.` (as is best pra
     <li>2016-03-09,18f1yugoAJuXcHAbsuRVLQC9TezJ</li>
 </Example>
 
-### Youtube Video
+### YouTube Video
 
 <Example
     regex={/(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?.*?v=([^&\s]+).*/gm}
@@ -186,3 +208,5 @@ Here, this could also be achieved by using `[^"]` instead of `.` (as is best pra
 </Example>
 
 We can adjust this to not match the last broken link using [anchors](anchors), which we shall encounter soon.
+
+[^1]: In this example, we could also achieve this using `/"[^"]*"/g` (as is best practice).

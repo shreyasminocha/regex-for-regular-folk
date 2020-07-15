@@ -154,6 +154,10 @@ blockquote {
     padding: 1rem 1.5rem;
 }
 
+blockquote em {
+    font-weight: bold;
+}
+
 blockquote p:last-child {
     margin-bottom: 0;
 }
