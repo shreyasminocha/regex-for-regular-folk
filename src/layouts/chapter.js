@@ -36,7 +36,7 @@ const ChapterTemplate = (props) => {
             <SEO title={title} description={excerpt} />
 
             <Header />
-            <LangSelector chapterNumber={mdx.fields.chapterNumber} />
+            <LangSelector pathName={props.location.pathname} chapterNumber={mdx.fields.chapterNumber} />
 
             <main>
                 <article>
