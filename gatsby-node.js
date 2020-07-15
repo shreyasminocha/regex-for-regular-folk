@@ -11,7 +11,7 @@ const buildFindSiblingsQuery = (currentChapterNumber, currentChapterLang) => {
     } else {
         siblingChapterNumbers = `[${currentChapterNumber - 1}, ${
             currentChapterNumber + 1
-            }]`;
+        }]`;
     }
 
     let languages = ``;
@@ -119,19 +119,35 @@ exports.createPages = ({ graphql, actions }) => {
                     // For backward-compatiblity with old URLs, keep all English chapters under /chapters
                     // in addition to them being under /en/chapters
                     if (node.parent.lang === "en") {
-                        let legacyNext = undefined
+                        let legacyNext = undefined;
                         if (next) {
-                            legacyNext = JSON.parse(JSON.stringify(next))
-                            if (legacyNext && legacyNext["fields"] && legacyNext.fields["slug"]) {
-                                legacyNext.fields.slug = legacyNext.fields.slug.replace("/en", "")
+                            legacyNext = JSON.parse(JSON.stringify(next));
+                            if (
+                                legacyNext &&
+                                legacyNext["fields"] &&
+                                legacyNext.fields["slug"]
+                            ) {
+                                legacyNext.fields.slug = legacyNext.fields.slug.replace(
+                                    "/en",
+                                    ""
+                                );
                             }
                         }
 
-                        let legacyPrevious = undefined
+                        let legacyPrevious = undefined;
                         if (previous) {
-                            legacyPrevious = JSON.parse(JSON.stringify(previous))
-                            if (legacyPrevious && legacyPrevious["fields"] && legacyPrevious.fields["slug"]) {
-                                legacyPrevious.fields.slug = legacyPrevious.fields.slug.replace("/en", "")
+                            legacyPrevious = JSON.parse(
+                                JSON.stringify(previous)
+                            );
+                            if (
+                                legacyPrevious &&
+                                legacyPrevious["fields"] &&
+                                legacyPrevious.fields["slug"]
+                            ) {
+                                legacyPrevious.fields.slug = legacyPrevious.fields.slug.replace(
+                                    "/en",
+                                    ""
+                                );
                             }
                         }
 
@@ -144,7 +160,7 @@ exports.createPages = ({ graphql, actions }) => {
                                 next: legacyNext,
                                 previous: legacyPrevious,
                             },
-                        })
+                        });
                     }
                 });
             })

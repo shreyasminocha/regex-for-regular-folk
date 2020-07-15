@@ -5,13 +5,19 @@ const LangSelector = ({ chapterNumber, pathName }) => {
     const data = useStaticQuery(query);
 
     // Get all known languages for a given chapter
-    const languages = data.allMdx.nodes.map(node => {
-        return (node.fields.chapterNumber === chapterNumber ? {
-            name: node.fields.lang
-        } : false)
-    }).filter(Boolean);
+    const languages = data.allMdx.nodes
+        .map((node) => {
+            return node.fields.chapterNumber === chapterNumber
+                ? {
+                      name: node.fields.lang,
+                  }
+                : false;
+        })
+        .filter(Boolean);
 
-    const pathNameWithoutLanguage = pathName.match(new RegExp("(chapters/.*)"))[0]
+    const pathNameWithoutLanguage = pathName.match(
+        new RegExp("(chapters/.*)")
+    )[0];
 
     return (
         <ul className="lang-list">
