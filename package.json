@@ -6,7 +6,7 @@
     "alex": "alex chapters/*.mdx",
     "lint-check": "prettier --check .",
     "lint": "prettier --write .",
-    "test": "status=0; npm run alex || status=$?; npm run lint-check || status=$?; exit $status",
+    "test": "status=0; npm run lint-check || status=$?; exit $status",
     "dev": "gatsby develop",
     "build": "gatsby build"
   },

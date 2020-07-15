@@ -81,11 +81,3 @@ npm run lint
 ### Language guidelines
 
 We use British English.
-
-We use [alex](https://alexjs.com) to automatically test for inconsiderate language.
-
-```sh
-npm run alex
-```
-
-It isn't very clever—sorry if it bothers you with false-positives. Please try to use synonyms, if possible.
