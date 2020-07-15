@@ -260,6 +260,17 @@ nav ul li a {
         monospace;
 }
 
+.lang-list {
+    display: flex;
+    margin-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.lang-list li {
+    margin-right: 2ch;
+}
+
 footer {
     font-size: small;
     text-align: center;
