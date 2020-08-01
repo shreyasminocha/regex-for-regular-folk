@@ -38,7 +38,7 @@ const Index = () => (
         <h2>Contents</h2>
         <ChapterList />
 
-        <h2>Testimonials</h2>
+        <h2>Feedback</h2>
         <blockquote>
             “Learned more in just the first few pages than I have in my many
             years of copy-pasting regex from StackOverflow. Cheers” —
@@ -68,6 +68,8 @@ const Index = () => (
             reading the supporting text. […]” —
             <a href="https://news.ycombinator.com/user?id=LeonB">LeonB</a>
         </blockquote>
+
+        Read the full discussion at <a href="https://news.ycombinator.com/item?id=23042079">Hacker News</a>.
 
         <h2>Translations</h2>
         <p>
