@@ -5,9 +5,7 @@ import ChapterList from "../components/chapter-list";
 const Index = () => (
     <>
         <SEO />
-
         <h1>Regular Expressions for Regular Folk</h1>
-
         <p>
             This is an experimental “book” about regular expressions. It is
             largely <em>visual</em> and <em>example-based</em>, as opposed to
@@ -15,12 +13,10 @@ const Index = () => (
             to choose test cases that highlight some common gotchas. I think
             it’ll be worth your time.
         </p>
-
         <img
             src="/images/screenshot.jpg"
             alt="Screenshot from /chapters/escapes"
         />
-
         <p>
             This book’s intended audience is <em>regex beginners</em>. Some
             programming experience is assumed. It does not go into advanced
@@ -34,10 +30,8 @@ const Index = () => (
             </a>
             , and contributions are welcome.
         </p>
-
         <h2>Contents</h2>
         <ChapterList />
-
         <h2>Feedback</h2>
         <blockquote>
             “Learned more in just the first few pages than I have in my many
@@ -68,9 +62,8 @@ const Index = () => (
             reading the supporting text. […]” —
             <a href="https://news.ycombinator.com/user?id=LeonB">LeonB</a>
         </blockquote>
-
-        Read the full discussion at <a href="https://news.ycombinator.com/item?id=23042079">Hacker News</a>.
-
+        Read the full discussion at{" "}
+        <a href="https://news.ycombinator.com/item?id=23042079">Hacker News</a>.
         <h2>Translations</h2>
         <p>
             Translations are welcome, as long as they adhere to the{" "}
@@ -102,7 +95,6 @@ const Index = () => (
                 </a>
             </li>
         </ul>
-
         <p>
             You can choose to publish your translation separately, but we
             welcome{" "}
@@ -111,7 +103,6 @@ const Index = () => (
             </a>{" "}
             too!
         </p>
-
         <h2>Printing</h2>
         <p>
             A <a href="/book">single-page version of the book</a> is available.
@@ -119,7 +110,6 @@ const Index = () => (
             on Firefox and “Background graphics” (under “More settings”) on
             Chrome.
         </p>
-
         <footer>
             <p>
                 Chapter content is licensed under{" "}
