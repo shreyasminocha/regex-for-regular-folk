@@ -1,6 +1,6 @@
 import React from "react";
-import SEO from "../components/seo";
-import ChapterList from "../components/chapter-list";
+import SEO from "../../components/seo";
+import ChapterList from "../../components/chapter-list";
 
 const Chapters = () => (
     <>
