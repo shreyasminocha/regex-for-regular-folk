@@ -1,17 +1,17 @@
-# [Regular Expressions for Regular Folk](https://refrf.shreyasminocha.me)
+# [Regular Expressions for Regular Folk](https://refrf.dev)
 
 [![Node CI](https://github.com/shreyasminocha/regex-for-regular-folk/workflows/Node%20CI/badge.svg)](https://github.com/shreyasminocha/regex-for-regular-folk/actions)
 [![Latest Version](https://img.shields.io/github/v/release/shreyasminocha/regex-for-regular-folk)](https://github.com/shreyasminocha/regex-for-regular-folk/releases/latest)
 
 This is an experimental “book” about regular expressions. It is largely _visual_ and _example-based_, as opposed to most regex resources I found while I was learning. I also attempted to choose test cases that highlight some common gotchas. I think it’ll be worth your time.
 
-[![Screenshot from /chapters/escapes](https://raw.githubusercontent.com/shreyasminocha/regex-for-regular-folk/master/static/images/screenshot.jpg)](https://refrf.shreyasminocha.me)
+[![Screenshot from /chapters/escapes](https://raw.githubusercontent.com/shreyasminocha/regex-for-regular-folk/master/static/images/screenshot.jpg)](https://refrf.dev)
 
 This book’s intended audience is _regex beginners_. Some programming experience is assumed. It does not go into advanced regex concepts like engine backtracking and recursive regexes—at least not at the moment.
 
 This is also an open source project, and contributions are welcome.
 
-[Read it online](https://refrf.shreyasminocha.me).
+[Read it online](https://refrf.dev).
 
 ## Translations
 
@@ -26,7 +26,7 @@ You can choose to publish your translation separately, but we welcome [translati
 
 ## Printing
 
-A [single-page version of the book](https://refrf.shreyasminocha.me/book) is available. Print it ordinarily. Make sure to enable “Print Background Colors” on Firefox and “Background graphics” (under “More settings”) on Chrome.
+A [single-page version of the book](https://refrf.dev/book) is available. Print it ordinarily. Make sure to enable “Print Background Colors” on Firefox and “Background graphics” (under “More settings”) on Chrome.
 
 ## Releases
 
